@@ -11,8 +11,8 @@
 #ifndef _XVARARGS_H_
 #define _XVARARGS_H_
 
-#include "./integer_x.h"
-#include "./pointer_x.h"
+#include "./xinteger.h"
+#include "./xpointer.h"
 
 
 /*
