@@ -19,7 +19,7 @@
 /**
  * @brief 定时器结构体
  */
-typedef struct _Timer xTimer_t;
+typedef struct _Timer xtimer_t;
 
 /**
  * @brief 定时器回调函数类型声明
@@ -36,7 +36,7 @@ extern "C" {
  * @param - 无
  * @return - 定时器结构体指针
  */
-xTimer_t * xtimer_create();
+xtimer_t* xtimer_create();
 
 
 /**
@@ -44,7 +44,7 @@ xTimer_t * xtimer_create();
  * @param[in] ptmr - 定时器结构体指针
  * @return - 无
  */
-void xtimer_destroy( xTimer_t* ptmr );
+void xtimer_destroy( xtimer_t* ptmr );
 
 /**
  * @brief 启动定时器
@@ -56,14 +56,14 @@ void xtimer_destroy( xTimer_t* ptmr );
  * @par 接口使用约定
  *      1.dwMSecs必须大于0<br>
  */
-void xtimer_start( xTimer_t * ptmr, xuint32_t dwMSecs, XFUNPOINTER_FNTIMEREVENT pfn, void* pvUser );
+void xtimer_start( xtimer_t* ptmr, xuint32_t dwMSecs, XFUNPOINTER_FNTIMEREVENT pfn, void* pvUser );
 
 /**
  * @brief 判断定时器是否已经启动
  * @param[in] ptmr - 定时器结构体指针
  * @return - 已经开始定时:true,没有开始定时:false
  */
-bool xtimer_isbusy( xTimer_t* ptmr );
+xbool_t xtimer_isbusy( xtimer_t* ptmr );
 
 
 /**
@@ -71,7 +71,7 @@ bool xtimer_isbusy( xTimer_t* ptmr );
  * @param[in] ptmr - 定时器结构体指针
  * @return - 无
  */
-void xtimer_cancel( xTimer_t* ptmr );
+void xtimer_cancel( xtimer_t* ptmr );
 
 #ifdef __cplusplus
 }

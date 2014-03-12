@@ -29,7 +29,7 @@ extern "C" {
  *      1.size不能等于0<br>
  *      2.分配的空间不使用后，需要调用free函数释放<br>
  */
-void* xmemory_alloc( xint32_t size );
+void* xmemory_alloc( xsize_t size );
 
 
 /**
@@ -42,7 +42,7 @@ void* xmemory_alloc( xint32_t size );
  *      2.函数calloc()会将所分配的内存空间中的每一位都初始化为零<br>
  *      3.分配的空间不使用后，需要调用free函数释放<br>
  */
-void* xmemory_calloc( xint32_t nmemb, xint32_t size );
+void* xmemory_calloc( xsize_t nmemb, xsize_t size );
 
 /**
  * @brief 改变给定的内存指针所指的空间大小为size
@@ -55,7 +55,7 @@ void* xmemory_calloc( xint32_t nmemb, xint32_t size );
  *      3.返回值可能与ptr的值不同,如果是不同的话,那么realloc函数完成后,ptr指向的旧内存已被free掉了<br>
  *      4.如果返回NULL值,则分配不成功,而原来的ptr指向的内存还没有被free掉,要求程序显式free<br>
  */
-void* xmemory_realloc( void* ptr, xint32_t size );
+void* xmemory_realloc( void* ptr, xsize_t size );
 
 /**
  * @brief 释放之前用malloc/calloc分配的空间
@@ -75,7 +75,7 @@ void xmemory_free( void* ptr );
  * @par 接口使用约定
  *      1.dptr和sptr所指内存区域不能重叠<br>
  */
-void* xmemory_copy( void* dptr, const void* sptr, xint32_t size );
+void* xmemory_copy( void* dptr, const void* sptr, xsize_t size );
 
 /**
  * @brief 移动内存数据
@@ -87,7 +87,7 @@ void* xmemory_copy( void* dptr, const void* sptr, xint32_t size );
  *      1.dptr和sptr所指内存区域可以重叠,但复制后sptr内容会被更改<br>
  *      2.复制速度比memcpy慢<br>
  */
-void* xmemory_move( void* dptr, const void* sptr, xint32_t size );
+void* xmemory_move( void* dptr, const void* sptr, xsize_t size );
 
 /**
  * @brief 设置目标内存数据
