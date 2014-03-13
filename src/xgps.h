@@ -13,6 +13,7 @@
 
 #include "./xinteger.h"
 #include "./xboolean.h"
+#include "./xfloat.h"
 
 
 /**
@@ -20,10 +21,10 @@
  */
 typedef struct _GPSInfo
 {
-    double  lon;                ///< 经度
-    double  lat;                ///< 纬度
-    double  speed;              ///< 速度 单位:米/秒
-    double  course;             ///< 方向 真北方向为0度,顺时针向东增加角度
+    xdouble_t  lon;                ///< 经度
+    xdouble_t  lat;                ///< 纬度
+    xdouble_t  speed;              ///< 速度 单位:米/秒
+    xdouble_t  course;             ///< 方向 真北方向为0度,顺时针向东增加角度
 } xGPSInfo_t;
 
 /**
