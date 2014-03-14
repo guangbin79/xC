@@ -464,47 +464,47 @@ extern "C" {
  * Entrypoint definitions
  *-----------------------------------------------------------------------*/
 
-void xopengl_GenBuffers (XGLsizei n, XGLuint* buffers);
-void xopengl_DeleteBuffers (XGLsizei n, const XGLuint* buffers);
-void xopengl_BindBuffer (XGLenum target, XGLuint buffer);
-void xopengl_BufferData (XGLenum target, XGLsizeiptr size, const XGLvoid* data, XGLenum usage);
-void xopengl_BufferSubData (XGLenum target, XGLintptr offset, XGLsizeiptr size, const XGLvoid* data);
-XGLuint xopengl_CreateShader (XGLenum type);
-void xopengl_GetShaderSource (XGLuint shader, XGLsizei bufsize, XGLsizei* length, XGLchar* source);
-void xopengl_CompileShader (XGLuint shader);
-void xopengl_GetShaderiv (XGLuint shader, XGLenum pname, XGLint* params);
-void xopengl_GetShaderInfoLog (XGLuint shader, XGLsizei bufsize, XGLsizei* length, XGLchar* infolog);
-void xopengl_DeleteShader (XGLuint shader);
-XGLuint xopengl_CreateProgram (void);
-void xopengl_AttachShader (XGLuint program, XGLuint shader);
-void xopengl_DeleteProgram (XGLuint program);
-void xopengl_LinkProgram (XGLuint program);
-void xopengl_UseProgram (XGLuint program);
-void xopengl_GetProgramiv (XGLuint program, XGLenum pname, XGLint* params);
-void xopengl_GetProgramInfoLog (XGLuint program, XGLsizei bufsize, XGLsizei* length, XGLchar* infolog)
-int xopengl_GetUniformLocation (XGLuint program, const XGLchar* name);
-void xopengl_Uniform1f (XGLint location, XGLfloat x);
-void xopengl_Uniform2f (XGLint location, XGLfloat x, XGLfloat y);
-void xopengl_Uniform3f (XGLint location, XGLfloat x, XGLfloat y, XGLfloat z);
-void xopengl_Uniform4f (XGLint location, XGLfloat x, XGLfloat y, XGLfloat z, XGLfloat w);
-void xopengl_UniformMatrix3fv (XGLint location, XGLsizei count, XGLboolean transpose, const XGLfloat* value);
-void xopengl_UniformMatrix4fv (XGLint location, XGLsizei count, XGLboolean transpose, const XGLfloat* value);
-void xopengl_Uniform1i (XGLint location, XGLint x);
-void xopengl_AttachShader (XGLuint program, XGLuint shader);
-void xopengl_GetVertexAttribPointerv (XGLuint index, XGLenum pname, XGLvoid** pointer);
-void xopengl_EnableVertexAttribArray (XGLuint index);
-void xopengl_DisableVertexAttribArray (XGLuint index);
-int  xopengl_GetAttribLocation (XGLuint program, const XGLchar* name);
-void xopengl_GenFramebuffers (XGLsizei n, XGLuint* framebuffers);
-void xopengl_BindFramebuffer (XGLenum target, XGLuint framebuffer);
-void xopengl_FramebufferTexture2D (XGLenum target, XGLenum attachment, XGLenum textarget, XGLuint texture, XGLint level);
-XGLenum xopengl_CheckFramebufferStatus (XGLenum target);
-void xopengl_DeleteFramebuffers (XGLsizei n, const XGLuint* framebuffers);
-void xopengl_GenRenderbuffers (XGLsizei n, XGLuint* renderbuffers);
-void xopengl_BindRenderbuffer (XGLenum target, XGLuint renderbuffer);
-void xopengl_RenderbufferStorage (XGLenum target, XGLenum internalformat, XGLsizei width, XGLsizei height);
-void xopengl_FramebufferRenderbuffer (XGLenum target, XGLenum attachment, XGLenum renderbuffertarget, XGLuint renderbuffer);
-void xopengl_DeleteRenderbuffers (XGLsizei n, const XGLuint* renderbuffers);
+void xopengl_genBuffers (XGLsizei n, XGLuint* buffers);
+void xopengl_deleteBuffers (XGLsizei n, const XGLuint* buffers);
+void xopengl_bindBuffer (XGLenum target, XGLuint buffer);
+void xopengl_bufferData (XGLenum target, XGLsizeiptr size, const XGLvoid* data, XGLenum usage);
+void xopengl_bufferSubData (XGLenum target, XGLintptr offset, XGLsizeiptr size, const XGLvoid* data);
+XGLuint xopengl_createShader (XGLenum type);
+void xopengl_getShaderSource (XGLuint shader, XGLsizei bufsize, XGLsizei* length, XGLchar* source);
+void xopengl_compileShader (XGLuint shader);
+void xopengl_getShaderiv (XGLuint shader, XGLenum pname, XGLint* params);
+void xopengl_getShaderInfoLog (XGLuint shader, XGLsizei bufsize, XGLsizei* length, XGLchar* infolog);
+void xopengl_deleteShader (XGLuint shader);
+XGLuint xopengl_createProgram (void);
+void xopengl_attachShader (XGLuint program, XGLuint shader);
+void xopengl_deleteProgram (XGLuint program);
+void xopengl_linkProgram (XGLuint program);
+void xopengl_useProgram (XGLuint program);
+void xopengl_getProgramiv (XGLuint program, XGLenum pname, XGLint* params);
+void xopengl_getProgramInfoLog (XGLuint program, XGLsizei bufsize, XGLsizei* length, XGLchar* infolog)
+int xopengl_getUniformLocation (XGLuint program, const XGLchar* name);
+void xopengl_uniform1f (XGLint location, XGLfloat x);
+void xopengl_uniform2f (XGLint location, XGLfloat x, XGLfloat y);
+void xopengl_uniform3f (XGLint location, XGLfloat x, XGLfloat y, XGLfloat z);
+void xopengl_uniform4f (XGLint location, XGLfloat x, XGLfloat y, XGLfloat z, XGLfloat w);
+void xopengl_uniformMatrix3fv (XGLint location, XGLsizei count, XGLboolean transpose, const XGLfloat* value);
+void xopengl_uniformMatrix4fv (XGLint location, XGLsizei count, XGLboolean transpose, const XGLfloat* value);
+void xopengl_uniform1i (XGLint location, XGLint x);
+void xopengl_attachShader (XGLuint program, XGLuint shader);
+void xopengl_getVertexAttribPointerv (XGLuint index, XGLenum pname, XGLvoid** pointer);
+void xopengl_enableVertexAttribArray (XGLuint index);
+void xopengl_disableVertexAttribArray (XGLuint index);
+int  xopengl_getAttribLocation (XGLuint program, const XGLchar* name);
+void xopengl_genFramebuffers (XGLsizei n, XGLuint* framebuffers);
+void xopengl_bindFramebuffer (XGLenum target, XGLuint framebuffer);
+void xopengl_framebufferTexture2D (XGLenum target, XGLenum attachment, XGLenum textarget, XGLuint texture, XGLint level);
+XGLenum xopengl_checkFramebufferStatus (XGLenum target);
+void xopengl_deleteFramebuffers (XGLsizei n, const XGLuint* framebuffers);
+void xopengl_genRenderbuffers (XGLsizei n, XGLuint* renderbuffers);
+void xopengl_bindRenderbuffer (XGLenum target, XGLuint renderbuffer);
+void xopengl_renderbufferStorage (XGLenum target, XGLenum internalformat, XGLsizei width, XGLsizei height);
+void xopengl_framebufferRenderbuffer (XGLenum target, XGLenum attachment, XGLenum renderbuffertarget, XGLuint renderbuffer);
+void xopengl_deleteRenderbuffers (XGLsizei n, const XGLuint* renderbuffers);
 
 #ifdef __cplusplus
 }

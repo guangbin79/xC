@@ -17,9 +17,9 @@ typedef struct _ThreadStr XThread;
 typedef struct _Mutexstr XMutex;
 
 //线程执行体函数原型
-typedef void (*XThreadProcFunc)(void* pvuser);
+typedef void (*XCB_THREADPROCFUNC)(void* pvuser);
 //线程执行完后的回调函数原型
-typedef void (*XThreadNotifyFunc)(void* pvuser);
+typedef void (*XCB_ThREADNOTIFYFUNC)(void* pvuser);
 
 #ifdef __cplusplus
 extern "C" {
