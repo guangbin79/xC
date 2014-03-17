@@ -5,7 +5,6 @@
  * @author tangbo <tangbo@tiros.com.cn>
  * @date 2014/03/17
  * @par android/ios pixel format different.
- * 
  */
 
 #ifndef _XOPENGL2_H_
@@ -75,12 +74,6 @@ typedef long            XGLsizeiptr;
 #define XGL_DST_COLOR                                     0x0306
 #define XGL_ONE_MINUS_DST_COLOR                           0x0307
 #define XGL_SRC_ALPHA_SATURATE                            0x0308
-/*      XGL_SRC_ALPHA */
-/*      XGL_ONE_MINUS_SRC_ALPHA */
-/*      XGL_DST_ALPHA */
-/*      XGL_ONE_MINUS_DST_ALPHA */
-
-
 
 /* DepthFunction */
 /*      XGL_NEVER */
@@ -148,12 +141,6 @@ typedef long            XGLsizeiptr;
 #define XGL_LEQUAL                                        0x0203
 #define XGL_GREATER                                       0x0204
 
-/* StringName */
-#define XGL_VENDOR                                        0x1F00
-#define XGL_RENDERER                                      0x1F01
-#define XGL_VERSION                                       0x1F02
-#define XGL_EXTENSIONS                                    0x1F03
-
 /* TextureMagFilter */
 #define XGL_NEAREST                                       0x2600
 #define XGL_LINEAR                                        0x2601
@@ -185,8 +172,6 @@ typedef long            XGLsizeiptr;
 /* TextureWrapMode */
 #define XGL_REPEAT                                        0x2901
 #define XGL_CLAMP_TO_EDGE                                 0x812F
-//#define XGL_MIRRORED_REPEAT                               0x8370
-
 
 /* Framebuffer Object. */
 #define XGL_FRAMEBUFFER                                   0x8D40
@@ -200,8 +185,6 @@ typedef long            XGLsizeiptr;
 #define XGL_COLOR_ATTACHMENT0                             0x8CE0
 #define XGL_DEPTH_ATTACHMENT                              0x8D00
 #define XGL_STENCIL_ATTACHMENT                            0x8D20
-
-#define XGL_MAX_RENDERBUFFER_SIZE                         0x84E8
 
 #define XGL_INVALID_FRAMEBUFFER_OPERATION                 0x0506
 
