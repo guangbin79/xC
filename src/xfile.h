@@ -117,7 +117,7 @@ xuint32_t xfile_seek(xfile_t * file, xfile_seek_type_t seekType, xuint32_t moveD
  * @param[in] size - 指定新的文件大小
  * @return uint32_t - 改变后的文件大小
  */
-xuint32_t xfile_change_size(xfile_t * file, xuint32_t size);
+xuint32_t xfile_changeSize(xfile_t * file, xuint32_t size);
 
 /**
  * @brief 重命名文件
@@ -146,14 +146,14 @@ xbool_t xfile_exist(const xchar_t * filename);
  * @param[in] dir - 目录名
  * @return - 目录建立成功返回true,否则返回false
  */
-xbool_t xfile_mk_dir(const xchar_t * dir);
+xbool_t xfile_mkDir(const xchar_t * dir);
 
 /**
  * @brief 删除目录
  * @param[in] dir - 目录名
  * @return - 目录删除成功返回true,否则返回false
  */
-xbool_t xfile_remove_dir(const xchar_t * dir);
+xbool_t xfile_removeDir(const xchar_t * dir);
 
 /**
  * @brief 获取文件大小
