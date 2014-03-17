@@ -38,17 +38,17 @@
 /**
  * @brief 文件结构体
  */
-typedef struct _xfile xfile_t;
+typedef struct _xfile_t xfile_t;
 
 /**
  * @brief 文件枚举结构体
  */
-typedef struct _xfile_enum xfile_enum_t;
+typedef struct _xfile_enum_t xfile_enum_t;
 
 /**
  * @brief 文件打开类型枚举
  */
-typedef enum _xopen_file_mode{
+typedef enum _xopen_file_mode_t{
     XOFM_READ,          ///< 只读
     XOFM_READWRITE,     ///< 读写
     XOFM_APPEND,        ///< 追加
@@ -58,7 +58,7 @@ typedef enum _xopen_file_mode{
 /**
  * @brief 文件定位类型枚举
  */
-typedef enum _xfile_seek_type{
+typedef enum _xfile_seek_type_t{
     XFST_START,         ///< 文件开头
     XFST_END,           ///< 文件结尾
     XFST_CURRENT_DOWN,  ///< 当前位置向下

@@ -20,7 +20,7 @@
 #else
 
 #define XASSERT(exp) xdebug_assert(exp)
-#define XDBGPRINTF(format,...) xdebug_printf(VA_ARGS)
+#define XDBGPRINTF(format,...) xdebug_printf(format, VA_ARGS)
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,7 +31,7 @@ extern "C" {
  * @param[in] exp - 断言
  * @return - 无
  */
-void xdbg_assert(xbool_t exp);
+void xdebug_assert(xbool_t exp);
 
 /**
  * @brief 调试信息输出的实现,请调用宏定义xdb_gprintf,不要直接调用xdbg_printf
@@ -39,7 +39,7 @@ void xdbg_assert(xbool_t exp);
  * @param[in] ... - 可变参序列
  * @return - 无
  */
-void xdbg_printf(const xchar_t * format, ...);
+void xdebug_printf(const xchar_t * format, ...);
 
 #ifdef __cplusplus
 }
