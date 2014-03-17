@@ -2,8 +2,8 @@
  * xC
  * @file xgl.h
  * @brief xgl API
- * @author map <map@tiros.com.cn>
- * @date 2014/03/14
+ * @author tangbo <tangbo@tiros.com.cn>
+ * @date 2014/03/17
  * @par 修改记录
  * 
  */
@@ -11,13 +11,30 @@
 #ifndef _XGL_H_
 #define _XGL_H_
 
+#include "xboolean.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+/**
+ * @brief 准备绘图上下文
+ * @return void
+ */
 void xgl_drawScreenBegin();
+    
+/**
+ * @brief 结束绘图上下文
+ * @return void
+ */
 void xgl_drawScreenEnd();
-void xgl_makeCurrentContext();
+
+/**
+ * @brief 准备绘图上下文
+ * @param[in] bBind - 是否将当前线程设置为渲染线程
+ * @return 是否成功设置
+ */
+xboolean xgl_makeCurrentContext(xboolean bBind);
 
 #ifdef __cplusplus
 }
