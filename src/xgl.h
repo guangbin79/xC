@@ -34,7 +34,7 @@ void xgl_drawScreenEnd();
  * @param[in] bBind - 是否将当前线程设置为渲染线程
  * @return 是否成功设置
  */
-xboolean xgl_makeCurrentContext(xboolean bBind);
+xbool_t xgl_makeCurrentContext(xbool_t bBind);
 
 #ifdef __cplusplus
 }

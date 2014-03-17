@@ -123,35 +123,35 @@ xuint32_t xfile_changeSize(xfile_t * file, xuint32_t size);
  * @brief 重命名文件
  * @param[in] filename1 - 改名前的文件名
  * @param[in] filename2 - 改名后的文件名
- * @return - 改名成功返回true,否则返回false
+ * @return - 改名成功返回XTRUE,否则返回XFALSE
  */
 xbool_t xfile_rename(const xchar_t * filename1, const xchar_t * filename2);
 
 /**
  * @brief 删除文件
  * @param[in] filename - 文件名
- * @return - 文件删除成功返回true,否则返回false
+ * @return - 文件删除成功返回XTRUE,否则返回XFALSE
  */
 xbool_t xfile_remove(const xchar_t * filename);
 
 /**
  * @brief 检查文件是否存在
  * @param[in] filename - 文件名
- * @return - 文件存在返回true,否则返回false
+ * @return - 文件存在返回XTRUE,否则返回XFALSE
  */
 xbool_t xfile_exist(const xchar_t * filename);
 
 /**
  * @brief 建立目录
  * @param[in] dir - 目录名
- * @return - 目录建立成功返回true,否则返回false
+ * @return - 目录建立成功返回XTRUE,否则返回XFALSE
  */
 xbool_t xfile_mkDir(const xchar_t * dir);
 
 /**
  * @brief 删除目录
  * @param[in] dir - 目录名
- * @return - 目录删除成功返回true,否则返回false
+ * @return - 目录删除成功返回XTRUE,否则返回XFALSE
  */
 xbool_t xfile_removeDir(const xchar_t * dir);
 
@@ -183,7 +183,7 @@ xuint32_t xfile_getFreeSpace(const xchar_t * disk);
 /**
  * @brief 开始枚举文件目录
  * @param[in] dir - 目录路径
- * @param[in] bDirs - true:只枚举该目录下的子目录  false:只枚举该目录下的文件
+ * @param[in] bDirs - XTRUE:只枚举该目录下的子目录  XFALSE:只枚举该目录下的文件
  * @return - 成功返回文件目录枚举指针,失败返回NULL
  */
 xfile_enum_t * xfile_enumStart(const xchar_t * dir, xbool_t bDirs);
@@ -215,5 +215,5 @@ xbool_t xfile_diskExist(const xchar_t * disk);
 }
 #endif
 
-#endif /* _FILE_H_ */
+#endif /* _XFILE_H_ */
 
