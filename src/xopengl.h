@@ -202,6 +202,10 @@ typedef long            XGLsizeiptr;
 
 #define XGL_INVALID_FRAMEBUFFER_OPERATION                 0x0506
 
+#define XGL_MAX_RENDERBUFFER_SIZE                         0x84E8
+#define XGL_MAX_TEXTURE_SIZE                              0x0D33
+#define XGL_MAX_VIEWPORT_DIMS                             0x0D3A
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -251,6 +255,28 @@ void xopengl_bindRenderbuffer (XGLenum target, XGLuint renderbuffer);
 void xopengl_renderbufferStorage (XGLenum target, XGLenum internalformat, XGLsizei width, XGLsizei height);
 void xopengl_framebufferRenderbuffer (XGLenum target, XGLenum attachment, XGLenum renderbuffertarget, XGLuint renderbuffer);
 void xopengl_deleteRenderbuffers (XGLsizei n, const XGLuint * renderbuffers);
+void xopengl_texParameterf (GLenum target, GLenum pname, GLfloat param);
+void xopengl_texImage2D (GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid* pixels);
+void xopengl_genTextures (GLsizei n, GLuint* textures);
+void xopengl_activeTexture (GLenum texture);
+void xopengl_bindTexture (GLenum target, GLuint texture);
+void xopengl_deleteTextures (GLsizei n, const GLuint* textures);
+GLenum xopengl_getError (void);
+void xopengl_texSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid* pixels);
+void xopengl_getIntegerv (GLenum pname, GLint* params);
+void xopengl_drawArrays (GLenum mode, GLint first, GLsizei count);
+void xopengl_drawElements (GLenum mode, GLsizei count, GLenum type, const GLvoid* indices);
+void xopengl_enable (GLenum cap);
+void xopengl_disable (GLenum cap);
+void xopengl_finish (void);
+void xopengl_flush (void);
+void xopengl_blendFunc (GLenum sfactor, GLenum dfactor);
+void xopengl_depthFunc (GLenum func);
+void xopengl_depthMask (GLboolean flag);
+void xopengl_copyTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height);
+void xopengl_clear (GLbitfield mask);
+void xopengl_clearColor (GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
+void xopengl_viewport (GLint x, GLint y, GLsizei width, GLsizei height);
 
 #ifdef __cplusplus
 }
