@@ -9,12 +9,3 @@ xC -- A portable C interface
 
     "xC" 将会优先在 Android/iOS/Qt 上移植实现，WP8/QNX 待定.
 
-##已完成的工作:
-1. 命名规则:
-    * 文件名: x<文件名> `例如: xfile.h`
-    * 编译宏: \_<大写文件名>\_<后缀名>\_ `例如: _XFILE_H_`
-    * 宏定义: X<宏定义> `例如: XNULL`
-    * 类型名: x<类型>\_t `例如: xint16_t, xfile_t`
-    * 函数名: x<类别>\_<功能> `例如: xmemory_alloc, xfile_open`
-
-##下一步工作:
