@@ -52,14 +52,14 @@ static const xint64_t  XINT64_MAX  = 0x7fffffffffffffff;
 static const xint64_t  XINT64_MAX  = 0x7fffffffffffffffLL;
 #endif
 
-static const uxint8_t  XUINT8_MAX  = 255;
-static const uxint16_t XUINT16_MAX = 65535;
-static const uxint32_t XUINT32_MAX = 0xffffffffUL;
+static const xuint8_t  XUINT8_MAX  = 255;
+static const xuint16_t XUINT16_MAX = 65535;
+static const xuint32_t XUINT32_MAX = 0xffffffffUL;
 
 #if defined _MSC_VER && _MSC_VER == 1200 
-static const uxint64_t XUINT64_MAX = 0xffffffffffffffff;
+static const xuint64_t XUINT64_MAX = 0xffffffffffffffff;
 #else
-static const uxint64_t XUINT64_MAX = 0xffffffffffffffffULL;
+static const xuint64_t XUINT64_MAX = 0xffffffffffffffffULL;
 #endif
 
 #endif /* _XINTEGER_H_ */
