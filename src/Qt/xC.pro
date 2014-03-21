@@ -4,14 +4,16 @@
 #
 #-------------------------------------------------
 
-QT       -= gui
+QT       += network
+QT       += opengl
 
 TARGET = xC
 TEMPLATE = lib
 CONFIG += staticlib
 
 SOURCES += \
-    comm/xhttp.c
+    comm/xhttp.c \
+    system/http/httpengine.cpp
 
 HEADERS += \
     system/http/httpengine.h \
@@ -36,7 +38,8 @@ HEADERS += \
     ../xcharacter.h \
     ../xboolean.h \
     include/sys_xhttp.h \
-    system/include/sys_xhttpdef.h
+    system/include/sys_xhttpdef.h \
+    system/http/httpengine.h
 unix:!symbian {
     maemo5 {
         target.path = /opt/usr/lib
