@@ -11,6 +11,7 @@
 #define _XDEBUG_H_
 
 #include "./xboolean.h"
+#include "./xcharacter.h"
 
 #ifdef NDEBUG
 

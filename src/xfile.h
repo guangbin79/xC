@@ -69,6 +69,8 @@ typedef enum _xfile_seek_type_t {
 extern "C" {
 #endif
 
+#include "../xcharacter.h"
+
 /**
  * @brief 打开文件
  * @param[in] filename - 文件名

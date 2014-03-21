@@ -25,7 +25,7 @@
 typedef xuint8_t * xva_list_t;
 
 #define XVA_INTSIZEOF(n) ((sizeof(n) + sizeof(int) - 1) & ~(sizeof(int) - 1))
-#define XVA_START(ap, v) (ap = (va_list_xt)&v + XVA_INTSIZEOF(v))
+#define XVA_START(ap, v) (ap = (xva_list_t)&v + XVA_INTSIZEOF(v))
 #define XVA_ARG(ap, t)   (*(t *)((ap += XVA_INTSIZEOF(t)) - XVA_INTSIZEOF(t)))
 #define XVA_END(ap)      (ap = XNULL)
 
