@@ -3,10 +3,10 @@
 
 void xrand_srand(xuint32_t seed)
 {
-    qsrand(seed);
+    qsrand((uint)seed);
 }
 
 xint32_t xrand_rand()
 {
-    return qrand();
+    return (xint32_t)qrand();
 }
