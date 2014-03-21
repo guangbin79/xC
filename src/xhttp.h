@@ -33,12 +33,21 @@ typedef void (*xfn_http_event)(void * pvUser, xuint32_t dwEvent);
  * @brief xhttp回调事件类型枚举
  */
 typedef enum _xhttp_event_t {
-    XEVT_HTTP_REQUEST = 0x0001,       // 请求
-    XEVT_HTTP_RESPONSE = 0X0002,      // 应答
-    XEVT_HTTP_BODY = 0x0003,          // 数据体
-    XEVT_HTTP_COMPLETED = 0x0004,     // 完成
-    XEVT_HTTP_ERROR = 0x0005          // 错误
+    XEVT_HTTP_REQUEST,       //请求
+    XEVT_HTTP_RESPONSE,      //应答
+    XEVT_HTTP_BODY,          //数据体
+    XEVT_HTTP_COMPLETED,     //完成
+    XEVT_HTTP_ERROR          //错误
 } xhttp_event_t;
+
+/**
+ * @brief xhttp错误类型枚举
+ */
+typedef enum _xhttp_error_t {
+    XERR_HTTP_NET_USELESS,     //网络未连接
+    XERR_HTTP_CONNECT_TIMEOUT, //连接服务器超时
+    XERR_HTTP_RESPONSE_TIMEOUT //服务应答超时
+} xhttp_error_t;
 
 #ifdef __cplusplus
 extern "C" {
@@ -146,6 +155,13 @@ xuint32_t xhttp_getBodySize(xhttp_t * pHttp);
  */
 void * xhttp_getBodyData(xhttp_t * pHttp);
     
+/**
+ * @brief 获取xhttp错误类型
+ * @param[in] pHttp - xhttp对象结构体指针
+ * @return - xhttp 错误类型
+ */
+xhttp_error_t xhttp_getError(xhttp_t * pHttp);
+
 #ifdef __cplusplus
 }
 #endif
