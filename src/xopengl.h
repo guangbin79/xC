@@ -231,7 +231,7 @@ void xopengl_deleteProgram(XGLuint program);
 void xopengl_linkProgram(XGLuint program);
 void xopengl_useProgram(XGLuint program);
 void xopengl_getProgramiv(XGLuint program, XGLenum pname, XGLint * params);
-void xopengl_getProgramInfoLog(XGLuint program, XGLsizei bufsize, XGLsizei * length, XGLchar * infolog)
+void xopengl_getProgramInfoLog(XGLuint program, XGLsizei bufsize, XGLsizei * length, XGLchar * infolog);
 XGLint xopengl_getUniformLocation(XGLuint program, const XGLchar* name);
 void xopengl_uniform1f(XGLint location, XGLfloat x);
 void xopengl_uniform2f(XGLint location, XGLfloat x, XGLfloat y);
@@ -254,7 +254,7 @@ void xopengl_genRenderbuffers(XGLsizei n, XGLuint * renderbuffers);
 void xopengl_bindRenderbuffer(XGLenum target, XGLuint renderbuffer);
 void xopengl_renderbufferStorage(XGLenum target, XGLenum internalformat, XGLsizei width, XGLsizei height);
 void xopengl_framebufferRenderbuffer(XGLenum target, XGLenum attachment, XGLenum renderbuffertarget, XGLuint renderbuffer);
-void xopengl_deleteRenderbuffers{XGLsizei n, const XGLuint * renderbuffers);
+void xopengl_deleteRenderbuffers(XGLsizei n, const XGLuint * renderbuffers);
 void xopengl_texParameterf(XGLenum target, XGLenum pname, XGLfloat param);
 void xopengl_texImage2D(XGLenum target, XGLint level, XGLint internalformat, XGLsizei width, XGLsizei height, XGLint border, XGLenum format, XGLenum type, const XGLvoid* pixels);
 void xopengl_genTextures(XGLsizei n, XGLuint * textures);
