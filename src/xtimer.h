@@ -25,7 +25,7 @@ typedef struct _xtimer_t xtimer_t;
  * @param pvUser - 回调对象指针
  * @return - 无
  */
-typedef void (*xfn_timer_event)(void * pvUser);
+typedef void (*xfn_timer_event_t)(void * pvUser);
 
 
 #ifdef __cplusplus
@@ -56,7 +56,7 @@ void xtimer_destroy(xtimer_t * ptmr);
  * @par 接口使用约定
  *      1.dwMSecs必须大于0<br>
  */
-void xtimer_start(xtimer_t * ptmr, xuint32_t dwMSecs, xfn_timer_event pfn, void * pvUser);
+void xtimer_start(xtimer_t * ptmr, xuint32_t dwMSecs, xfn_timer_event_t pfn, void * pvUser);
 
 /**
  * @brief 判断定时器是否已经启动
