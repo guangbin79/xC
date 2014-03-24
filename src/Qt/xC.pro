@@ -32,6 +32,24 @@ SOURCES += \
     system/file/sys_xfdiskexist.cpp \
     system/file/sys_xfenumend.cpp \
     system/file/sys_xfenumnext.cpp \
+    comm/xtimer.c \
+    comm/xmemory.c \
+    comm/ximage.c \
+    system/image/sys_image.cpp \
+    system/memory/sys_realloc.cpp \
+    system/memory/sys_memset.cpp \
+    system/memory/sys_memmove.cpp \
+    system/memory/sys_memcpy.cpp \
+    system/memory/sys_memcmp.cpp \
+    system/memory/sys_memchr.cpp \
+    system/memory/sys_malloc.cpp \
+    system/memory/sys_free.cpp \
+    system/memory/sys_calloc.cpp \
+    system/timer/sys_tmrstart.cpp \
+    system/timer/sys_tmrisbusy.cpp \
+    system/timer/sys_tmrdestroy.cpp \
+    system/timer/sys_tmrcreate.cpp \
+    system/timer/sys_tmrcancel.cpp
     system/file/sys_xfenumstart.cpp \
     system/file/sys_xfexist.cpp \
     system/file/sys_xfgetfreespace.cpp \
@@ -76,6 +94,11 @@ HEADERS += \
     system/thread/MyThread.h \
     system/thread/LockEngine.h \
     system/include/sys_threaddef.h \
+    include/sys_xtimer.h \
+    include/sys_xmemory.h \
+    include/sys_ximage.h \
+    system/include/sys_xtimerdef.h \
+    system/include/sys_ximagedef.h
     include/sys_thread.h \
     include/sys_http.h \
     system/include/sys_httpdef.h
