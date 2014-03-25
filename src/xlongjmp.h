@@ -1,5 +1,5 @@
 /**
- * xC 
+ * xC
  * @file xlongjmp.h
  * @brief 非本地跳转
  * @author guangbin <baigb@tiros.com.cn>
@@ -13,7 +13,7 @@
 
 #include "./xinteger.h"
 
- 
+
 /**
  * @brief 用于保存恢复调用环境所需的信息
  */
@@ -33,7 +33,7 @@ xint32_t xlongjmp_set(xjmp_buf_t env);
  * @parma[in] val - xlongjmp_set返回值
  * @return - 无
  */
-void xlongjmp_jump(xjmp_buf_t env, xint32_t val); 
+void xlongjmp_jump(xjmp_buf_t env, xint32_t val);
 
 #endif /* _XLONGJMP_H_ */
 

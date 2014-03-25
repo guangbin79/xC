@@ -12,11 +12,16 @@ TEMPLATE = lib
 CONFIG += staticlib
 
 SOURCES += \
-    comm/xhttp.c \
-    system/http/httpengine.cpp
+    system/thread/ThreadEngine.cpp \
+    system/thread/sys_thread.cpp \
+    system/thread/MyThread.cpp \
+    system/thread/LockEngine.cpp \
+    system/http/sys_http.cpp \
+    comm/xthread.cpp \
+    comm/xhttp.cpp \
+    comm/xlongjmp.cpp
 
 HEADERS += \
-    system/http/httpengine.h \
     ../xvarargs.h \
     ../xtimer.h \
     ../xtime.h \
@@ -37,9 +42,13 @@ HEADERS += \
     ../xdebug.h \
     ../xcharacter.h \
     ../xboolean.h \
-    include/sys_xhttp.h \
-    system/include/sys_xhttpdef.h \
-    system/http/httpengine.h
+    system/thread/ThreadEngine.h \
+    system/thread/MyThread.h \
+    system/thread/LockEngine.h \
+    system/include/sys_threaddef.h \
+    include/sys_thread.h \
+    include/sys_http.h \
+    system/include/sys_httpdef.h
 unix:!symbian {
     maemo5 {
         target.path = /opt/usr/lib

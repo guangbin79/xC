@@ -1,3 +1,8 @@
+# Qt user files
+*.pro.user
+*.pro.user.*
+build-*-Desktop-*
+
 # Object files
 *.o
 *.ko
