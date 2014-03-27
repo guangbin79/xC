@@ -1,121 +1,102 @@
-#include "../../include/sys_tapi.h"
-#include "../../../../universal/string.h"
-#include"../include/sys_tapidef.h"
+#include "../../xtapi.h"
+#include "../include/sys_xtapi.h"
+#include "../../xdebug.h"
+#include "../../xpointer.h"
+#include "../../xfile.h"
+#include "../../xmemory.h"
+#define KTirosLocalMobileIdLen 128
 
 xtapi_t * xtapi_create()
 {
-    SYS_TAPI* pTApi = new SYS_TAPI;
-    if ( pTApi )
-    {
-        pTApi->_iBaseStationCount = 0;
-        pTApi->_pBaseStationInfo = new SYS_BaseStationInfo;
-        if (pTApi->_pBaseStationInfo)
-        {
-            pTApi->_pBaseStationInfo->cellid = 50927;
-            pTApi->_pBaseStationInfo->lac = 4440;
-            pTApi->_pBaseStationInfo->lat = 0;
-            pTApi->_pBaseStationInfo->lon = 0;
-            pTApi->_pBaseStationInfo->mcc = 460;
-            pTApi->_pBaseStationInfo->mnc = 0;
-            pTApi->_pBaseStationInfo->signalstrength = 100;
-            pTApi->_pBaseStationInfo->type = 0;
-            pTApi->_iBaseStationCount = 1;
-        }
-        pTApi->_pWifiInfo = new SYS_WifiInfo;
-        if ( pTApi->_pWifiInfo )
-        {
-            pTApi->_pWifiInfo->ip = new char[32];
-            strcpy(pTApi->_pWifiInfo->ip,  "192,168.6.146");
-            pTApi->_pWifiInfo->mac =new char[16];
-            strcpy(pTApi->_pWifiInfo->mac,  "00254b960bbb");
-            pTApi->_pWifiInfo->name = new char[32];
-            strcpy(pTApi->_pWifiInfo->name, "tiros608");
-            pTApi->_pWifiInfo->signalstrength = 100;
-        }
-        pTApi->_pDeviceInfo = new SYS_DeviceInfo;
-        if ( pTApi->_pDeviceInfo )
-        {
-            pTApi->_pDeviceInfo->manufacturername = new char[32];
-            strcpy(pTApi->_pDeviceInfo->manufacturername,  "simulator");
-            pTApi->_pDeviceInfo->devicemodel = new char[32];
-            strcpy(pTApi->_pDeviceInfo->devicemodel,  "qt");
-            pTApi->_pDeviceInfo->osversion = new char[32];
-            strcpy(pTApi->_pDeviceInfo->osversion,  "1.0");
-        }
-    }
-    return pTApi;
+    return (TAPI*)sys_tapicreate();
 }
 
 void xtapi_destroy(xtapi_t * pxtapi)
 {
-    if ( ptapi )
-    {
-        if (ptapi->_pBaseStationInfo)
-            delete ptapi->_pBaseStationInfo;
-        if (ptapi->_pWifiInfo)
-        {
-            if ( ptapi->_pWifiInfo->ip )
-                delete ptapi->_pWifiInfo->ip;
-            if ( ptapi->_pWifiInfo->mac )
-                delete ptapi->_pWifiInfo->mac;
-            if ( ptapi->_pWifiInfo->name )
-                delete ptapi->_pWifiInfo->name;
-            delete ptapi->_pWifiInfo;
-        }
-        if ( ptapi->_pDeviceInfo )
-        {
-            if ( ptapi->_pDeviceInfo->manufacturername )
-                delete ptapi->_pDeviceInfo->manufacturername;
-            if ( ptapi->_pDeviceInfo->devicemodel )
-                delete ptapi->_pDeviceInfo->devicemodel;
-            if ( ptapi->_pDeviceInfo->osversion )
-                delete ptapi->_pDeviceInfo->osversion;
-            delete ptapi->_pDeviceInfo;
-        }
-        delete ptapi;
-    }
+    sys_tapidestroy((SYS_TAPI*)ptapi);
 }
-
 
 xuint8_t xtapi_getBsCount(xtapi_t * pxtapi)
 {
-    if ( ptapi )
-        return ptapi->_iBaseStationCount;
-    return 0;
+    return sys_tapigetbscount((SYS_TAPI*)ptapi);
 }
 
 const xbase_station_info_t * xtapi_getBsByIndex(xtapi_t * pxtapi, const xuint8_t index)
 {
-    if ( !ptapi || aIndex >= ptapi->_iBaseStationCount )
-        return 0;
-    return ptapi->_pBaseStationInfo;
+    return (const BaseStationInfo*)sys_tapigetbsbyindex((SYS_TAPI*)ptapi, aIndex);
 }
 
 const xwifi_info_t * xtapi_getConnWifiInfo(xtapi_t * pxtapi)
 {
-    if ( ptapi )
-        return ptapi->_pWifiInfo;
-    return 0;
+    return (const WifiInfo*)sys_tapigetconnwifiinfo((SYS_TAPI*)ptapi);
 }
 
 const xchar_t * xtapi_getMobileId(xtapi_t * pxtapi)
 {
-    return "123456789012345";
+    static char id[KTirosLocalMobileIdLen] = {'\0'};
+    if (id[0] != '\0')
+    {
+        return id;
+    }
+    else
+    {
+        bool needCallAPI = true;
+        const char* fileName = "fs0:/config/api/mobileid";
+        bool fileExist = tr_fexist(fileName);
+        if (fileExist)
+        {
+            File* fileHandler = tr_fopen("fs0:/config/api/mobileid", OFM_READ);
+            if (fileHandler != NULL)
+            {
+                uint32_t size =  tr_fread(fileHandler,
+                                          (void*)id,
+                                          KTirosLocalMobileIdLen);
+                if (size != 0)
+                {
+                    id[size] = '\0';
+                    needCallAPI = false;
+                }
+                tr_fclose(fileHandler);
+                fileHandler = NULL;
+            }
+        }
+        if (needCallAPI)
+        {
+            const char* temp = sys_tapigetmobileid( (SYS_TAPI*) ptapi);
+            if (temp != NULL)
+            {
+                uint32_t size = strlen(temp);
+                memcpy(id, temp, size + 1);
+                File* fileHandler = tr_fopen("fs0:/config/api/mobileid",
+                                             OFM_CREATE);
+                if (fileHandler != NULL)
+                {
+                    uint32_t realSize = tr_fwrite(fileHandler, temp, size);
+                    tr_fclose(fileHandler);
+                    fileHandler = NULL;
+                    if (size != realSize)
+                    {
+                        tr_fremove("fs0:/config/api/mobileid");
+                    }
+                }
+            }
+        }
+    }
+
+    return id;
 }
 
 const xchar_t * xtapi_getImsi(xtapi_t * pxtapi)
 {
-    return "000000000000000";
+    return sys_tapigetimsi( (SYS_TAPI*) ptapi);
 }
 
 xdevice_info_t xtapi_getNetType(xtapi * pxtapi)
 {
-    return 0;
+    return sys_tapigetnettype( (SYS_TAPI*) ptapi);
 }
 
 const xdevice_info_t * xtapi_getDeviceInfo(xtapi_t * pxtapi)
 {
-    if ( ptapi )
-        return ptapi->_pDeviceInfo;
-    return 0;
+    return (const DeviceInfo*)sys_tapigetdeviceinfo( (SYS_TAPI*) ptapi);
 }
