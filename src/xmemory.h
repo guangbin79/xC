@@ -13,6 +13,7 @@
 
 #include "./xinteger.h"
 #include "./xpointer.h"
+#include "./xcharacter.h"
 
 
 #ifdef __cplusplus

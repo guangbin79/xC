@@ -12,6 +12,7 @@ TEMPLATE = lib
 CONFIG += staticlib
 
 SOURCES += \
+<<<<<<< HEAD
     system/thread/ThreadEngine.cpp \
     system/thread/sys_thread.cpp \
     system/thread/MyThread.cpp \
@@ -32,6 +33,23 @@ SOURCES += \
     system/file/sys_xfdiskexist.cpp \
     system/file/sys_xfenumend.cpp \
     system/file/sys_xfenumnext.cpp \
+    system/file/sys_xfenumstart.cpp \
+    system/file/sys_xfexist.cpp \
+    system/file/sys_xfgetfreespace.cpp \
+    system/file/sys_xfgetsize.cpp \
+    system/file/sys_xfgetspace.cpp \
+    system/file/sys_xfmkdir.cpp \
+    system/file/sys_xfopen.cpp \
+    system/file/sys_xfread.cpp \
+    system/file/sys_xfpathchange.cpp \
+    system/file/sys_xfremove.cpp \
+    system/file/sys_xfrename.cpp \
+    system/file/sys_xfrmdir.cpp \
+    system/file/sys_xfseek.cpp \
+    system/file/sys_xfwrite.cpp
+=======
+    comm/xhttp.c \
+    system/http/httpengine.cpp \
     comm/xtimer.c \
     comm/xmemory.c \
     comm/ximage.c \
@@ -49,21 +67,8 @@ SOURCES += \
     system/timer/sys_tmrisbusy.cpp \
     system/timer/sys_tmrdestroy.cpp \
     system/timer/sys_tmrcreate.cpp \
-    system/timer/sys_tmrcancel.cpp \
-    system/file/sys_xfenumstart.cpp \
-    system/file/sys_xfexist.cpp \
-    system/file/sys_xfgetfreespace.cpp \
-    system/file/sys_xfgetsize.cpp \
-    system/file/sys_xfgetspace.cpp \
-    system/file/sys_xfmkdir.cpp \
-    system/file/sys_xfopen.cpp \
-    system/file/sys_xfread.cpp \
-    system/file/sys_xfpathchange.cpp \
-    system/file/sys_xfremove.cpp \
-    system/file/sys_xfrename.cpp \
-    system/file/sys_xfrmdir.cpp \
-    system/file/sys_xfseek.cpp \
-    system/file/sys_xfwrite.cpp
+    system/timer/sys_tmrcancel.cpp
+>>>>>>> add api xmemory/ximage/xtimer
 
 HEADERS += \
     ../xvarargs.h \
@@ -86,6 +91,7 @@ HEADERS += \
     ../xdebug.h \
     ../xcharacter.h \
     ../xboolean.h \
+<<<<<<< HEAD
     include/sys_xtime.h \
     include/sys_xfile.h \
     include/sys_xdebug.h \
@@ -94,15 +100,20 @@ HEADERS += \
     system/thread/MyThread.h \
     system/thread/LockEngine.h \
     system/include/sys_threaddef.h \
-    include/sys_xtimer.h \
-    include/sys_xmemory.h \
-    include/sys_ximage.h \
-    system/include/sys_xtimerdef.h \
-    system/include/sys_ximagedef.h \
     include/sys_thread.h \
     include/sys_http.h \
     system/include/sys_httpdef.h
 
+=======
+    include/sys_xhttp.h \
+    system/include/sys_xhttpdef.h \
+    system/http/httpengine.h \
+    include/sys_xtimer.h \
+    include/sys_xmemory.h \
+    include/sys_ximage.h \
+    system/include/sys_xtimerdef.h \
+    system/include/sys_ximagedef.h
+>>>>>>> add api xmemory/ximage/xtimer
 unix:!symbian {
     maemo5 {
         target.path = /opt/usr/lib
