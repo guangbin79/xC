@@ -66,7 +66,18 @@ SOURCES += \
     system/file/sys_xfwrite.cpp \
     comm/xopengl.c \
     comm/xgl.cpp \
-    comm/xfont.cpp
+    comm/xfont.cpp \
+    comm/xtapi.c \
+    system/tapi/sys_tapigetnettype.cpp \
+    system/tapi/sys_tapigetmobileid.cpp \
+    system/tapi/sys_tapigetimsi.cpp \
+    system/tapi/sys_tapigetdeviceinfo.cpp \
+    system/tapi/sys_tapigetconnwifiinfo.cpp \
+    system/tapi/sys_tapigetbscount.cpp \
+    system/tapi/sys_tapigetbsbyindex.cpp \
+    system/tapi/sys_tapidestroy.cpp \
+    system/tapi/sys_tapicreate.cpp \
+    comm/xrand.cpp
 
 HEADERS += \
     ../xvarargs.h \
@@ -104,7 +115,9 @@ HEADERS += \
     system/include/sys_ximagedef.h \
     include/sys_thread.h \
     include/sys_http.h \
-    system/include/sys_httpdef.h
+    system/include/sys_httpdef.h \
+    system/include/sys_xtapidef.h \
+    include/sys_xtapi.h
 
 unix:!symbian {
     maemo5 {
