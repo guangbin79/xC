@@ -4,7 +4,7 @@
  * @brief xgl API
  * @author tangbo <tangbo@tiros.com.cn>
  * @date 2014/03/17
- * @par 修改记录
+ * @par 修改xgl_makeCurrentContext接口声明
  * 
  */
 
@@ -12,6 +12,8 @@
 #define _XGL_H_
 
 #include "xboolean.h"
+
+typedef struct _xgl_surface_t xgl_surface_t;
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,10 +33,10 @@ void xgl_drawScreenEnd();
 
 /**
  * @brief 准备绘图上下文
- * @param[in] bBind - 是否将当前线程设置为渲染线程
+ * @param[in] surface - 绑定surface，不可以传NULL
  * @return 是否成功设置
  */
-xbool_t xgl_makeCurrentContext(xbool_t bBind);
+xbool_t xgl_makeCurrentContext(xgl_surface_t * surface);
 
 #ifdef __cplusplus
 }

@@ -63,7 +63,10 @@ SOURCES += \
     system/file/sys_xfrename.cpp \
     system/file/sys_xfrmdir.cpp \
     system/file/sys_xfseek.cpp \
-    system/file/sys_xfwrite.cpp
+    system/file/sys_xfwrite.cpp \
+    comm/xopengl.c \
+    comm/xgl.cpp \
+    comm/xfont.cpp
 
 HEADERS += \
     ../xvarargs.h \
