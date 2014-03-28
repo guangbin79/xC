@@ -19,15 +19,6 @@ typedef struct _xsys_file_enum_t
     bool isdir;
 } xsys_file_enum_t;
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 QString sys_fpathchange(const char * pszFilename);
-
-#ifdef __cplusplus
-}
-#endif
-
 
 #endif /* _SYS_FILEDEF_H_ */

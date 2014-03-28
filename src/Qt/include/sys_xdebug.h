@@ -1,6 +1,8 @@
 #ifndef _SYS_XDEBUG_H_
 #define _SYS_XDEBUG_H_
 
+#include <stdarg.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -9,7 +11,7 @@ extern "C" {
 #include "../../xvarargs.h"
 
 void xsys_xdebug_assert(xchar_t exp);
-void xsys_xdebug_dbgPrintf(const char * format, void * ap);
+void xsys_xdebug_dbgPrintf(const char * format, va_list ap);
 
 #ifdef __cplusplus
 }
