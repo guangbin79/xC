@@ -7,7 +7,7 @@ xfile_t * xfile_open(const xchar_t * filename, xopen_file_mode_t mode)
 {
     xdebug_assert(filename != XNULL);
 
-    return (xfile_t *)xsys_xfile_fOpen((const char *)filename, mode);
+    return (xfile_t *)xsys_xfile_fOpen((const char *)filename, (xsys_open_file_mode_t)mode);
 }
 
 void xfile_close(xfile_t * pf)
@@ -35,7 +35,7 @@ xuint32_t xfile_seek(xfile_t * pf, xfile_seek_type_t seekType, xuint32_t moveDis
 {
     xdebug_assert(pf != XNULL);
 
-    return xsys_xfile_fSeek((xsys_file_t *)pf, seekType, moveDistance);
+    return xsys_xfile_fSeek((xsys_file_t *)pf, (xsys_file_seek_type_t)seekType, moveDistance);
 }
 
 xuint32_t xfile_changeSize(xfile_t * pf, xuint32_t size)
