@@ -123,7 +123,7 @@ const xchar_t * xtapi_getImsi(xtapi_t * pxtapi);
  * @param[in] pxtapi - xtapi对象句柄
  * @return - 网络类型
  */
-xdevice_info_t xtapi_getNetType(xtapi * pxtapi);
+xnet_type_t xtapi_getNetType(xtapi_t * pxtapi);
 
 /**
  * @brief 获取设备信息
