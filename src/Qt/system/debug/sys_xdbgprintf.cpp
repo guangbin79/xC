@@ -5,6 +5,6 @@
 void xsys_xdebug_dbgPrintf(const char * format, void * ap)
 {
     QTextStream out(stdout);
-    out<< QString().vsprintf(format, (va_list)ap);
+  //  out<< QString().vsprintf(format, ap);
 }
 

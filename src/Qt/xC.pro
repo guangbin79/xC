@@ -19,8 +19,8 @@ SOURCES += \
     system/http/sys_http.cpp \
     comm/xthread.cpp \
     comm/xhttp.cpp \
-    comm/xlongjmp.cpp
-	comm/xtime.c \
+    comm/xlongjmp.cpp \
+    comm/xtime.c \
     comm/xfile.c \
     comm/xdebug.c \
     system/debug/sys_xassert.cpp \
@@ -45,7 +45,7 @@ SOURCES += \
     system/file/sys_xfrename.cpp \
     system/file/sys_xfrmdir.cpp \
     system/file/sys_xfseek.cpp \
-    system/file/sys_xfwrite.cpp \
+    system/file/sys_xfwrite.cpp
 
 HEADERS += \
     ../xvarargs.h \
@@ -68,7 +68,7 @@ HEADERS += \
     ../xdebug.h \
     ../xcharacter.h \
     ../xboolean.h \
-	include/sys_xtime.h \
+    include/sys_xtime.h \
     include/sys_xfile.h \
     include/sys_xdebug.h \
     system/include/sys_xfiledef.h \
@@ -79,6 +79,7 @@ HEADERS += \
     include/sys_thread.h \
     include/sys_http.h \
     system/include/sys_httpdef.h
+
 unix:!symbian {
     maemo5 {
         target.path = /opt/usr/lib
