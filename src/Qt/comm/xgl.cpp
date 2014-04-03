@@ -1,9 +1,5 @@
 #include "../../xgl.h"
-#include <QGLContext>
-
-struct _xgl_surface_t {
-    QGLWidget * widget;
-};
+#include "./system/include/sys_xgldef.h"
 
 void xgl_drawScreenBegin()
 {
