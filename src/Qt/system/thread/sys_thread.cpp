@@ -8,8 +8,6 @@
 #include "../../include/sys_thread.h"
 #include "../include/sys_threaddef.h"
 
-
-
 SYS_Thread* sys_ThreadCreate(SYS_ThreadProcFunc proc, void* pvuser)
 {
     SYS_Thread * pThread = new SYS_Thread;
@@ -60,6 +58,11 @@ void sys_ThreadDestory(SYS_Thread* pthread)
         delete pthread;
         pthread = NULL;
     }
+}
+
+void sys_ThreadSleep(unsigned int dwMSecs)
+{
+    CMyThread::sleep(dwMSecs);
 }
 
 /************************************************************************************/

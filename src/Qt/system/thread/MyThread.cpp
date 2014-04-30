@@ -18,6 +18,11 @@ CMyThread::~CMyThread()
     }
 }
 
+void CMyThread::sleep(unsigned long time)
+{
+    QThread::sleep(time);
+}
+
 void CMyThread::SetNotify(CThreadEngine* _pNotify)
 {
     _pThreadNotify = _pNotify;

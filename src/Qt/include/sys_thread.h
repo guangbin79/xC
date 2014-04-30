@@ -27,6 +27,8 @@ unsigned char sys_ThreadIsExecuting(SYS_Thread* pthread);
 
 void sys_ThreadDestory(SYS_Thread* pthread);
 
+void sys_ThreadSleep(unsigned int dwMSecs);
+
 /************************************************************************************/
 /*                                                                                  */
 /*      线程间互斥相关api接口声明                                                       */

@@ -65,6 +65,13 @@ xbool_t xthread_isExecuting(xthread_t * pxthread);
 void xthread_destory(xthread_t * pxthread);
 
 /**
+ * @brief 挂起当前线程
+ * @param[in] dwMSecs - 挂起时间,单位:毫秒
+ * @return - 无
+ */
+void xthread_sleep(xuint32_t dwMSecs);
+
+/**
  * @brief 创建线程互斥句柄
  * @return - 创建成功的线程互斥句柄，XNULL为失败
  */
@@ -96,4 +103,3 @@ void xmutex_destory(xmutex_t * pmutex);
 #endif
 
 #endif /*_XTHREAD_H_*/
-
