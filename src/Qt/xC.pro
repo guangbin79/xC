@@ -117,7 +117,8 @@ HEADERS += \
     include/sys_http.h \
     system/include/sys_httpdef.h \
     system/include/sys_xtapidef.h \
-    include/sys_xtapi.h
+    include/sys_xtapi.h \
+    system/include/sys_xgldef.h
 
 unix:!symbian {
     maemo5 {
