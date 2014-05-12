@@ -11,6 +11,7 @@
 
 #include "./xinteger.h"
 #include "./xboolean.h"
+#include "./xcharacter.h"
 
 /**
  * @par ******** 注意 ******** <br>
@@ -68,8 +69,6 @@ typedef enum _xfile_seek_type_t {
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#include "../xcharacter.h"
 
 /**
  * @brief 打开文件

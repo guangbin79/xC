@@ -7,8 +7,8 @@
 extern "C" {
 #endif
 
-#include "../../xcharacter.h"
-#include "../../xvarargs.h"
+#include "../../../xcharacter.h"
+#include "../../../xvarargs.h"
 
 void xsys_xdebug_assert(xchar_t exp);
 void xsys_xdebug_dbgPrintf(const char * format, va_list ap);

@@ -2,8 +2,8 @@
 #include <QPainter>
 #include <QImage>
 #include "../system/include/sys_ximagedef.h"
-#include "../../src/ximage.h"
-#include "../../xfont.h"
+#include "../../../ximage.h"
+#include "../../../xfont.h"
 
 struct _xfont_t {
     QFont qfont;

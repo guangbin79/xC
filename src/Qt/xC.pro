@@ -80,26 +80,6 @@ SOURCES += \
     comm/xrand.cpp
 
 HEADERS += \
-    ../xvarargs.h \
-    ../xtimer.h \
-    ../xtime.h \
-    ../xthread.h \
-    ../xtapi.h \
-    ../xrand.h \
-    ../xpointer.h \
-    ../xopengl.h \
-    ../xmemory.h \
-    ../xlongjmp.h \
-    ../xinteger.h \
-    ../ximage.h \
-    ../xhttp.h \
-    ../xgl.h \
-    ../xfont.h \
-    ../xfloat.h \
-    ../xfile.h \
-    ../xdebug.h \
-    ../xcharacter.h \
-    ../xboolean.h \
     include/sys_xtime.h \
     include/sys_xfile.h \
     include/sys_xdebug.h \
@@ -118,7 +98,27 @@ HEADERS += \
     system/include/sys_httpdef.h \
     system/include/sys_xtapidef.h \
     include/sys_xtapi.h \
-    system/include/sys_xgldef.h
+    system/include/sys_xgldef.h \
+    ../../xboolean.h \
+    ../../xvarargs.h \
+    ../../xtimer.h \
+    ../../xtime.h \
+    ../../xthread.h \
+    ../../xtapi.h \
+    ../../xrand.h \
+    ../../xpointer.h \
+    ../../xopengl.h \
+    ../../xmemory.h \
+    ../../xlongjmp.h \
+    ../../xinteger.h \
+    ../../ximage.h \
+    ../../xhttp.h \
+    ../../xgl.h \
+    ../../xfont.h \
+    ../../xfloat.h \
+    ../../xfile.h \
+    ../../xdebug.h \
+    ../../xcharacter.h
 
 unix:!symbian {
     maemo5 {

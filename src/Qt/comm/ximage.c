@@ -1,7 +1,7 @@
-#include "../../ximage.h"
+#include "../../../ximage.h"
 #include "../include/sys_ximage.h"
-#include "../../xdebug.h"
-#include "../../xpointer.h"
+#include "../../../xdebug.h"
+#include "../../../xpointer.h"
 
 ximage_t * ximage_load(const void * pximgdata, xuint32_t size)
 {

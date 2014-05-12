@@ -1,4 +1,4 @@
-#include "../../xrand.h"
+#include "../../../xrand.h"
 #include<QtGlobal>
 
 void xrand_srand(xuint32_t seed)

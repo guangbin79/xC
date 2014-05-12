@@ -1,4 +1,4 @@
-#include "../../xthread.h"
+#include "../../../xthread.h"
 #include "../include/sys_thread.h"
 
 xthread_t * xthread_create(xfn_thread_proc_t proc, void* pvuser)

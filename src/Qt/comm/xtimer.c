@@ -1,7 +1,7 @@
-#include "../../xtimer.h"
+#include "../../../xtimer.h"
 #include "../include/sys_xtimer.h"
-#include "../../xdebug.h"
-#include "../../xpointer.h"
+#include "../../../xdebug.h"
+#include "../../../xpointer.h"
 
 xtimer_t * xtimer_create()
 {

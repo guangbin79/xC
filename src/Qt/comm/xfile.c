@@ -1,7 +1,7 @@
-#include "../../xfile.h"
+#include "../../../xfile.h"
 #include "../include/sys_xfile.h"
-#include "../../xdebug.h"
-#include "../../xpointer.h"
+#include "../../../xdebug.h"
+#include "../../../xpointer.h"
 
 xfile_t * xfile_open(const xchar_t * filename, xopen_file_mode_t mode)
 {

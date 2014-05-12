@@ -5,8 +5,8 @@
 extern "C" {
 #endif
 
-#include "../../xinteger.h"
-#include "../../xcharacter.h"
+#include "../../../xinteger.h"
+#include "../../../xcharacter.h"
 
 typedef struct _xsys_tm
 {
