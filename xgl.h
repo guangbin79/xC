@@ -11,7 +11,7 @@
 #ifndef _XGL_H_
 #define _XGL_H_
 
-#include "xboolean.h"
+#include "./xboolean.h"
 
 typedef struct _xgl_surface_t xgl_surface_t;
 

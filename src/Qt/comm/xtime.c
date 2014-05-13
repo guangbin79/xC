@@ -1,7 +1,7 @@
-#include "../../xtime.h"
+#include "../../../xtime.h"
 #include "../include/sys_xtime.h"
-#include "../../xdebug.h"
-#include "../../xpointer.h"
+#include "../../../xdebug.h"
+#include "../../../xpointer.h"
 
 xuint32_t xtime_clock()
 {

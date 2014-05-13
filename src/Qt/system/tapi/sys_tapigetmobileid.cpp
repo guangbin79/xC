@@ -1,7 +1,7 @@
-#include "../../../xdebug.h"
-#include "../../../xpointer.h"
-#include "../../../xfile.h"
-#include "../../../xmemory.h"
+#include "../../../../xdebug.h"
+#include "../../../../xpointer.h"
+#include "../../../../xfile.h"
+#include "../../../../xmemory.h"
 #include "../../include/sys_xtapi.h"
 #include<stdlib.h>
 #include<string.h>

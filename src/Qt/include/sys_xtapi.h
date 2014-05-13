@@ -1,9 +1,9 @@
 #ifndef _SYS_XTAPI_H_
 #define _SYS_XTAPI_H_
 
-#include "../../xcharacter.h"
-#include "../../xfloat.h"
-#include "../../xinteger.h"
+#include "../../../xcharacter.h"
+#include "../../../xfloat.h"
+#include "../../../xinteger.h"
 
 typedef struct  _xsys_tapi_t   xsys_tapi_t;
 

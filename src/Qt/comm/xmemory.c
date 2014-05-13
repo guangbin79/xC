@@ -1,6 +1,6 @@
-#include "../../xmemory.h"
+#include "../../../xmemory.h"
 #include "../include/sys_xmemory.h"
-#include "../../xdebug.h"
+#include "../../../xdebug.h"
 
 void * xmemory_alloc(xsize_t size)
 {

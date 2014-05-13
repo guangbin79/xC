@@ -1,4 +1,4 @@
-#include "../xopengl.h"
+#include "../../../xopengl.h"
 #include <OpenGL/gl.h>
 
 void xopengl_genBuffers(XGLsizei n, XGLuint * buffers)

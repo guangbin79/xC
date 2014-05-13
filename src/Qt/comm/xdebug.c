@@ -1,6 +1,6 @@
-#include "../../xdebug.h"
+#include "../../../xdebug.h"
 #include "../include/sys_xdebug.h"
-#include "../../xvarargs.h"
+#include "../../../xvarargs.h"
 #include <stdarg.h>
 
 void xdebug_assert(xbool_t exp)

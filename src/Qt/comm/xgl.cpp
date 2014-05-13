@@ -1,4 +1,4 @@
-#include "../../xgl.h"
+#include "../../../xgl.h"
 #include "./system/include/sys_xgldef.h"
 
 void xgl_drawScreenBegin()
