@@ -1,5 +1,5 @@
 #include "../../../xgl.h"
-#include "./system/include/sys_xgldef.h"
+#include "../system/include/sys_xgldef.h"
 
 xbool_t xgl_makeCurrentContext(xgl_surface_t * surface)
 {

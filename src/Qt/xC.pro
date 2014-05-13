@@ -64,7 +64,6 @@ SOURCES += \
     system/file/sys_xfrmdir.cpp \
     system/file/sys_xfseek.cpp \
     system/file/sys_xfwrite.cpp \
-    comm/xopengl.c \
     comm/xgl.cpp \
     comm/xfont.cpp \
     comm/xtapi.c \
@@ -77,7 +76,8 @@ SOURCES += \
     system/tapi/sys_tapigetbsbyindex.cpp \
     system/tapi/sys_tapidestroy.cpp \
     system/tapi/sys_tapicreate.cpp \
-    comm/xrand.cpp
+    comm/xrand.cpp \
+    comm/xopengl.cpp
 
 HEADERS += \
     include/sys_xtime.h \
