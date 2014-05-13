@@ -5,7 +5,7 @@
  * @author tangbo <tangbo@tiros.com.cn>
  * @date 2014/03/17
  * @par 修改xgl_makeCurrentContext接口声明
- * 
+ *
  */
 
 #ifndef _XGL_H_
@@ -21,22 +21,17 @@ extern "C" {
 
 /**
  * @brief 准备绘图上下文
- * @return void
- */
-void xgl_drawScreenBegin();
-    
-/**
- * @brief 结束绘图上下文
- * @return void
- */
-void xgl_drawScreenEnd();
-
-/**
- * @brief 准备绘图上下文
  * @param[in] surface - 绑定surface，不可以传NULL
  * @return 是否成功设置
  */
 xbool_t xgl_makeCurrentContext(xgl_surface_t * surface);
+
+/**
+ * @brief 交换缓冲区
+ * @param - 无
+ * @return - 无
+ */
+void xgl_swapBuffers();
 
 #ifdef __cplusplus
 }

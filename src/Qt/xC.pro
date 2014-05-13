@@ -118,7 +118,8 @@ HEADERS += \
     ../../xfloat.h \
     ../../xfile.h \
     ../../xdebug.h \
-    ../../xcharacter.h
+    ../../xcharacter.h \
+    ../../Qt/xgl_def.h
 
 unix:!symbian {
     maemo5 {

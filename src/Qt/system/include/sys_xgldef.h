@@ -1,10 +1,6 @@
 #ifndef _SYS_XGLDEF_H_
 #define _SYS_XGLDEF_H_
 
-#include <QGLContext>
-
-struct _xgl_surface_t {
-    QGLWidget * widget;
-};
+#include "../../../../Qt/xgl_def.h"
 
 #endif // _SYS_XGLDEF_H_
