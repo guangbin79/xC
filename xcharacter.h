@@ -5,18 +5,18 @@
  * @author guangbin <guangbin79@gmail.com>
  * @date 2014/03/06
  * @par 修改记录
- * 
+ *
  */
 
 #ifndef _XCHARACTER_H_
 #define _XCHARACTER_H_
 
 #include "./xinteger.h"
- 
 
-typedef unsigned char xchar_t;
-typedef xuint16_t     xwchar_t;
-		
+
+typedef char       xchar_t;
+typedef xint16_t   xwchar_t;
+
 
 static const xuint8_t  XCHAR_MIN  = 0;
 static const xuint16_t XWCHAR_MIN = 0;

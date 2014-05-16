@@ -81,11 +81,11 @@ xuint16_t xfont_measureText(xfont_t * font, const xwchar_t * text, xuint32_t nCh
 
     if ((unsigned int)str.size() > nChars && 0 != nChars)
     {
-        str = QString::fromUtf16(text).left(nChars);
+        str = QString::fromUtf16((const ushort *)text).left(nChars);
     }
     else
     {
-         str = QString::fromUtf16(text);
+         str = QString::fromUtf16((const ushort *)text);
     }
 
     if (0 == nMaxWidth)
@@ -130,7 +130,7 @@ void xfont_drawText(xfont_t * font, xint16_t x, xint16_t y, const xwchar_t * tex
     QString str;
     font->qpainter.setFont(font->qfont);
     font->qpainter.setPen(QColor(r, g, b, 255));
-    str = QString::fromUtf16(text);
+    str = QString::fromUtf16((const ushort *)text);
     font->qpainter.drawText(x, y + font->qpainter.fontMetrics().ascent(), str);
 }
 
