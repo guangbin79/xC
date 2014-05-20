@@ -31,6 +31,18 @@ typedef unsigned __int64    xuint64_t;
 typedef unsigned long long  xuint64_t;
 #endif
 
+#if __WORDSIZE == 64
+typedef xuint64_t           xsize_t; 
+typedef xint64_t            xptrdiff_t; 
+typedef xint64_t            xintptr_t; 
+typedef xuint64_t           xuintptr_t; 
+#else
+typedef xuint32_t           xsize_t; 
+typedef xint32_t            xptrdiff_t; 
+typedef xint32_t            xintptr_t; 
+typedef xuint32_t           xuintptr_t; 
+#endif
+
 
 static const xint8_t   XINT8_MIN   = -128;
 static const xint16_t  XINT16_MIN  = -32768;

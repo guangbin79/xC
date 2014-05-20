@@ -14,10 +14,6 @@
 #include "./xinteger.h"
 
 
-typedef xuint32_t xsize_t;
-typedef xint32_t  xptrdiff_t;
-
-
 #define XNULL 0
 #define XOFFSETOF(type, member) ((size_xt)((uint8_xt *)&(((type *)0)->member) - (uint8_xt *)0))
 
