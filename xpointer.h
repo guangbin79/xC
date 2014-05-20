@@ -15,7 +15,7 @@
 
 
 #define XNULL 0
-#define XOFFSETOF(type, member) ((size_xt)((uint8_xt *)&(((type *)0)->member) - (uint8_xt *)0))
+#define XOFFSETOF(type, member) ((xsize_t)((xuint8_t *)&(((type *)0)->member) - (xuint8_t *)0))
 
 #endif /* _XPOINTER_H_ */
 
