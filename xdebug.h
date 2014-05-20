@@ -16,12 +16,12 @@
 #ifdef NDEBUG
 
 #define XASSERT(exp)
-#define XDBGPRINTF(format, ...)
+#define XDBGPRINTF(...)
 
 #else
 
-#define XASSERT(exp) xdebug_assert(exp)
-#define XDBGPRINTF(format,...) xdebug_printf(format, VA_ARGS)
+#define XASSERT(exp)      xdebug_assert(exp)
+#define XDBGPRINTF(...)   xdebug_printf(__VA_ARGS__)
 
 #ifdef __cplusplus
 extern "C" {
