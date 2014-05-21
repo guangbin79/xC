@@ -44,7 +44,7 @@ void * xmemory_move(void * dptr, const void * sptr, xsize_t size)
     return sys_xmemmove(dptr, sptr, size);
 }
 
-void * xmemory_set(void * ptr, int c, xsize_t size)
+void * xmemory_set(void * ptr, xint32_t c, xuint32_t size)
 {
 //    assert(ptr != NULL && size != 0);
 
