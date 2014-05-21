@@ -17,7 +17,8 @@
 /**
  * @brief 用于保存恢复调用环境所需的信息
  */
-typedef struct _xjmp_buf_t xjmp_buf_t;
+static const xuint8_t JBLEN = 50;
+typedef int xjmp_buf_t[JBLEN];
 
 
 /**
