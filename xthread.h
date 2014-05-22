@@ -18,6 +18,8 @@
  */
 typedef struct _xthread_t xthread_t;
 
+typedef struct _xthread_key_t xthread_key_t;
+
 /**
  * @brief 互斥结构体
  */
@@ -70,6 +72,11 @@ void xthread_destory(xthread_t * pxthread);
  * @return - 无
  */
 void xthread_sleep(xuint32_t dwMSecs);
+
+xthread_key_t xthread_allocKey();
+void xthread_freeKey(xthread_key_t);
+void xthread_setSpecific(xthread_key_t, void *);
+void * xthread_getSpecific(xthread_key_t);
 
 /**
  * @brief 创建线程互斥句柄
