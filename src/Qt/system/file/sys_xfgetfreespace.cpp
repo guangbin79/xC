@@ -3,5 +3,5 @@
 
 unsigned int xsys_xfile_fGetFreeSpace(const char * )
 {
-    return 5 * 1024 * 1024 * 1024; // 默认可使用空间5G
+    return 500 * 1024 * 1024; // 默认可使用空间500M
 }

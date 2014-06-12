@@ -3,6 +3,6 @@
 
 unsigned int xsys_xfile_fGetSpace(const char * )
 {
-    return 10 * 1024 * 1024 * 1024; // 默认空间10G
+    return 500 * 1024 * 1024; // 默认空间500M
 }
 
