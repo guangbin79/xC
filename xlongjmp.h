@@ -17,8 +17,9 @@
 /**
  * @brief 用于保存恢复调用环境所需的信息
  */
-static const xuint8_t JBLEN = 50;
-typedef int xjmp_buf_t[JBLEN];
+typedef struct _xjmp_buf {
+    int buf[66]; // 66 : 用于兼容各个系统的 jmp_buf 大小
+} xjmp_buf_t[1];
 
 
 /**

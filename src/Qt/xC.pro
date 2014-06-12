@@ -19,7 +19,7 @@ SOURCES += \
     system/http/sys_http.cpp \
     comm/xthread.cpp \
     comm/xhttp.cpp \
-    comm/xlongjmp.cpp \
+    comm/xlongjmp.c \
     comm/xtime.c \
     comm/xfile.c \
     comm/xdebug.c \
