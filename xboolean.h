@@ -5,7 +5,7 @@
  * @author guangbin <guangbin79@gmail.com>
  * @date 2014/03/06
  * @par 修改记录
- * 
+ *
  */
 
 #ifndef _XBOOLEAN_H_
@@ -17,8 +17,8 @@
 typedef xuint8_t xbool_t;
 
 
-static const xbool_t XTRUE  = 1;
-static const xbool_t XFALSE = 0;
+#define XTRUE  1
+#define XFALSE 0
 
 #endif /* _XBOOLEAN_H_ */
 

@@ -45,34 +45,34 @@ typedef xuint32_t           xuintptr_t;
 #endif
 
 
-static const xint8_t   XINT8_MIN   = -128;
-static const xint16_t  XINT16_MIN  = -32768;
-static const xint32_t  XINT32_MIN  = ~0x7fffffffL;
+#define XINT8_MIN   -128
+#define XINT16_MIN  -32768
+#define XINT32_MIN  ~0x7fffffffL
 
 #if defined _MSC_VER && _MSC_VER == 1200
-static const xint64_t  XINT64_MIN  = ~0x7fffffffffffffff;
+#define XINT64_MIN  ~0x7fffffffffffffff
 #else
-static const xint64_t  XINT64_MIN  = ~0x7fffffffffffffffLL;
+#define XINT64_MIN  ~0x7fffffffffffffffLL
 #endif
 
-static const xint8_t   XINT8_MAX   = 127;
-static const xint16_t  XINT16_MAX  = 32767;
-static const xint32_t  XINT32_MAX  = 0x7fffffffL;
+#define XINT8_MAX   127
+#define XINT16_MAX  32767
+#define XINT32_MAX  0x7fffffffL
 
 #if defined _MSC_VER && _MSC_VER == 1200
-static const xint64_t  XINT64_MAX  = 0x7fffffffffffffff;
+#define XINT64_MAX  0x7fffffffffffffff
 #else
-static const xint64_t  XINT64_MAX  = 0x7fffffffffffffffLL;
+#define XINT64_MAX  0x7fffffffffffffffLL
 #endif
 
-static const xuint8_t  XUINT8_MAX  = 255;
-static const xuint16_t XUINT16_MAX = 65535;
-static const xuint32_t XUINT32_MAX = 0xffffffffUL;
+#define XUINT8_MAX  255
+#define XUINT16_MAX 65535
+#define XUINT32_MAX 0xffffffffUL
 
 #if defined _MSC_VER && _MSC_VER == 1200
-static const xuint64_t XUINT64_MAX = 0xffffffffffffffff;
+#define XUINT64_MAX 0xffffffffffffffff
 #else
-static const xuint64_t XUINT64_MAX = 0xffffffffffffffffULL;
+#define XUINT64_MAX 0xffffffffffffffffULL
 #endif
 
 #endif /* _XINTEGER_H_ */

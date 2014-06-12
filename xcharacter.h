@@ -18,10 +18,10 @@ typedef char       xchar_t;
 typedef xint16_t   xwchar_t;
 
 
-static const xuint8_t  XCHAR_MIN  = 0;
-static const xuint16_t XWCHAR_MIN = 0;
-static const xuint8_t  XCHAR_MAX  = 255;
-static const xuint16_t XWCHAR_MAX = 65535;
+#define XCHAR_MIN  0
+#define XWCHAR_MIN 0
+#define XCHAR_MAX  255
+#define XWCHAR_MAX 65535
 
 #endif /* _XCHARACTER_H_ */
 
