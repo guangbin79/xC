@@ -31,7 +31,7 @@ xbool_t xgl_makeCurrentContext(xgl_surface_t * surface);
  * @param - 无
  * @return - 无
  */
-void xgl_swapBuffers();
+void xgl_swapBuffers(xgl_surface_t * surface);
 
 #ifdef __cplusplus
 }
