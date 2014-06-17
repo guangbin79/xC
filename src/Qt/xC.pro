@@ -11,6 +11,48 @@ TARGET = xC
 TEMPLATE = lib
 CONFIG += staticlib
 
+HEADERS += \
+    include/sys_xtime.h \
+    include/sys_xfile.h \
+    include/sys_xdebug.h \
+    system/include/sys_xfiledef.h \
+    system/thread/ThreadEngine.h \
+    system/thread/MyThread.h \
+    system/thread/LockEngine.h \
+    system/include/sys_threaddef.h \
+    include/sys_xtimer.h \
+    include/sys_xmemory.h \
+    include/sys_ximage.h \
+    system/include/sys_xtimerdef.h \
+    system/include/sys_ximagedef.h \
+    include/sys_thread.h \
+    include/sys_http.h \
+    system/include/sys_httpdef.h \
+    system/include/sys_xtapidef.h \
+    include/sys_xtapi.h \
+    system/include/sys_xgldef.h \
+    ../../xboolean.h \
+    ../../xvarargs.h \
+    ../../xtimer.h \
+    ../../xtime.h \
+    ../../xthread.h \
+    ../../xtapi.h \
+    ../../xrand.h \
+    ../../xpointer.h \
+    ../../xopengl.h \
+    ../../xmemory.h \
+    ../../xlongjmp.h \
+    ../../xinteger.h \
+    ../../ximage.h \
+    ../../xhttp.h \
+    ../../xgl.h \
+    ../../xfont.h \
+    ../../xfloat.h \
+    ../../xfile.h \
+    ../../xdebug.h \
+    ../../xcharacter.h \
+    ../../Qt/xgl_def.h
+    
 SOURCES += \
     system/thread/ThreadEngine.cpp \
     system/thread/sys_thread.cpp \
@@ -79,53 +121,3 @@ SOURCES += \
     comm/xrand.cpp \
     comm/xopengl.cpp
 
-HEADERS += \
-    include/sys_xtime.h \
-    include/sys_xfile.h \
-    include/sys_xdebug.h \
-    system/include/sys_xfiledef.h \
-    system/thread/ThreadEngine.h \
-    system/thread/MyThread.h \
-    system/thread/LockEngine.h \
-    system/include/sys_threaddef.h \
-    include/sys_xtimer.h \
-    include/sys_xmemory.h \
-    include/sys_ximage.h \
-    system/include/sys_xtimerdef.h \
-    system/include/sys_ximagedef.h \
-    include/sys_thread.h \
-    include/sys_http.h \
-    system/include/sys_httpdef.h \
-    system/include/sys_xtapidef.h \
-    include/sys_xtapi.h \
-    system/include/sys_xgldef.h \
-    ../../xboolean.h \
-    ../../xvarargs.h \
-    ../../xtimer.h \
-    ../../xtime.h \
-    ../../xthread.h \
-    ../../xtapi.h \
-    ../../xrand.h \
-    ../../xpointer.h \
-    ../../xopengl.h \
-    ../../xmemory.h \
-    ../../xlongjmp.h \
-    ../../xinteger.h \
-    ../../ximage.h \
-    ../../xhttp.h \
-    ../../xgl.h \
-    ../../xfont.h \
-    ../../xfloat.h \
-    ../../xfile.h \
-    ../../xdebug.h \
-    ../../xcharacter.h \
-    ../../Qt/xgl_def.h
-
-unix:!symbian {
-    maemo5 {
-        target.path = /opt/usr/lib
-    } else {
-        target.path = /usr/lib
-    }
-    INSTALLS += target
-}
