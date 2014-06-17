@@ -8,7 +8,7 @@ xbool_t xgl_makeCurrentContext(xgl_surface_t * surface)
     return true;
 }
 
-void xgl_swapBuffers()
+void xgl_swapBuffers(xgl_surface_t * surface)
 {
     const QGLContext * context = QGLContext::currentContext();
 
