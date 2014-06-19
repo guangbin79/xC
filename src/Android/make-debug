@@ -1,0 +1,2 @@
+ndk-build NDK_DEBUG=1 -B
+#cp -f libs/armeabi/libnavidog4x.so  ../TirosNaviDog/libs/armeabi/
