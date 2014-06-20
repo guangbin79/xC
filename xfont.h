@@ -17,12 +17,12 @@
 /**
  * @brief 字体结构体
  */
-typedef struct _xfont_t xfont_t;
+typedef struct _xfont xfont_t;
 
 /**
  * @brief 字体风格结构体
  */
-typedef enum _xfont_style_t {
+typedef enum _xfont_style {
     XFS_MAP_1,                              ///<  标准字体大小:地图最大字体36
     XFS_MAP_2,                              ///<  标准字体大小:
     XFS_MAP_3,                              ///<  标准字体大小:

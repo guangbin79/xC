@@ -16,12 +16,12 @@
 /**
  * @brief 线程结构体
  */
-typedef struct _xthread_t xthread_t;
+typedef struct _xthread xthread_t;
 
 /**
  * @brief 互斥结构体
  */
-typedef struct _xmutex_t xmutex_t;
+typedef struct _xmutex xmutex_t;
 
 /**
  * @brief 线程执行函数类型声明

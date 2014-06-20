@@ -17,12 +17,12 @@
 #include "./xcharacter.h"
 
 
-typedef struct _xtapi_t xtapi_t;
+typedef struct _xtapi xtapi_t;
 
 /**
  * @brief 基站信息结构体
  */
-typedef struct _xbase_station_info_t {
+typedef struct _xbase_station_info {
     xuint32_t lac;                             //lac
     xuint32_t cell_id;                         //cellid
     xuint32_t mcc;                             //mobile_country_code
@@ -36,7 +36,7 @@ typedef struct _xbase_station_info_t {
 /**
  * @brief wifi信息结构体
  */
-typedef struct _xwifi_info_t {
+typedef struct _xwifi_info {
     xchar_t * name;                            //wifi名称
     xchar_t * mac;                             //mac地址，12位+1位,mac地址格式没有连接字符,比如mac地址为12:34:56:78:9a:bc,对应为123456789abc
     xchar_t * ip;                              //连接后实际分配的ip地址
@@ -46,7 +46,7 @@ typedef struct _xwifi_info_t {
 /**
   * @brief DeviceInfo信息结构体
   */
-typedef struct _xdevice_info_t {
+typedef struct _xdevice_info {
     xchar_t * manufacturer;                    //厂商名称
     xchar_t * device_model;                    //设备型号
     xchar_t * os_version;                      //操作系统版本
@@ -55,7 +55,7 @@ typedef struct _xdevice_info_t {
 /**
   * @brief 移动网络类型
   */
-typedef enum _xnet_type_t {
+typedef enum _xnet_type {
     XNET_TYPE_WIFI,
     XNET_TYPE_GSM,
     XNET_TYPE_CDMA,

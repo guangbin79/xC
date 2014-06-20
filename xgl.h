@@ -13,7 +13,7 @@
 
 #include "./xboolean.h"
 
-typedef struct _xgl_surface_t xgl_surface_t;
+typedef struct _xgl_surface xgl_surface_t;
 
 #ifdef __cplusplus
 extern "C" {

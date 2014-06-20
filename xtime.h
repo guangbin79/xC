@@ -17,7 +17,7 @@
 /**
  * @brief 日期时间结构体
  */
-typedef struct _xdate_time_t {
+typedef struct _xdate_time {
     xint16_t year;   ///< 年
     xint8_t month;   ///< 月
     xint8_t day;     ///< 日

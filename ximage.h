@@ -22,7 +22,7 @@
 /**
  * @brief 图片结构体
  */
-typedef struct _ximage_t ximage_t;
+typedef struct _ximage ximage_t;
 
 
 #ifdef __cplusplus

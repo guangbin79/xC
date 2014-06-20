@@ -5,7 +5,7 @@
 #include "../../../ximage.h"
 #include "../../../xfont.h"
 
-struct _xfont_t {
+struct _xfont {
     QFont qfont;
     QImage* qimage;
     QPainter qpainter;

@@ -19,12 +19,12 @@
 /**
  * @brief xhttp对象结构体
  */
-typedef struct _xhttp_t xhttp_t;
+typedef struct _xhttp xhttp_t;
 
 /**
  * @brief xhttp错误类型枚举
  */
-typedef enum _xhttp_error_t {
+typedef enum _xhttp_error {
     XHE_NO_ERROR,        //没有错误
     XHE_CANCELED,        //取消请求
     XHE_NET_USELESS,     //网络未连接
@@ -36,7 +36,7 @@ typedef enum _xhttp_error_t {
 /**
  * @brief xhttp回调函数类型枚举
  */
-typedef enum _xhttp_callback_t {
+typedef enum _xhttp_callback {
     XHCB_REQUEST,       //请求回调
     XHCB_RESPONSE,      //应答回调
     XHCB_HEADER,        //http头回调

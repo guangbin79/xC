@@ -3,7 +3,7 @@
 
 #include <QGLContext>
 
-struct _xgl_surface_t {
+struct _xgl_surface {
     QGLWidget * widget;
 };
 
