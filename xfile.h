@@ -168,7 +168,7 @@ xuint32_t xfile_getSize(const xchar_t * filename);
  * @param[in] disk - 准备获取空间的存储器
  * @return - 存储器空间
  * @par 接口使用约定:
- * 	   1.参数pszDisk可以为 “fs0:/”、“fs1:/”或“fs2:/”<br>
+ * 	   1.参数pszDisk可以为 “fs0:/”、“fs1:/”或“fs2:/”以及目录<br>
  */
 xuint32_t xfile_getSpace(const xchar_t * disk);
 

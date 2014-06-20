@@ -51,8 +51,8 @@ HEADERS += \
     ../../xfile.h \
     ../../xdebug.h \
     ../../xcharacter.h \
-    ../../Qt/xgl_def.h
-    
+    ../../xgl_surface/Qt/xgl_surface.h
+
 SOURCES += \
     system/thread/ThreadEngine.cpp \
     system/thread/sys_thread.cpp \
