@@ -1,8 +1,7 @@
 /*
- * sys_tapigetbsbyindex.c
- *
- *  Created on: 2011-11-9
- *      Author: shizy
+ * @file tapigetbsbyindex.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/sys_xtapi.h"
 #include "../../jni_include/jni_tapi.h"
@@ -33,7 +32,7 @@ const xbase_station_info_t * sys_tapigetbsbyindex(xsys_tapi_t * ptapi, const uns
 		if(obj_stationInfo){
 			if(!ptapi->stationInfo)
 			{
-				ptapi->stationInfo = (xbase_station_info_t * )sys_xmalloc(sizeof(xbase_station_info_t));
+				ptapi->stationInfo = (xbase_station_info_t * )malloc(sizeof(xbase_station_info_t));
 			}
 
 			ptapi->stationInfo->lac = (*g_env)->GetIntField(g_env, obj_stationInfo, fid_lac);

@@ -1,8 +1,7 @@
 /*
- * sys_httpcancle.c
- *
- *  Created on: 2011-10-28
- *      Author: shizy
+ * @file sys_httpcancel.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/sys_xhttp.h"
 #include "../../jni_include/jni_http.h"
@@ -18,5 +17,4 @@ void sys_httpcancel(SYS_Http * pHttp){
 		(*g_env)->CallVoidMethod(g_env, pHttp->httpObject, mid);
 		(*g_env)->DeleteLocalRef(g_env, cls);
 	}
-
 }

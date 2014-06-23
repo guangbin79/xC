@@ -44,7 +44,6 @@ public class Xfont {
 	 */
 	public void sys_ftdrawtext(Ximage img, int x, int y, String pwszText, int r, int g, int b) {	
 	    
-//		long starttime = System.currentTimeMillis();
 		System.out.println("xxxxxxxxxtext1 start");
 		int color = Color.rgb(r, g, b);
 		System.out.println("xxxxxxxxxtext1 1");
@@ -60,7 +59,6 @@ public class Xfont {
 		mPaint.setColor(color);
 		img.mCanvas.drawText(pwszText, x, y - mPaint.getFontMetrics().ascent, mPaint);
 		
-//		Log.e("Font", "LLLL sys_ftdrawtext time = " + (System.currentTimeMillis() - starttime));
 	}
 	
 	public int sys_ftmeasuretext(String pwszText, int nChars, int nMaxWidth) {

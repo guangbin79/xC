@@ -1,8 +1,7 @@
 /*
- * sys_tpicreate.c
- *
- *  Created on: 2011-11-9
- *      Author: shizy
+ * @file tapicreate.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/sys_xtapi.h"
 #include "../../jni_include/jni_tapi.h"
@@ -10,14 +9,10 @@
 
 xsys_tapi_t * sys_tapicreate(){
 	JNIEnv * g_env;
-	if(jvm == 0)
-	{
-		mylog("jvm = NULL");
-	}
 	(*jvm)->AttachCurrentThread(jvm, &g_env, 0);
-	xsys_tapi_t * tapi = (xsys_tapi_t *)sys_xmalloc(sizeof(xsys_tapi_t));
+	xsys_tapi_t * tapi = (xsys_tapi_t *)malloc(sizeof(xsys_tapi_t));
 
-	sys_xmemset(tapi, 0, sizeof(xsys_tapi_t));
+	memset(tapi, 0, sizeof(xsys_tapi_t));
 
 	if(!tapi){
 		return 0;

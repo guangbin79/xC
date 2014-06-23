@@ -1,8 +1,7 @@
 /*
- * sys_tapigetdeviceinfo.c
- *
- *  Created on: 2012-3-5
- *      Author: shizy
+ * @file tapigetdeviceinfo.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/sys_xtapi.h"
 #include "../../jni_include/sys_xmemory.h"
@@ -27,7 +26,7 @@ const xdevice_info_t* sys_tapigetdeviceinfo(xsys_tapi_t* ptapi){
 			jstring str_devicemodel = (jstring)((*g_env)->CallObjectMethod(g_env, ptapi->tapiObject, mid_devicemodel));
 			jstring str_manufacturername = (jstring)((*g_env)->CallObjectMethod(g_env, ptapi->tapiObject, mid_manufacturername));
 
-			ptapi->deviceInfo = (xdevice_info_t * )sys_xmalloc(sizeof(xdevice_info_t));
+			ptapi->deviceInfo = (xdevice_info_t * )malloc(sizeof(xdevice_info_t));
 			sys_xmemset(ptapi->deviceInfo, 0, sizeof(xdevice_info_t));
 
 			if(str_osversion){

@@ -1,10 +1,7 @@
 /*
- * sys_ftdrawend.c
- *
- *  Created on: 2012-2-17
- *      Author: shizy
- *  Modify  by caoyp on: 2012-5-28
- *  Modify  by caoyp on: 2012-7-04
+ * @file ftdrawend.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/jni_image.h"
 #include "../../jni_include/jni_font.h"

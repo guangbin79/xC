@@ -1,3 +1,8 @@
+/*
+ * @file sys_xfile.h
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
 #ifndef _SYS_XFILE_H_
 #define _SYS_XFILE_H_
 

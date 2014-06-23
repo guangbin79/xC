@@ -1,9 +1,12 @@
+/*
+ * @file xtimer.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
 #include "../../../xtimer.h"
 #include "../../../xdebug.h"
 #include "../../../xpointer.h"
 #include "../jni_include/sys_xtimer.h"
-
-
 
 xtimer_t * xtimer_create()
 {
@@ -37,6 +40,4 @@ void xtimer_cancel(xtimer_t * ptmr)
     {
     	sys_tmrcancel((xsys_timer_t *)ptmr);
     }
-
 }
-

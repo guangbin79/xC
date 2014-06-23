@@ -1,8 +1,12 @@
+/*
+ * @file ximage.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
 #include "../../../ximage.h"
 #include "../jni_include/sys_ximage.h"
 #include "../../../xdebug.h"
 #include "../../../xpointer.h"
-
 
 ximage_t * ximg_load(const void * pimgdata, uint32_t size)
 {

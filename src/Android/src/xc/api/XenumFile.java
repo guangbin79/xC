@@ -1,5 +1,5 @@
 package xc.api;
-import xc.api.XfileClass;
+import xc.api.Xfile;
 import java.io.File;
 import java.util.Vector;
 
@@ -12,7 +12,7 @@ public class XenumFile {
 
 	public void sys_fenumstart(String FileDir, boolean bDirs)
 	{	
-		String filePath = XfileClass.libToJavaPath(FileDir);
+		String filePath = Xfile.libToJavaPath(FileDir);
 		File file = new File(filePath);
 		filePath = null;
 		File[] listFiles = file.listFiles();
@@ -36,11 +36,7 @@ public class XenumFile {
 		mFileIndex = 0;
 	}
 	
-	/**
-	 * ö���ļ�Ŀ¼
-	 * @param bDirs
-	 * @return
-	 */
+
 	public String sys_fenumnext() {
 		if(mFiles.size() < 1){
 			return null;
@@ -54,11 +50,7 @@ public class XenumFile {
 		return fileName;
 	}
 	
-	/**
-	 * �����ļ�ö��
-	 * @param bDirs
-	 * @return
-	 */
+
 	public void sys_fenumend() {
 		mFiles.removeAllElements();
 		mFiles = null;

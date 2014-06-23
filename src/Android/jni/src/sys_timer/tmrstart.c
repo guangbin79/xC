@@ -16,7 +16,7 @@ void sys_tmrstart(xsys_timer_t * ptmr, unsigned int dwMSecs, xfn_timer_event_t p
 		ptmr->pfn = pfn;
 		ptmr->pvUser = pvUser;
 
-		jclass cls = (*g_env)->FindClass(g_env, "xc/api/Xtimerr");
+		jclass cls = (*g_env)->FindClass(g_env, "xc/api/Xtimer");
 		jmethodID mid = (*g_env)->GetMethodID(g_env, cls, "sys_tmrstart", "(I)V");
 
 		(*g_env)->CallVoidMethod(g_env, ptmr->timerObject, mid, dwMSecs);

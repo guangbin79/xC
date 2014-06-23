@@ -1,3 +1,8 @@
+/*
+ * @file xlongjmp.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
 #include "../../../xlongjmp.h"
 #include <setjmp.h>
 

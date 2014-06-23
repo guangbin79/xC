@@ -1,8 +1,7 @@
 /*
- * sys_fenumend.c
- *
- *  Created on: 2011-10-12
- *      Author: shizy
+ * @file fenumend.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/sys_xfile.h"
 #include "../../jni_include/jni_system.h"

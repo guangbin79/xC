@@ -1,8 +1,7 @@
 /*
- * sys_tapigetimsi.c
- *
- *  Created on: 2012-3-5
- *      Author: shizy
+ * @file tapigetimsi.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/sys_xtapi.h"
 #include "../../jni_include/jni_tapi.h"

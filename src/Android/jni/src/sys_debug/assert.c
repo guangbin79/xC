@@ -1,8 +1,7 @@
 /*
- * sys_assert.c
- *
- *  Created on: 2011-10-11
- *      Author: shizy
+ * @file assert.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/jni_system.h"
 #include "../../jni_include/sys_xdebug.h"

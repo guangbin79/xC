@@ -1,3 +1,9 @@
+/*
+ * @file sys_xtime.h
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
+
 #ifndef _TR_SYS_TIME_H_
 #define _TR_SYS_TIME_H_
 

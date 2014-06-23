@@ -1,8 +1,7 @@
 /*
- * sys_tapigetnettype.c
- *
- *  Created on: 2012-3-5
- *      Author: shizy
+ * @file tapigetnettype.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/sys_xtapi.h"
 #include "../../jni_include/jni_tapi.h"
@@ -21,6 +20,5 @@ int sys_tapigetnettype(xsys_tapi_t* ptapi){
 
 		return result;
 	}
-
 	return 0;
 }

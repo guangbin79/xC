@@ -1,9 +1,9 @@
 /*
- * Java_cn_com_tiros_api_Http_sys_1httpEvent__III_3B.c
- *
- *  Created on: 2012-07-24
- *      Author: caoyp
+ * @file Java_cn_com_tiros_api_Http_sys_1httpEvent__III_3B.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
+
 #include "cn_com_tiros_api_Http.h"
 #include "../../jni_include/jni_http.h"
 /*

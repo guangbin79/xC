@@ -13,7 +13,7 @@ void sys_tmrdestroy(xsys_timer_t * ptmr){
 	JNIEnv * g_env;
 	(*jvm)->AttachCurrentThread(jvm, &g_env, 0);
 	if(ptmr){
-		jclass cls = (*g_env)->FindClass(g_env, "xc/api/Xtimerr");
+		jclass cls = (*g_env)->FindClass(g_env, "xc/api/Xtimer");
 		jmethodID mid = (*g_env)->GetMethodID(g_env, cls, "sys_tmrdestroy","()V");
 
 		(*g_env)->CallVoidMethod(g_env, ptmr->timerObject, mid);
@@ -21,7 +21,7 @@ void sys_tmrdestroy(xsys_timer_t * ptmr){
 		(*g_env)->DeleteGlobalRef(g_env, ptmr->timerObject);
 		(*g_env)->DeleteLocalRef(g_env, cls);
 
-		sys_xfree(ptmr);
+		free(ptmr);
 	}
 
 }

@@ -1,3 +1,8 @@
+/*
+ * @file xtapi.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
 #include "../../../xtapi.h"
 #include "../jni_include/sys_xtapi.h"
 #include "../jni_include/sys_xfile.h"
@@ -6,7 +11,6 @@
 #include "../../../xfile.h"
 #include "../../../xmemory.h"
 #include <string.h>
-//#include "../../../../api/universal/string.h"
 
 #define KTirosLocalMobileIdLen 128
 

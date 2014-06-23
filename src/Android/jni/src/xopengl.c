@@ -1,3 +1,8 @@
+/*
+ * @file xopengl.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
 #include "../../../xopengl.h"
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
@@ -151,7 +156,8 @@ void xopengl_bindFramebuffer(XGLenum target, XGLuint framebuffer)
 	glBindFramebuffer(target, framebuffer);
 }
 
-void xopengl_framebufferTexture2D(XGLenum target, XGLenum attachment, XGLenum textarget, XGLuint texture, XGLint level)
+void xopengl_framebufferTexture2D(XGLenum target, XGLenum attachment, XGLenum textarget,
+								  XGLuint texture, XGLint level)
 {
 	glFramebufferTexture2D(target, attachment, textarget, texture, level);
 }
@@ -196,7 +202,8 @@ void xopengl_texParameterf(XGLenum target, XGLenum pname, XGLfloat param)
 	glTexParameterf(target, pname, param);
 }
 
-void xopengl_texImage2D(XGLenum target, XGLint level, XGLint internalformat, XGLsizei width, XGLsizei height, XGLint border, XGLenum format, XGLenum type, const XGLvoid* pixels)
+void xopengl_texImage2D(XGLenum target, XGLint level, XGLint internalformat, XGLsizei width,
+						XGLsizei height, XGLint border, XGLenum format, XGLenum type, const XGLvoid* pixels)
 {
 	glTexImage2D(target,level, internalformat, width, height, border, format, type, pixels);
 }
@@ -226,7 +233,8 @@ XGLenum xopengl_getError(void)
 	return glGetError();
 }
 
-void xopengl_texSubImage2D(XGLenum target, XGLint level, XGLint xoffset, XGLint yoffset, XGLsizei width, XGLsizei height, XGLenum format, XGLenum type, const XGLvoid* pixels)
+void xopengl_texSubImage2D(XGLenum target, XGLint level, XGLint xoffset, XGLint yoffset, XGLsizei width,
+						   XGLsizei height, XGLenum format, XGLenum type, const XGLvoid* pixels)
 {
 	glTexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixels);
 }
@@ -280,7 +288,8 @@ void xopengl_depthMask(XGLboolean flag)
 	glDepthMask(flag);
 }
 
-void xopengl_copyTexSubImage2D(XGLenum target, XGLint level, XGLint xoffset, XGLint yoffset, XGLint x, XGLint y, XGLsizei width, XGLsizei height)
+void xopengl_copyTexSubImage2D(XGLenum target, XGLint level, XGLint xoffset, XGLint yoffset,
+							   XGLint x, XGLint y, XGLsizei width, XGLsizei height)
 {
 	glCopyTexSubImage2D(target, level, xoffset, yoffset, x, y, width, height);
 }
@@ -298,21 +307,4 @@ void xopengl_viewport(XGLint x, XGLint y, XGLsizei width, XGLsizei height)
 {
 	glViewport(x, y, width, height);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

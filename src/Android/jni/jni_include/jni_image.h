@@ -1,9 +1,9 @@
 /*
- * jni_image.h
- *
- *  Created on: 2011-10-13
- *      Author: shizy
+ * @file jni_image.h
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
+
 
 #ifndef JNI_IMAGE_H_
 #define JNI_IMAGE_H_

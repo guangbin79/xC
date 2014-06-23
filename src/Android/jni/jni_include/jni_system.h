@@ -1,8 +1,7 @@
 /*
- * system_jni.h
- *
- *  Created on: 2011-10-11
- *      Author: shizy
+ * @file jni_system.h
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 
 #ifndef JNI_SYSTEM_H_

@@ -1,8 +1,7 @@
 /*
- * sys_memcmp.c
- *
- *  Created on: 2011-10-14
- *      Author: shizy
+ * @file memcmp.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include <string.h>
 

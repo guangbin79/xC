@@ -1,3 +1,8 @@
+/*
+ * @file sys_xmemory.h
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
 #ifndef _TR_SYS_MEMORY_H_
 #define _TR_SYS_MEMORY_H_
 

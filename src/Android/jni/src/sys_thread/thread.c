@@ -1,8 +1,7 @@
 /*
- * thread.c
- *
- *  Created on: 2013-11-08
- *      Author: caoyp
+ * @file thread.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/jni_system.h"
 #include "../../jni_include/sys_xthread.h"
@@ -52,12 +51,12 @@ xsys_thread_t* sys_ThreadCreate(SYS_ThreadProcFunc proc, void* pvuser){
 	mid = (*g_env)->GetMethodID(g_env, cls, "sys_ThreadCreate", "(II)V");
 
 	thread->pfn1 = proc;
-//	if(notify){
-//		hasnotify = 1;
-//		thread->pfn2 = notify;
-//	}else{
+	if(notify){
+		hasnotify = 1;
+		thread->pfn2 = notify;
+	}else{
 		hasnotify = 0;
-	//}
+	}
 	thread->pvUser = pvuser;
 
 	(*g_env)->CallVoidMethod(g_env, thread->threadObject, mid, (jint) thread, hasnotify);

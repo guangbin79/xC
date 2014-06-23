@@ -1,3 +1,8 @@
+/*
+ * @file time.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
 #include "../../jni_include/jni_system.h"
 #include "../../../xtime.h"
 #include <time.h>

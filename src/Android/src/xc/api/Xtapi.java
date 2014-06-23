@@ -135,19 +135,14 @@ public class Xtapi {
 	}
 	
 	public WIFIInfo sys_tapigetconnwifiinfo(){
-		System.out.println("javawifi------11111");
 		if(wifiManager == null){
-			System.out.println("javawifi------22222");
 			return null;
 		}
-		System.out.println("javawifixxxxx------33333");
 		WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-		System.out.println("javawifixxxxxx------444444");
 		if(wifiInfo == null){
 			return null;
 		}
 		
-		System.out.println("javawifi------555555");
 		if(wifiInfo.getSSID() != null && wifiInfo.getBSSID() != null){
 			WIFIInfo info = new WIFIInfo();
 			info.mName = wifiInfo.getSSID();

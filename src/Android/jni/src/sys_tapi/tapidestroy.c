@@ -1,8 +1,7 @@
 /*
- * sys_tapidestroy.c
- *
- *  Created on: 2011-11-9
- *      Author: shizy
+ * @file tapidestroy.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/sys_xtapi.h"
 #include "../../jni_include/jni_tapi.h"
@@ -20,42 +19,42 @@ void sys_tapidestroy(xsys_tapi_t * ptapi){
 		(*g_env)->DeleteLocalRef(g_env, cls);
 
 		if(ptapi->mobileid){
-			sys_xfree(ptapi->mobileid);
+			free(ptapi->mobileid);
 		}
 
 		if(ptapi->imsi){
-			sys_xfree(ptapi->imsi);
+			free(ptapi->imsi);
 		}
 
 		if(ptapi->stationInfo){
-			sys_xfree(ptapi->stationInfo);
+			free(ptapi->stationInfo);
 		}
 		if(ptapi->wifiInfo){
 			if(ptapi->wifiInfo->name){
-				sys_xfree(ptapi->wifiInfo->name);
+				free(ptapi->wifiInfo->name);
 			}
 			if(ptapi->wifiInfo->mac){
-				sys_xfree(ptapi->wifiInfo->mac);
+				free(ptapi->wifiInfo->mac);
 			}
 			if(ptapi->wifiInfo->ip){
-				sys_xfree(ptapi->wifiInfo->ip);
+				free(ptapi->wifiInfo->ip);
 			}
-			sys_xfree(ptapi->wifiInfo);
+			free(ptapi->wifiInfo);
 		}
 
 		if(ptapi->deviceInfo){
 			if(ptapi->deviceInfo->os_version){
-				sys_xfree(ptapi->deviceInfo->os_version);
+				free(ptapi->deviceInfo->os_version);
 			}
 			if(ptapi->deviceInfo->device_model){
 				(ptapi->deviceInfo->device_model);
 			}
 			if(ptapi->deviceInfo->manufacturer){
-				sys_xfree(ptapi->deviceInfo->manufacturer);
+				free(ptapi->deviceInfo->manufacturer);
 			}
-			sys_xfree(ptapi->deviceInfo);
+			free(ptapi->deviceInfo);
 		}
 
-		sys_xfree(ptapi);
+		free(ptapi);
 	}
 }

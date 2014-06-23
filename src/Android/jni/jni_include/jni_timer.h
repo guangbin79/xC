@@ -1,9 +1,9 @@
 /*
- * jni_timer.h
- *
- *  Created on: 2011-10-14
- *      Author: shizy
+ * @file jni_timer.h
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
+
 
 #ifndef JNI_TIMER_H_
 #define JNI_TIMER_H_

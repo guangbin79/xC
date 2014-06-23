@@ -14,7 +14,7 @@ void sys_tmrcancel(xsys_timer_t * ptmr){
 	(*jvm)->AttachCurrentThread(jvm, &g_env, 0);
 	if(ptmr){
 
-		jclass cls = (*g_env)->FindClass(g_env, "xc/api/Xtimerr");
+		jclass cls = (*g_env)->FindClass(g_env, "xc/api/Xtimer");
 		jmethodID mid = (*g_env)->GetMethodID(g_env, cls, "sys_tmrcancel", "()V");
 
 		(*g_env)->CallVoidMethod(g_env, ptmr->timerObject, mid);

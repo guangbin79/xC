@@ -1,3 +1,8 @@
+/*
+ * @file xdebug.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
 #include "../../../xdebug.h"
 #include "../jni_include/sys_xdebug.h"
 #include "../../../xvarargs.h"

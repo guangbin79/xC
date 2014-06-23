@@ -1,8 +1,7 @@
 /*
- * sys_httppost.c
- *
- *  Created on: 2011-10-28
- *      Author: shizy
+ * @file sys_httppost.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/sys_xhttp.h"
 #include "../../jni_include/jni_http.h"
@@ -17,12 +16,7 @@ unsigned char sys_httppost(SYS_Http * pHttp, const char * pContentType, const ch
 		jmethodID mid = (*g_env)->GetMethodID(g_env, cls, "sys_httppost", "(Ljava/lang/String;Ljava/lang/String;[B)Z");
 
 		jbyteArray bytes = (*g_env)->NewByteArray(g_env, dwSize);
-
-               //__android_log_print(ANDROID_LOG_INFO,"jni--","sys_httppost  0 dwSize ==  %d", dwSize);
-
 		(*g_env)->SetByteArrayRegion(g_env, bytes, 0, dwSize, (jbyte *)pvData);
-
-              // __android_log_print(ANDROID_LOG_INFO,"jni--","sys_httppost  1");
 
 		jstring type = 0;
 
@@ -44,9 +38,6 @@ unsigned char sys_httppost(SYS_Http * pHttp, const char * pContentType, const ch
 		(*g_env)->DeleteLocalRef(g_env, cls);
 
 		bytes = 0;
-
-               //__android_log_print(ANDROID_LOG_INFO,"jni--","sys_httppost  2");
-
 		if(result){
 			return (unsigned char)1;
 		}

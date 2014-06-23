@@ -1,6 +1,11 @@
+/*
+ * @file sys_ximage.h
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
 #ifndef _TR_SYS_IMAGE_H_
 #define _TR_SYS_IMAGE_H_
-#include "../../../ximage.h"
+#include "../../../../ximage.h"
 #include "jni_image.h"
 
 #ifdef __cplusplus

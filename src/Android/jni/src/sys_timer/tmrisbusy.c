@@ -12,7 +12,7 @@ unsigned char sys_tmrisbusy(xsys_timer_t * ptmr){
 	JNIEnv * g_env;
 	(*jvm)->AttachCurrentThread(jvm, &g_env, 0);
 	if(ptmr){
-		jclass cls = (*g_env)->FindClass(g_env, "xc/api/Xtimerr");
+		jclass cls = (*g_env)->FindClass(g_env, "xc/api/Xtimer");
 		jmethodID mid = (*g_env)->GetMethodID(g_env, cls, "sys_tmrisbusy","()Z");
 
 		jboolean result = (*g_env)->CallBooleanMethod(g_env, ptmr->timerObject, mid);

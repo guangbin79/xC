@@ -1,11 +1,10 @@
 /*
- * Java_cn_com_tiros_api_Http_sys_1httpEvent__III_3B.c
- *
- *  Created on: 2011-10-28
- *      Author: shizy
- *  Modify  on: 2012-11-05
- *      Modify: caoyp (添加Http回调方法，增加参数为String的回调)
+ * @file Java_cn_com_tiros_api_Http_sys_1httpEvent__III_3B.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
+
+
 #include "cn_com_tiros_api_Http.h"
 #include "../../jni_include/sys_xhttp.h"
 #include "../../jni_include/jni_http.h"

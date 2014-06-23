@@ -1,8 +1,7 @@
 /*
- * jni_tapi.h
- *
- *  Created on: 2011-11-9
- *      Author: shizy
+ * @file jni_tapi.h
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 
 #ifndef JNI_TAPI_H_

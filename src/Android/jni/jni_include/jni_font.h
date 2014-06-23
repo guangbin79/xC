@@ -1,10 +1,9 @@
 /*
- * jni_font.h
- *
- *  Created on: 2011-10-12
- *      Author: shizy
- *  Modify caoyp on: 2012-5-28
+ * @file jni_font.h
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
+
 
 #ifndef JNI_FONT_H_
 #define JNI_FONT_H_

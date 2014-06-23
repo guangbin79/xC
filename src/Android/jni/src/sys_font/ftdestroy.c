@@ -1,8 +1,7 @@
 /*
- * sys_ftdestroy.c
- *
- *  Created on: 2011-10-12
- *      Author: shizy
+ * @file ftdestroy.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/jni_image.h"
 #include "../../jni_include/jni_font.h"
@@ -21,7 +20,7 @@ void sys_xftdestroy(xfont_t * pft){
 		(*g_env)->DeleteGlobalRef(g_env, pft->fontObject);
 		(*g_env)->DeleteLocalRef(g_env, cls);
 
-		sys_xfree(pft);
+		free(pft);
 	}
 
 }

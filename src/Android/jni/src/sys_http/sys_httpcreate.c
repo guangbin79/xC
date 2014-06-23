@@ -1,8 +1,7 @@
 /*
- * sys_httpcreate.c
- *
- *  Created on: 2011-10-28
- *      Author: shizy
+ * @file sys_httpcreate.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/sys_xhttp.h"
 #include "../../jni_include/jni_http.h"
@@ -33,7 +32,6 @@ SYS_Http * sys_httpcreate(){
 		http->pfn[i] = 0;
 		http->pvUser[i] = 0;
 	}
-
 
 	(*g_env)->DeleteLocalRef(g_env, obj);
 	(*g_env)->DeleteLocalRef(g_env, cls);

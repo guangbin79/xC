@@ -1,8 +1,7 @@
 /*
- * sys_httpsettimeout.c
- *
- *  Created on: 2011-10-28
- *      Author: shizy
+ * @file sys_httpsettimeout.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/sys_xhttp.h"
 #include "../../jni_include/jni_http.h"
@@ -19,5 +18,4 @@ void sys_httpsettimeout(SYS_Http * pHttp, unsigned int dwMSecs1, unsigned int dw
 		(*g_env)->CallVoidMethod(g_env, pHttp->httpObject, mid, dwMSecs1, dwMSecs2);
 		(*g_env)->DeleteLocalRef(g_env, cls);
 	}
-
 }

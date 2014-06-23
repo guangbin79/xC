@@ -1,8 +1,12 @@
-#include "../../../xgl.h"
+/*
+ * @file sys_xgl.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
 #include "../../jni_include/jni_system.h"
 #include "../../jni_include/sys_xgl.h"
 
-unsigned char sys_gl_makeCurrent(xsys_xglsurface * surface)
+unsigned char sys_gl_makeCurrent(sys_xglsurface * surface)
 {
 	if(surface && surface->glsurfaceObject)
 	{
@@ -16,7 +20,7 @@ unsigned char sys_gl_makeCurrent(xsys_xglsurface * surface)
 	}
 }
 
-void sys_gl_swapBuffers(xsys_xglsurface * surface)
+void sys_gl_swapBuffers(sys_xglsurface * surface)
 {
 	JNIEnv * g_env;
 	(*jvm)->AttachCurrentThread(jvm, &g_env, 0);

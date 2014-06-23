@@ -1,8 +1,7 @@
 /*
- * sys_fremove.c
- *
- *  Created on: 2011-10-12
- *      Author: shizy
+ * @file fremove.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 
 #include "../../jni_include/jni_system.h"
@@ -11,7 +10,7 @@
 unsigned char xsys_xfile_fRemove(const char * pszFilename){
 	JNIEnv * g_env;
 	(*jvm)->AttachCurrentThread(jvm, &g_env, 0);
-	jclass cls = (*g_env)->FindClass(g_env, "xc/api/XfileClass");
+	jclass cls = (*g_env)->FindClass(g_env, "xc/api/Xfile");
 	jmethodID mid = (*g_env)->GetStaticMethodID(g_env, cls, "sys_fremove", "(Ljava/lang/String;)I");
 
 	jstring name = 0;
@@ -23,6 +22,5 @@ unsigned char xsys_xfile_fRemove(const char * pszFilename){
 
 	(*g_env)->DeleteLocalRef(g_env,cls);
 	(*g_env)->DeleteLocalRef(g_env,name);
-	mylog("xxxxxxxxxx123123!!!!!!!!!");
 	return (unsigned char)result;
 }

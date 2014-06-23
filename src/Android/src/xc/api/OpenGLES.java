@@ -9,37 +9,37 @@ import javax.microedition.khronos.opengles.GL11;
 import android.view.SurfaceHolder;
 
 /**
- * EGL���������� 2012-07-12
+ * EGL环境创建类 2012-07-12
  * 
- * @author ��ӱ��
+ * @author 曹颖鹏
  * 
  */
 public class OpenGLES {
 
-	/** �汾�ű��� */
+	/** 版本号变量 */
 	public static final int OPENGL_ES_VERSION_1x = 1;
 	public static final int OPENGL_ES_VERSION_2 = 2;
 
-	private static final int EGL_CONTEXT_CLIENT_VERSION = 0x3098; // �汾��
+	private static final int EGL_CONTEXT_CLIENT_VERSION = 0x3098; // 版本号
 
-	private static int EGL_OPENGL_ES2_BIT = 4; //�����ֽ���
+	private static int EGL_OPENGL_ES2_BIT = 4; //配置字节数
 
-	public static EGL10 EGL; //����
-	public static EGLDisplay Gl_Display = null; // ����
-	public static EGLContext Gl_Window_Context = null; //������
+	public static EGL10 EGL; //环境
+	public static EGLDisplay Gl_Display = null; // 画布
+	public static EGLContext Gl_Window_Context = null; //上下文
 	public static EGLSurface Gl_Window_Surface = null;// Surface
-	public static EGLConfig Gl_Config = null; //����
+	public static EGLConfig Gl_Config = null; //配置
 
-	private static GL11 gl; //����
+	private static GL11 gl; //画笔
 
 	/**
-	 * ��ʼ������
+	 * 初始化函数
 	 */
 	public OpenGLES() {
 	}
 
 	/**
-	 * �汾���
+	 * 版本检测
 	 * @param glesversion
 	 */
 	private static void DetectionVersion(int glesversion) {
@@ -50,20 +50,20 @@ public class OpenGLES {
 	}
 
 	/**
-	 * ��������
-	 * @param glesVersion  �汾��
+	 * 环境创建
+	 * @param glesVersion  版本号
 	 */
 	public static void EGLCreate(int glesVersion) {
-		if (EGL == null) { //��ֻ֤����һ��
-			//���汾
+		if (EGL == null) { //保证只创建一次
+			//检测版本
 			DetectionVersion(glesVersion);
 			// Create EGL ,Display
 			EGL = (EGL10) EGLContext.getEGL();
-			//��ȡ��ǰ����
+			//获取当前画布
 			Gl_Display = EGL.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
 //			Log.e("EGLCreate ", "EGL.eglGetError()  0000000000 " + EGL.eglGetError());
 
-			//��ʼ��
+			//初始化
 			EGL.eglInitialize(Gl_Display, null);
 
 			// Choose an EGLConfig
@@ -76,7 +76,7 @@ public class OpenGLES {
 			}
 			EGLConfig[] configOut = new EGLConfig[1];
 			int[] configNumOut = new int[1];
-			//ѡ������
+			//选择配置
 			if (EGL.eglChooseConfig(Gl_Display, attrList, configOut, 1, configNumOut) && 1 == configNumOut[0]) {
 				Gl_Config = configOut[0];
 			}
@@ -87,7 +87,7 @@ public class OpenGLES {
 			if (OPENGL_ES_VERSION_2 == glesVersion) {
 				contextAttrs = new int[] { EGL_CONTEXT_CLIENT_VERSION, OPENGL_ES_VERSION_2, EGL10.EGL_NONE };
 			}
-			//��ȡ������
+			//获取上下文
 			Gl_Window_Context = EGL.eglCreateContext(Gl_Display, Gl_Config, EGL10.EGL_NO_CONTEXT, contextAttrs);
 
 //			Log.e("EGLCreate ", "EGL.eglGetError()  222222222 " + EGL.eglGetError());
@@ -95,7 +95,7 @@ public class OpenGLES {
 	}
 
 	/**
-	 * ����WindowSurface
+	 * 创建WindowSurface
 	 * 
 	 * @param holder
 	 */
@@ -107,16 +107,17 @@ public class OpenGLES {
 	}
 
 	/**
-	 * ���õ�ǰ������Ϊwindowsurface,ֱ�ӻ�����Ļ
+	 * 设置当前上下文为windowsurface,直接绘制屏幕
 	 */
 	public static void EGLWindowSurfaceMakeCurrent() {
 		if(EGL != null){
 			EGL.eglMakeCurrent(Gl_Display, Gl_Window_Surface, Gl_Window_Surface, Gl_Window_Context);
+//			Log.e("surfacecreate ", "EGL.eglGetError()  000000000000 " + EGL.eglGetError());
 		}
 	}
 
 	/**
-	 * ���EGL����������
+	 * 销毁EGL环境上下文
 	 */
 	public static void EGLDestory() {
 		if(EGL != null){
@@ -126,7 +127,7 @@ public class OpenGLES {
 	}
 
 	/**
-	 * ���EGLSurface
+	 * 销毁EGLSurface
 	 */
 	public static void EGLSurfaceDestory() {
         if (Gl_Window_Surface != null && Gl_Window_Surface != EGL10.EGL_NO_SURFACE) {
@@ -138,16 +139,11 @@ public class OpenGLES {
 	}
 
 	public static void EGLSwapBuffers() {
-		EGL.eglSwapBuffers(Gl_Display, Gl_Window_Surface);// ˢ����Ļ
-	}
-	
-	
-	public static boolean EGLmakeCurrentContext(){
-		return EGL.eglMakeCurrent(Gl_Display, Gl_Window_Surface, Gl_Window_Surface, Gl_Window_Context);
+		EGL.eglSwapBuffers(Gl_Display, Gl_Window_Surface);// 刷新屏幕
 	}
 
 	/**
-	 * �����ɫ
+	 * 填充颜色
 	 */
 	public void clearcolor() {
 		gl = (GL11) Gl_Window_Context.getGL();
@@ -157,7 +153,7 @@ public class OpenGLES {
 	}
 
 	/**
-	 * ˢ��
+	 * 刷新
 	 */
 //	private static void glflush() {
 //		gl = (GL11) Gl_Window_Context.getGL();

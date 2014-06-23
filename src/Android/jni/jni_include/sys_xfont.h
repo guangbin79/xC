@@ -1,11 +1,13 @@
+/*
+ * @file sys_xfont.h
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
 #ifndef _TR_SYS_FONT_H_
 #define _TR_SYS_FONT_H_
 
-
 #include "../../../../xfont.h"
 
-//typedef struct _SYS_Font SYS_Font;
-//typedef struct _SYS_Image SYS_Image;
 
 typedef enum _SYS_FontStyle
 {

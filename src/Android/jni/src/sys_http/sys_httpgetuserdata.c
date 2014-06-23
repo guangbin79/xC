@@ -1,8 +1,7 @@
 /*
- * sys_httpgetuserdata.c
- *
- *  Created on: 2011-11-23
- *      Author: shizy
+ * @file sys_httpgetuserdata.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 
 #include "../../jni_include/sys_xhttp.h"

@@ -1,8 +1,7 @@
 /*
- * sys_fgetspace.c
- *
- *  Created on: 2011-10-12
- *      Author: shizy
+ * @file fgetspace.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 
 
@@ -11,7 +10,7 @@
 unsigned int xsys_xfile_fGetSpace(const char * pszDisk){
 	JNIEnv * g_env;
 	(*jvm)->AttachCurrentThread(jvm, &g_env, 0);
-	jclass cls =(*g_env)->FindClass(g_env , "xc/api/XfileClass");
+	jclass cls =(*g_env)->FindClass(g_env , "xc/api/Xfile");
 	jmethodID mid = (*g_env)->GetStaticMethodID(g_env, cls, "sys_fgetspace", "(Ljava/lang/String;)D");
 
 	jstring dir = 0;

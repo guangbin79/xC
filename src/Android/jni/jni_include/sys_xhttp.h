@@ -1,3 +1,8 @@
+/*
+ * @file sys_xhttp.h
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
 #ifndef _SYS_HTTP_H_
 #define _SYS_HTTP_H_
 

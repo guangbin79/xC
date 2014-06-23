@@ -1,8 +1,7 @@
 /*
- * sys_httpEvent.c
- *
- *  Created on: 2011-10-28
- *      Author: shizy
+ * @file sys_httpEvent.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/sys_xhttp.h"
 #include "../../jni_include/jni_http.h"
@@ -16,5 +15,4 @@ void sys_httpEvent(void * pHttp, unsigned int dwEvent, unsigned int dwParam1, un
 	}
 
 	(*(http->pfn))(http->pvUser, dwEvent, dwParam1, dwParam2);
-
 }

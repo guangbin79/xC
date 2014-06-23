@@ -1,6 +1,10 @@
+/*
+ * @file xthread.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
 #include "../../../xthread.h"
 #include "../jni_include/sys_xthread.h"
-
 
 xthread_t * xthread_create(xfn_thread_proc_t proc, void * pvUser)
 {
@@ -49,12 +53,3 @@ void xmutex_Destory(xmutex_t* pmutex)
 {
     sys_MutexDestory((SYS_Mutex*) pmutex);
 }
-
-
-
-
-
-
-
-
-

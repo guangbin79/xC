@@ -1,8 +1,7 @@
 /*
- * sys_fopen.c
- *
- *  Created on: 2011-10-12
- *      Author: shizy
+ * @file fopen.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 
 #include "../../jni_include/sys_xfile.h"
@@ -13,15 +12,14 @@ xsys_file_t * xsys_xfile_fOpen(const char * pszFilename, xsys_open_file_mode_t m
 	JNIEnv * g_env;
 	(*jvm)->AttachCurrentThread(jvm, &g_env, 0);
 
-	//先用系统的malloc
-	//SYS_File * file = (SYS_File *)sys_malloc(sizeof(SYS_File));
+
 	xsys_file_t * file = (xsys_file_t *)malloc(sizeof(xsys_file_t));
 
 	if(!file){
 		return 0;
 	}
 
-	jclass cls =(*g_env)->FindClass(g_env, "xc/api/XfileClass");
+	jclass cls =(*g_env)->FindClass(g_env, "xc/api/Xfile");
 
 	jmethodID mid;
 	mid = (*g_env)->GetMethodID(g_env, cls, "<init>", "()V");

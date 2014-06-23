@@ -15,37 +15,11 @@ public class Const {
 	private static Context mContext = null;
 
 	public static void setAppContext(Context context) {
-		System.out.println("xxxxxxxxxxxxxxxx-setAppContext-OK");
 		mContext = context;
 	}
 
 	public static Context getAppContext() {
-//      wxttest
-//		MyApplication p = new MyApplication();
-//		p.onCreate();
-//		Context test = MyApplication.getInstance();
-//		
-//		setAppContext(test);
-//		
-//		if(test == null)
-//		{
-//			System.out.println("xxxxxxxxxxxxxxxx-java-test-NULL");
-//		}
-//		else
-//		{
-//			System.out.println("xxxxxxxxxxxxxxxx-java-test-OK");
-//		}
-//		return test;
-		
-	if(mContext == null)
-		{
-			System.out.println("xxxxxxxxxxxxxxxx-java-mContext-NULL");
-		}
-		else
-		{
-			System.out.println("xxxxxxxxxxxxxxxx-java-mContext-OK");
-		}
-		return mContext;
+	return mContext;
 	}
 
 	public static void copyAssetDir(String srcDir, String dstDir) {
@@ -113,8 +87,6 @@ public class Const {
 			}
 		}
 	}
-
-	
 	public static void copyFile(String srcFilePath, String dstFilePath){
 		InputStream input = null;
 		if (srcFilePath.lastIndexOf("/") > 0) {

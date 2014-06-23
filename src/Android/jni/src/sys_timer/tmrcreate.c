@@ -12,13 +12,13 @@
 xsys_timer_t * sys_tmrcreate(){
 	JNIEnv * g_env;
 	(*jvm)->AttachCurrentThread(jvm, &g_env, 0);
-	xsys_timer_t * timer = (xsys_timer_t *)sys_xmalloc(sizeof(xsys_timer_t));
+	xsys_timer_t * timer = (xsys_timer_t *)malloc(sizeof(xsys_timer_t));
 
 	if(!timer){
 		return 0;
 	}
 
-	jclass cls = (*g_env)->FindClass(g_env, "xc/api/Xtimerr");
+	jclass cls = (*g_env)->FindClass(g_env, "xc/api/Xtimer");
 	jmethodID mid = (*g_env)->GetMethodID(g_env, cls, "<init>", "()V");
 
 	jobject obj = (*g_env)->NewObject(g_env, cls, mid);

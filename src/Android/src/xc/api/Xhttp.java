@@ -35,32 +35,31 @@ import android.provider.Settings;
 
 public class Xhttp {
     
-	/** ����ʧ�� */
+
 	public static final int NSEERR_DICONNECT = 600;
-	/** �ͻ��˴��� */
+
 	public static final int NSEERR_CLIENTERR = 601;
-	/** Ӧ��ʱ */
+
 	public static final int NSEERR_TIMEOUT_RESPONSE = 700;
-	/** ��ݽ��ճ�ʱ */
+
 	public static final int NSEERR_TIMEOUT_DATA = 701;
-	/** ���ص���ݳ�������������س��Ȳ��� */
+
 	public static final int NSEERR_TOTALLENERR = 702;
 	
-	/** http����ǰ״̬ */
-	public static final int NETSTATE_RUNNING = 0; //��ǰ����״̬
-	public static final int NETSTATE_WAIT = 1; //�ȴ�״̬
+	public static final int NETSTATE_RUNNING = 0;
 	
-	public int netstate = 1;//��ǰ����״̬��Ĭ��Ϊ�ȴ�״̬
+	public static final int NETSTATE_WAIT = 1;
 	
-	private int mHttpHandler; //http c�˾��
+	public int netstate = 1;
+	private int mHttpHandler;
 	private HttpGet mHttpGet;
 	private HttpPost mHttpPost;
 	public HttpClient mHttpClient;
 	public HttpAsyncTask httpasync;
 	private HttpParams mParams;
 	private Map<String, String> mHeaders;
-	private int  httpConnectTimeOutTime = 30*1000;//��������Ĭ�ϳ�ʱʱ��
-	private int  httpSoTimeOutTime = 20*1000;//Ĭ�����ӳ�ʱʱ��
+	private int  httpConnectTimeOutTime = 30*1000;
+	private int  httpSoTimeOutTime = 20*1000;
 	
     public void sys_httpcreate(int http, int dwConnectTimeout, int dwResponseTimeout) {
     	mHttpHandler = http;
@@ -88,11 +87,7 @@ public class Xhttp {
 		mHttpGet = null;
 	}
 
-    /**
-     * 
-     * @param[in] dwMSecs1 - http���������յ���������Ӧ�ĵȴ����ӳ�ʱʱ��
-     * @param[in] dwMSecs2 - http�������Ƭ�μ����ʱʱ��
-     */
+
 	public void sys_httpsettimeout(int dwMSecs1, int dwMSecs2) {
 		httpConnectTimeOutTime = dwMSecs1;
 		httpSoTimeOutTime = dwMSecs2;
@@ -106,8 +101,7 @@ public class Xhttp {
 	public void sys_httpremoveheader(String name) {
 		mHeaders.remove(name);
 	}
-	
-	//shizy 20120409 �޸�http��ÿ��������ɣ�Error��Cancel��Ҫ���head��Ϣ��
+
 	public void clearHeaders(){
 		if(mHeaders != null){
 			mHeaders.clear();

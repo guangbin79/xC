@@ -1,21 +1,14 @@
-//
-//  sys_thread.h
-//  Thread API
-//
-//  Created by Harry on 13-10-31.
-//  Copyright (c) 2013年 Harry. All rights reserved.
+/*
+ * @file sys_xthread.h
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
+ */
 
 #ifndef __SYS_THREAD_H__
 #define __SYS_THREAD_H__
 
-
-
 #include <jni.h>
 #include <pthread.h>
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 
 /////////////////////
@@ -31,14 +24,22 @@ typedef struct _xsys_thread_t{
 	void * pvUser;
 }xsys_thread_t;
 
+typedef struct _SYS_Mutexstr{
+	pthread_mutex_t mMutex;
+}SYS_Mutex;
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+
+
 //typedef struct _pthread_mutex_t{
 //
 //}pthread_mutex_t;
 
 
-typedef struct _SYS_Mutexstr{
-	pthread_mutex_t mMutex;
-}SYS_Mutex;
+
 
 
 

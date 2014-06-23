@@ -1,8 +1,7 @@
 /*
- * sys_fexist.c
- *
- *  Created on: 2011-10-12
- *      Author: shizy
+ * @file fexist.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/sys_xfile.h"
 #include "../../jni_include/jni_system.h"
@@ -11,7 +10,7 @@
 unsigned char xsys_xfile_fExist(const char * pszFilename){
 	JNIEnv * g_env;
 	(*jvm)->AttachCurrentThread(jvm, &g_env, 0);
-	jclass cls =(*g_env)->FindClass(g_env , "xc/api/XfileClass");
+	jclass cls =(*g_env)->FindClass(g_env , "xc/api/Xfile");
 
 	jmethodID mid = (*g_env)->GetStaticMethodID(g_env, cls, "sys_fexist", "(Ljava/lang/String;)I");
 

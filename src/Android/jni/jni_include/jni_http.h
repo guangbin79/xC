@@ -1,8 +1,7 @@
 /*
- * jni_http.h
- *
- *  Created on: 2011-10-28
- *      Author: shizy
+ * @file jni_http.h
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 
 #ifndef JNI_HTTP_H_

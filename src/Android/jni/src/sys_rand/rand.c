@@ -1,8 +1,7 @@
 /*
- * sys_rand.c
- *
- *  Created on: 2011-11-9
- *      Author: shizy
+ * @file rand.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include "../../jni_include/sys_xrand.h"
 #include "../../jni_include/jni_system.h"

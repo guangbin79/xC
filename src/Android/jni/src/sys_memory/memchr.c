@@ -1,8 +1,7 @@
 /*
- * sys_memchr.c
- *
- *  Created on: 2011-11-23
- *      Author: shizy
+ * @file memchr.c
+ * @Author: wangxt<wangxt@tiros.com.cn>
+ * @Created on: 2014-6-19
  */
 #include <string.h>
 
