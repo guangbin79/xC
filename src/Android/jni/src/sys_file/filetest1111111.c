@@ -3,7 +3,7 @@
 #include "../../jni_include/sys_xfile.h"
 #include "../../jni_include/sys_xmemory.h"
 #include "../../jni_include/jni_system.h"
-#include "../../include/xinteger.h"
+#include "../../../xinteger.h"
 #include "../../../xfile.h"
 #include "../../../xfont.h"
 #include "../../../xtimer.h"

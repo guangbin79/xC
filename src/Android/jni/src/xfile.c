@@ -123,10 +123,6 @@ const xchar_t * xfile_enumNext(xfile_enum_t * pfe)
 void xfile_enumEnd(xfile_enum_t * pfe)
 {
     xdebug_assert(pfe != XNULL);
-	if(notify){
-		hasnotify = 1;
-		thread->pfn2 = notify;
-	}else{
     return xsys_xfile_fEnumEnd((xsys_file_enum_t *)pfe);
 }
 

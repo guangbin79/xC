@@ -51,12 +51,12 @@ xsys_thread_t* sys_ThreadCreate(SYS_ThreadProcFunc proc, void* pvuser){
 	mid = (*g_env)->GetMethodID(g_env, cls, "sys_ThreadCreate", "(II)V");
 
 	thread->pfn1 = proc;
-	if(notify){
-		hasnotify = 1;
-		thread->pfn2 = notify;
-	}else{
+//	if(notify){
+//		hasnotify = 1;
+//		thread->pfn2 = notify;
+//	}else{
 		hasnotify = 0;
-	}
+	//}
 	thread->pvUser = pvuser;
 
 	(*g_env)->CallVoidMethod(g_env, thread->threadObject, mid, (jint) thread, hasnotify);
