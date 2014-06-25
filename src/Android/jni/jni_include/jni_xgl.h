@@ -6,10 +6,6 @@
 #ifndef _JNI_XGL_H_
 #define _JNI_XGL_H_
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 typedef struct _sys_xglsurface
 {
 	jobject glsurfaceObject;
@@ -19,6 +15,9 @@ typedef struct _sys_xglsurface
 	void * contest;
 }sys_xglsurface;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #ifdef __cplusplus
 }

@@ -27,7 +27,7 @@ const xdevice_info_t* sys_tapigetdeviceinfo(xsys_tapi_t* ptapi){
 			jstring str_manufacturername = (jstring)((*g_env)->CallObjectMethod(g_env, ptapi->tapiObject, mid_manufacturername));
 
 			ptapi->deviceInfo = (xdevice_info_t * )malloc(sizeof(xdevice_info_t));
-			sys_xmemset(ptapi->deviceInfo, 0, sizeof(xdevice_info_t));
+			memset(ptapi->deviceInfo, 0, sizeof(xdevice_info_t));
 
 			if(str_osversion){
 				ptapi->deviceInfo->os_version = jstringTochar(g_env, str_osversion);

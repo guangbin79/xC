@@ -19,7 +19,7 @@ struct _xfont_t
 	jobject  fontObject;
 	xfont_style_t style;
 	void * pcolors;
-    void * ptr; //保存像素数组地址
+	void * ptr; //保存像素数组地址
 	unsigned short int width;
 	unsigned short int height;
 };

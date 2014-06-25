@@ -10,7 +10,6 @@
 #include <jni.h>
 #include <pthread.h>
 
-
 /////////////////////
 //线程执行体函数原型
 typedef void (*SYS_ThreadProcFunc)(void* pvuser);
@@ -31,23 +30,9 @@ typedef struct _SYS_Mutexstr{
 extern "C" {
 #endif
 
-
-
-
-//typedef struct _pthread_mutex_t{
-//
-//}pthread_mutex_t;
-
-
-
-
-
-
 void sys_ThreadProcFuncEvent(void * pvUser);
+
 void sys_ThreadNotifyFuncEvent(void * pvUser);
-
-///////////////////////
-
 
 xsys_thread_t* sys_ThreadCreate(SYS_ThreadProcFunc proc, void* pvuser);
 
@@ -70,12 +55,9 @@ void sys_MutexLock(SYS_Mutex* pmutex);
 void sys_MutexUnlock(SYS_Mutex* pmutex);
 
 void sys_MutexDestory(SYS_Mutex* pmutex);
-    
-    
+
 #ifdef __cplusplus
 }
 #endif
 
 #endif /*__SYS_THREAD_H__*/
-
-
