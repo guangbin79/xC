@@ -12,11 +12,11 @@ xsys_tapi_t * sys_tapicreate(){
 	(*jvm)->AttachCurrentThread(jvm, &g_env, 0);
 	xsys_tapi_t * tapi = (xsys_tapi_t *)malloc(sizeof(xsys_tapi_t));
 
-	memset(tapi, 0, sizeof(xsys_tapi_t));
-
 	if(!tapi){
 		return 0;
 	}
+
+	memset(tapi, 0, sizeof(xsys_tapi_t));
 
 	jclass cls =(*g_env)->FindClass(g_env, "xc/api/Xtapi");
 	jmethodID mid = (*g_env)->GetMethodID(g_env, cls, "<init>", "()V");

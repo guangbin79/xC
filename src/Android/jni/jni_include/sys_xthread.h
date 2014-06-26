@@ -9,6 +9,7 @@
 
 #include <jni.h>
 #include <pthread.h>
+//#include "../../../../xboolean.h"
 
 /////////////////////
 //线程执行体函数原型
@@ -26,6 +27,7 @@ typedef struct _xsys_thread_t{
 typedef struct _SYS_Mutexstr{
 	pthread_mutex_t mMutex;
 }SYS_Mutex;
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -48,13 +50,26 @@ void sys_ThreadDestory(xsys_thread_t* pthread);
 /*                                                                                  */
 /************************************************************************************/
     
-SYS_Mutex* sys_MutexCreate();
+SYS_Mutex* sys_MutexCreate(unsigned char bRecursive);
 
 void sys_MutexLock(SYS_Mutex* pmutex);
 
 void sys_MutexUnlock(SYS_Mutex* pmutex);
 
 void sys_MutexDestory(SYS_Mutex* pmutex);
+
+/**************key*********************/
+
+pthread_key_t * sys_keycreate();
+
+void sys_keydestroy(pthread_key_t * pkey);
+
+void * sys_keyget(pthread_key_t * pkey);
+
+void sys_keyset(pthread_key_t * pkey, const void * value);
+
+unsigned char sys_threadonce(pthread_once_t * once, void(*init)());
+
 
 #ifdef __cplusplus
 }
