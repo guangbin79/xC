@@ -13,7 +13,8 @@
 /*      线程互斥引擎API                             */
 /*                                                */
 /**************************************************/
-CMutexEngine::CMutexEngine()
+CMutexEngine::CMutexEngine(bool bRecursive) :
+    _Lock(bRecursive ? QMutex::Recursive: QMutex::NonRecursive)
 {
 }
 

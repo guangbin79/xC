@@ -1,5 +1,4 @@
 #include "ThreadEngine.h"
-#include <QUrl>
 #include <QDebug>
 #include"../include/sys_threaddef.h"
 

@@ -21,7 +21,7 @@ private:
     QMutex _Lock;
 
 public:
-    CMutexEngine();
+    CMutexEngine(bool bRecursive);
     ~CMutexEngine();
     void lock();
     void unlock();

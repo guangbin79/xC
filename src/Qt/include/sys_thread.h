@@ -29,13 +29,18 @@ void sys_ThreadDestory(SYS_Thread* pthread);
 
 void sys_ThreadSleep(unsigned int dwMSecs);
 
+void * sys_TlsAlloc();
+void sys_TlsFree(void * tls_key);
+void * sys_TlsGet(void * tls_key);
+void sys_TlsSet(void * tls_key, const void * data);
+
 /************************************************************************************/
 /*                                                                                  */
 /*      线程间互斥相关api接口声明                                                       */
 /*                                                                                  */
 /************************************************************************************/
 
-SYS_Mutex* sys_MutexCreate();
+SYS_Mutex* sys_MutexCreate(bool bRecursive);
 
 void sys_MutexLock(SYS_Mutex* pmutex);
 

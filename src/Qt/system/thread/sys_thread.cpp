@@ -65,16 +65,36 @@ void sys_ThreadSleep(unsigned int dwMSecs)
     CMyThread::sleep(dwMSecs);
 }
 
+void * sys_TlsAlloc()
+{
+    return CMyThread::TlsAlloc();
+}
+
+void sys_TlsFree(void * tls_key)
+{
+    CMyThread::TlsFree(tls_key);
+}
+
+void * sys_TlsGet(void * tls_key)
+{
+    return CMyThread::TlsGet(tls_key);
+}
+
+void sys_TlsSet(void * tls_key, const void * data)
+{
+    CMyThread::TlsSet(tls_key, data);
+}
+
 /************************************************************************************/
 /*                                                                                  */
 /*      线程间互斥相关api接口声明                                                       */
 /*                                                                                  */
 /************************************************************************************/
 
-SYS_Mutex* sys_MutexCreate()
+SYS_Mutex* sys_MutexCreate(bool bRecursive)
 {
     SYS_Mutex* pmutex= new SYS_Mutex;
-    pmutex->_pMutexEngine = new CMutexEngine;
+    pmutex->_pMutexEngine = new CMutexEngine(bRecursive);
     return  pmutex;
 }
 
