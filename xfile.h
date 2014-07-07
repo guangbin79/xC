@@ -14,29 +14,6 @@
 #include "./xcharacter.h"
 
 /**
- * @par ******** 注意 ******** <br>
- * 文件系统目前共有四种类型: <br>
- * fs0:/代表应用程序内部存储器 <br>
- * fs1:/代表扩展存储器,建议在操作系统扩展存储器(T卡)里建立tiros-com-cn-ext目录作为腾瑞万里扩展存储器 <br>
- * fs2:/应用程序缓存存储目录，主要用于存储缓存数据，此目录内文件有可能被系统清除（如ios5系统）
- * fs3:/系统媒体文件存储目录，其下又分为：
-    fs3:/picture/ 映射到系统图片存储目录
-    fs3:/audio/ 映射到系统的音频文件存储目录
-    fs3:/video/ 映射到系统的视频文件存储目录
-    备注：系统媒体文件存储目录暂时固定只支持为以上3种媒体目录
- * 如果路径没有fs0:/、fs1:/、fs2:/、fs3:\的前缀,则默认为fs0:/ <br>
- *
- * @par 代码示例
- * fs0:/first/test1.dat-->应用程序内部存储根目录下first目录中的test1.dat文件 <br>
- * fs1:/second/test2.dat-->扩展存储器根目录下second目录中的test2.dat文件 <br>
- * fs2:/img/navidog.png-->应用程序缓存存储目录根目录下img目录中的navidog.png文件 <br>
- * fs3:/picture/p1.png-->系统媒体目录的图片存储目录下p1.png文件
- * fs3:/audio/a1.mp3-->系统媒体目录的音频存储目录下a1.mp3文件
- * fs3:/video/v1.avi-->系统媒体目录的视频存储目录下v1.avi文件
- * fourth/test4.dat-->没有固定前缀，则默认指向应用程序内部存储根目录下fourth目录中的test4.dat文件 <br>
- */
-
-/**
  * @brief 文件结构体
  */
 typedef struct _xfile xfile_t;
@@ -45,6 +22,14 @@ typedef struct _xfile xfile_t;
  * @brief 文件枚举结构体
  */
 typedef struct _xfile_enum xfile_enum_t;
+
+/**
+ * @brief 文件系统访问前缀
+ */
+#define XFS_DEFAULT ""              //默认私有,随机读写文件系统
+#define XFS_ASSET   "asset:/"       //私有资源,随机只读文件系统
+#define XFS_COLUD   "colud:/"       //私有云同步,随机读写文件系统
+#define XFS_EXT     "ext:/"         //扩展共享,随机读写文件系统
 
 /**
  * @brief 文件打开类型枚举
@@ -164,22 +149,18 @@ xbool_t xfile_removeDir(const xchar_t * dir);
 xuint32_t xfile_getSize(const xchar_t * filename);
 
 /**
- * @brief 获取存储器空间
- * @param[in] disk - 准备获取空间的存储器
- * @return - 存储器空间
- * @par 接口使用约定:
- * 	   1.参数pszDisk可以为 “fs0:/”、“fs1:/”或“fs2:/”以及目录<br>
+ * @brief 获取目录占用空间
+ * @param[in] dir - 指定目录
+ * @return - 占用空间
  */
-xuint32_t xfile_getSpace(const xchar_t * disk);
+xuint32_t xfile_getSpace(const xchar_t * dir);
 
 /**
  * @brief 获取存储器剩余空间
- * @param[in] disk - 准备获取剩余空间的存储器
- * @return - 存储器剩余空间
- * @par 接口使用约定:
- * 	   1.参数disk可以为 “fs0:/”、“fs1:/”或“fs2:/”<br>
+ * @param[in] fs - 准备获取剩余空间的存储器
+ * @return - 剩余空间
  */
-xuint32_t xfile_getFreeSpace(const xchar_t * disk);
+xuint32_t xfile_getFreeSpace(const xchar_t * xfs);
 
 /**
  * @brief 开始枚举文件目录
@@ -192,7 +173,7 @@ xfile_enum_t * xfile_enumStart(const xchar_t * dir, xbool_t bDirs);
 /**
  * @brief 枚举文件目录
  * @param[in] fileEnum - 文件目录枚举指针
- * @return - 枚举的文件名,枚举结束时返回NULL
+ * @return - 枚举的文件名/目录名,枚举结束时返回NULL
  */
 const xchar_t * xfile_enumNext(xfile_enum_t * fileEnum);
 
@@ -202,15 +183,6 @@ const xchar_t * xfile_enumNext(xfile_enum_t * fileEnum);
  * @return - 无
  */
 void xfile_enumEnd(xfile_enum_t * fileEnum);
-
-/**
- * @brief 获取存储器是否存在
- * @param[in] disk - 准备判断是否存在的存储器
- * @return - true：该存储器存在    false:该存储器不存在
- * @par 接口使用约定:
- * 	   1.参数pszDisk可以为 “fs0:/”、“fs1:/”或“fs2:/”<br>
- */
-xbool_t xfile_diskExist(const xchar_t * disk);
 
 #ifdef __cplusplus
 }

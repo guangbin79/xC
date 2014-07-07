@@ -4,5 +4,10 @@
 
 unsigned char xsys_xfile_fRmDir(const char * pszDir)
 {
-    return QDir().rmpath(sys_fpathchange(pszDir));
+    bool bAsset;
+    QString szdir = sys_fpathchange(pszDir, &bAsset);
+
+    if (bAsset) return false;
+
+    return QDir().rmpath(szdir);
 }

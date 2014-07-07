@@ -28,22 +28,18 @@ HEADERS += \
     include/sys_thread.h \
     include/sys_http.h \
     system/include/sys_httpdef.h \
-    system/include/sys_xtapidef.h \
-    include/sys_xtapi.h \
     system/include/sys_xgldef.h \
     ../../xboolean.h \
     ../../xvarargs.h \
     ../../xtimer.h \
     ../../xtime.h \
     ../../xthread.h \
-    ../../xtapi.h \
     ../../xrand.h \
     ../../xpointer.h \
     ../../xopengl.h \
     ../../xmemory.h \
     ../../xlongjmp.h \
     ../../xinteger.h \
-    ../../ximage.h \
     ../../xhttp.h \
     ../../xgl.h \
     ../../xfont.h \
@@ -76,7 +72,6 @@ SOURCES += \
     system/file/sys_xfenumnext.cpp \
     comm/xtimer.c \
     comm/xmemory.c \
-    comm/ximage.c \
     system/image/sys_image.cpp \
     system/memory/sys_realloc.cpp \
     system/memory/sys_memset.cpp \
@@ -108,16 +103,6 @@ SOURCES += \
     system/file/sys_xfwrite.cpp \
     comm/xgl.cpp \
     comm/xfont.cpp \
-    comm/xtapi.c \
-    system/tapi/sys_tapigetnettype.cpp \
-    system/tapi/sys_tapigetmobileid.cpp \
-    system/tapi/sys_tapigetimsi.cpp \
-    system/tapi/sys_tapigetdeviceinfo.cpp \
-    system/tapi/sys_tapigetconnwifiinfo.cpp \
-    system/tapi/sys_tapigetbscount.cpp \
-    system/tapi/sys_tapigetbsbyindex.cpp \
-    system/tapi/sys_tapidestroy.cpp \
-    system/tapi/sys_tapicreate.cpp \
     comm/xrand.cpp \
     comm/xopengl.cpp
 

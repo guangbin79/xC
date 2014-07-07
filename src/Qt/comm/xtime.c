@@ -204,13 +204,6 @@ xuint32_t xtime_mkTime(const xdate_time_t * pdt)
     end.minute = 0;
     end.second = 0;
 
-    xdebug_assert(pdtChange->year > end.year ||
-                  (pdtChange->year == end.year && pdtChange->month > end.month) ||
-                  (pdtChange->year == end.year && pdtChange->month == end.month && pdtChange->day > end.day) ||
-                  (pdtChange->year == end.year && pdtChange->month == end.month && pdtChange->day == end.day && pdtChange->hour > end.hour) ||
-                  (pdtChange->year == end.year && pdtChange->month == end.month && pdtChange->day == end.day && pdtChange->hour == end.hour && pdtChange->minute > end.minute) ||
-                  (pdtChange->year == end.year && pdtChange->month == end.month && pdtChange->day == end.day && pdtChange->hour == end.hour && pdtChange->minute == end.minute && pdtChange->second >= end.second));
-
     if (pdtChange->year > end.year)
     {
         xuint8_t n;

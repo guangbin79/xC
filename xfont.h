@@ -10,7 +10,6 @@
 #define _XFONT_H_
 
 #include "./xboolean.h"
-#include "./ximage.h"
 #include "./xinteger.h"
 #include "./xcharacter.h"
 
@@ -92,7 +91,7 @@ xuint16_t xfont_measureText(xfont_t * font, const xwchar_t * text, xuint32_t nCh
  * @param[in] image - 目标图片结构体
  * @return 无
 */
-void xfont_drawBegin(xfont_t * font, ximage_t * image);
+void xfont_drawBegin(xfont_t * font, void * pixels_argb, xuint16_t width, xuint16_t height);
 
 /**
  * @brief 开始绘制文字

@@ -4,7 +4,11 @@
 
 unsigned char xsys_xfile_fMkDir(const char * pszDir)
 {
-     QString szdir = sys_fpathchange(pszDir);
+     bool bAsset;
+
+     QString szdir = sys_fpathchange(pszDir, &bAsset);
+
+     if (bAsset) return false;
 
      if (!szdir.endsWith('/'))
      {

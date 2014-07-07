@@ -1,12 +1,15 @@
 #include <QFont>
 #include <QPainter>
 #include <QImage>
+#include "../include/sys_ximage.h"
 #include "../system/include/sys_ximagedef.h"
-#include "../../../ximage.h"
 #include "../../../xfont.h"
 
 struct _xfont {
     QFont qfont;
+    SYS_Image * image;
+    void * argb;
+    uint16_t width, height;
     QImage* qimage;
     QPainter qpainter;
 };
@@ -120,9 +123,19 @@ xuint16_t xfont_measureText(xfont_t * font, const xwchar_t * text, xuint32_t nCh
     return sum;
 }
 
-void xfont_drawBegin(xfont_t * font, ximage_t * image)
+void xfont_drawBegin(xfont_t * font, void * pixels_argb, xuint16_t width, xuint16_t height)
 {
-    font->qpainter.begin(((SYS_Image *)image)->qimage);
+    font->argb = pixels_argb;
+    font->width = width;
+    font->height = height;
+
+    font->image = sys_ximgcreate(width, height);
+
+    void * pdata = sys_ximglock(font->image);
+    memcpy(pdata, font->argb, 4 * font->width * font->height);
+    sys_ximgunlock(font->image, pdata);
+
+    font->qpainter.begin(((SYS_Image *)font->image)->qimage);
 }
 
 void xfont_drawText(xfont_t * font, xint16_t x, xint16_t y, const xwchar_t * text, xuint8_t r, xuint8_t g, xuint8_t b)
@@ -137,4 +150,10 @@ void xfont_drawText(xfont_t * font, xint16_t x, xint16_t y, const xwchar_t * tex
 void xfont_drawEnd(xfont_t * font)
 {
     font->qpainter.end();
+
+    void * pdata = sys_ximglock(font->image);
+    memcpy(font->argb, pdata, 4 * font->width * font->height);
+    sys_ximgunlock(font->image, pdata);
+
+    sys_ximgdestroy(font->image);
 }

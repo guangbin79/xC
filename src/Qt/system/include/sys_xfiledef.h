@@ -19,6 +19,6 @@ typedef struct _xsys_file_enum_t
     bool isdir;
 } xsys_file_enum_t;
 
-QString sys_fpathchange(const char * pszFilename);
+QString sys_fpathchange(const char * pszFilename, bool * bAsset);
 
 #endif /* _SYS_FILEDEF_H_ */

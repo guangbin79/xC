@@ -3,5 +3,5 @@
 
 unsigned int xsys_xfile_fGetSize(const char * pszFilename)
 {
-    return (unsigned int)QFile(sys_fpathchange(pszFilename)).size();
+    return (unsigned int)QFile(sys_fpathchange(pszFilename, NULL)).size();
 }

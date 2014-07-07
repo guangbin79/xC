@@ -10,7 +10,7 @@ xsys_file_enum_t * xsys_xfile_fEnumStart(const char * pszDir, unsigned char bDir
         return NULL;
     }
 
-    pfileEnum->qdir.setPath(sys_fpathchange(pszDir));
+    pfileEnum->qdir.setPath(sys_fpathchange(pszDir, NULL));
     pfileEnum->qFileInfoList = pfileEnum->qdir.entryInfoList();
     pfileEnum->isdir = bDirs;
     pfileEnum->pos = 0;

@@ -4,74 +4,40 @@
 #include <QDesktopServices>
 #include <QCoreApplication>
 
-static const char * TIROS_FS0 = "fs0:/";
-static const char * TIROS_FS1 = "fs1:/";
-static const char * TIROS_FS2 = "fs2:/";
-static const char * TIROS_FS3_P = "fs3:/picture/";
-static const char * TIROS_FS3_A = "fs3:/audio/";
-static const char * TIROS_FS3_V = "fs3:/video/";
-static const char * TIROS_FS4 = "fs4:/";
-static const char * TIROS_FS0_APP = "tiros-com-cn-app";
-static const char * TIROS_FS1_EXT = "tiros-com-cn-ext";
-static const char * TIROS_FS2_CACHE = "tiros-com-cn-cache";
-static const char * TIROS_FS4_CLOUD = "Cloud";
-//static const char * TIROS_FS3_PICTURE = "/home/administrator/Pictures";
-//static const char * TIROS_FS3_AUDIO = "/home/administrator/Music";
-//static const char * TIROS_FS3_VIDEO = "/home/administrator/Videos";
+#define XFS_DEFAULT    ""              //默认私有,随机读写文件系统
+#define XFS_ASSET      "asset:/"       //私有资源,随机只读文件系统
+#define XFS_COLUD      "colud:/"       //私有云同步,随机读写文件系统
+#define XFS_EXT        "ext:/"         //扩展共享,随机读写文件系统
 
-QString sys_fpathchange(const char * pszFilename)
+#define XFS_DEFAULT_QT "xcpi_default/"
+#define XFS_ASSET_QT   "xcpi_asset/"
+#define XFS_COLUD_QT   "xcpi_colud/"
+#define XFS_EXT_QT     "xcpi_ext/"
+
+QString sys_fpathchange(const char * pszFilename, bool * bAsset)
 {
     QString path(pszFilename);
     int index;
 
-   if ((index = path.indexOf(TIROS_FS0)) == 0)
-    {
-        path.replace(0, strlen(TIROS_FS0), QString(TIROS_FS0_APP) + "/");
-    }
-    else if ((index = path.indexOf(TIROS_FS1)) == 0)
-    {
-        path.replace(0, strlen(TIROS_FS1), QString(TIROS_FS1_EXT) + "/");
-    }
-    else if ((index = path.indexOf(TIROS_FS2)) == 0)
-    {
-        path.replace(0, strlen(TIROS_FS2), QString(TIROS_FS2_CACHE) + "/");
-    }
-    else if ((index = path.indexOf(TIROS_FS3_P)) == 0)
-    {
-        //QString sPath = QDesktopServices::storageLocation(QDesktopServices::PicturesLocation)+ "/";
-        QString sPath = QDir::homePath()+ QLatin1String("/Pictures/");
-        //path.replace(0, strlen(TIROS_FS3_P), QString(TIROS_FS3_PICTURE) + "/");
-        path.replace(0, strlen(TIROS_FS3_P), sPath);
-    }
-    else if ((index = path.indexOf(TIROS_FS3_A)) == 0)
-    {
-        //path.replace(0, strlen(TIROS_FS3_A), QString(TIROS_FS3_AUDIO) + "/");
-        //QString sPath = QDesktopServices::storageLocation(QDesktopServices::MusicLocation)+ "/";
-        QString sPath = QDir::homePath()+ QLatin1String("/Music/");
-        path.replace(0, strlen(TIROS_FS3_A), sPath);
-    }
-    else if ((index = path.indexOf(TIROS_FS3_V)) == 0)
-    {
-        //path.replace(0, strlen(TIROS_FS3_V), QString(TIROS_FS3_VIDEO) + "/");
-        //QString sPath = QDesktopServices::storageLocation(QDesktopServices::MoviesLocation)+ "/";
-        QString sPath = QDir::homePath()+ QLatin1String("/Videos/");
-        path.replace(0, strlen(TIROS_FS3_V), sPath);
-    }
-    else if ((index = path.indexOf(TIROS_FS4)) == 0)
-    {
-       path.replace(0, strlen(TIROS_FS4), QString(TIROS_FS4_CLOUD) + "/");
-    }
-    else if ((index = path.indexOf("./")) == 0)
-    {
-       path = QString(TIROS_FS0_APP) + "/" + path.right(path.length()-2);
-    }
-   else if ((index = path.indexOf("/home/")) == 0)
-    {
+    if (bAsset != NULL) *bAsset = false;
 
-    }
-   else
+    if ((index = path.indexOf(XFS_ASSET)) == 0)
     {
-           path = QString(TIROS_FS0_APP) + "/" + path;
+        if (bAsset != NULL) *bAsset = true;
+
+        path.replace(0, strlen(XFS_ASSET), QString(XFS_ASSET));
+    }
+    else if ((index = path.indexOf(XFS_COLUD)) == 0)
+    {
+        path.replace(0, strlen(XFS_COLUD), QString(XFS_COLUD_QT));
+    }
+    else if ((index = path.indexOf(XFS_EXT)) == 0)
+    {
+        path.replace(0, strlen(XFS_EXT), QString(XFS_EXT_QT));
+    }
+    else
+    {
+           path = QString(XFS_DEFAULT_QT) + path;
     }
 
 #ifdef Q_OS_MAC

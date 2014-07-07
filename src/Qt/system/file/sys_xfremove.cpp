@@ -3,5 +3,11 @@
 
 unsigned char xsys_xfile_fRemove(const char * pszFilename)
 {
-    return QFile::remove(sys_fpathchange(pszFilename));
+    bool bAsset;
+
+    QString szdir = sys_fpathchange(pszFilename, &bAsset);
+
+    if (bAsset) return false;
+
+    return QFile::remove(szdir);
 }
