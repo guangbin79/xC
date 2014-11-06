@@ -11,12 +11,6 @@ struct _xgl_surface {
 	void * contest;
 };
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-#ifdef __cplusplus
-}
-#endif
-
 #endif // _XGL_SURFACE_X_
+
+
