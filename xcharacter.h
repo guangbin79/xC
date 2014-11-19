@@ -14,8 +14,8 @@
 #include "./xinteger.h"
 
 
-typedef char       xchar_t;
-typedef xint16_t   xwchar_t;
+typedef xuint8_t    xchar_t;
+typedef xuint16_t   xwchar_t;
 
 
 #define XCHAR_MIN  0
