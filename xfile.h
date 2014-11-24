@@ -29,7 +29,7 @@ typedef struct _xfile_enum xfile_enum_t;
 #define XFS_DEFAULT ""              //默认私有,随机读写文件系统
 #define XFS_ASSET   "asset:/"       //私有资源,随机只读文件系统
 #define XFS_COLUD   "colud:/"       //私有云同步,随机读写文件系统
-#define XFS_EXT     "ext:/"         //扩展共享,随机读写文件系统
+#define XFS_SHARE   "share:/"       //扩展共享,随机读写文件系统
 
 /**
  * @brief 文件打开类型枚举

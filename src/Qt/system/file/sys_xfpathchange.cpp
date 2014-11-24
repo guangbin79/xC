@@ -7,12 +7,12 @@
 #define XFS_DEFAULT    ""              //默认私有,随机读写文件系统
 #define XFS_ASSET      "asset:/"       //私有资源,随机只读文件系统
 #define XFS_COLUD      "colud:/"       //私有云同步,随机读写文件系统
-#define XFS_EXT        "ext:/"         //扩展共享,随机读写文件系统
+#define XFS_SHARE      "share:/"       //扩展共享,随机读写文件系统
 
 #define XFS_DEFAULT_QT "xcpi_default/"
 #define XFS_ASSET_QT   "xcpi_asset/"
 #define XFS_COLUD_QT   "xcpi_colud/"
-#define XFS_EXT_QT     "xcpi_ext/"
+#define XFS_SHARE_QT   "xcpi_share/"
 
 QString sys_fpathchange(const char * pszFilename, bool * bAsset)
 {
@@ -31,9 +31,9 @@ QString sys_fpathchange(const char * pszFilename, bool * bAsset)
     {
         path.replace(0, strlen(XFS_COLUD), QString(XFS_COLUD_QT));
     }
-    else if ((index = path.indexOf(XFS_EXT)) == 0)
+    else if ((index = path.indexOf(XFS_SHARE)) == 0)
     {
-        path.replace(0, strlen(XFS_EXT), QString(XFS_EXT_QT));
+        path.replace(0, strlen(XFS_SHARE), QString(XFS_SHARE_QT));
     }
     else
     {

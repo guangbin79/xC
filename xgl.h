@@ -20,8 +20,8 @@ extern "C" {
 #endif
 
 /**
- * @brief 准备绘图上下文
- * @param[in] surface - 绑定surface，不可以传NULL
+ * @brief 设定当前线程的绘图上下文
+ * @param[in] surface - 绘图上下文，传NULL则解除当前线程的绘图上下文
  * @return 是否成功设置
  */
 xbool_t xgl_makeCurrentContext(xgl_surface_t * surface);

@@ -26,8 +26,9 @@ void xfont_destroy(xfont_t * font)
     delete font;
 }
 
-void xfont_setStyle(xfont_t * font, xfont_style_t fontStyle)
+void xfont_config(xfont_t * font, float pt, xuint32_t pattern_i)
 {
+    /*
     switch (fontStyle)
     {
     case XFS_MAP_1:
@@ -63,6 +64,7 @@ void xfont_setStyle(xfont_t * font, xfont_style_t fontStyle)
     default:
         font->qfont.setPixelSize(14);
     }
+    */
 }
 
 xuint16_t xfont_getFontSize(xfont_t * font)
@@ -138,11 +140,11 @@ void xfont_drawBegin(xfont_t * font, void * pixels_argb, xuint16_t width, xuint1
     font->qpainter.begin(((SYS_Image *)font->image)->qimage);
 }
 
-void xfont_drawText(xfont_t * font, xint16_t x, xint16_t y, const xwchar_t * text, xuint8_t r, xuint8_t g, xuint8_t b)
+void xfont_drawText(xfont_t * font, xint16_t x, xint16_t y, const xwchar_t * text)
 {
     QString str;
     font->qpainter.setFont(font->qfont);
-    font->qpainter.setPen(QColor(r, g, b, 255));
+    //font->qpainter.setPen(QColor(r, g, b, 255));
     str = QString::fromUtf16((const ushort *)text);
     font->qpainter.drawText(x, y + font->qpainter.fontMetrics().ascent(), str);
 }

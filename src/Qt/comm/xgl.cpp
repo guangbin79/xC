@@ -3,7 +3,9 @@
 
 xbool_t xgl_makeCurrentContext(xgl_surface_t * surface)
 {
-    surface->widget->makeCurrent();
+    if (surface != NULL) {
+        surface->widget->makeCurrent();
+    }
 
     return true;
 }

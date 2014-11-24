@@ -18,22 +18,6 @@
  */
 typedef struct _xfont xfont_t;
 
-/**
- * @brief 字体风格结构体
- */
-typedef enum _xfont_style {
-    XFS_MAP_1,                              ///<  标准字体大小:地图最大字体36
-    XFS_MAP_2,                              ///<  标准字体大小:
-    XFS_MAP_3,                              ///<  标准字体大小:
-    XFS_MAP_4,                              ///<  标准字体大小:
-    XFS_MAP_5,                              ///<  标准字体大小:
-    XFS_MAP_6,                              ///<  标准字体大小:
-    XFS_MAP_7,                              ///<  标准字体大小:
-    XFS_MAP_8,                              ///<  标准字体大小:
-    XFS_MAP_9,                              ///<  标准字体大小:
-    XFS_MAP_10                              ///<  标准字体大小:
-} xfont_style_t;
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -55,27 +39,28 @@ void xfont_destroy(xfont_t * font);
 /**
  * @brief 设置字体风格
  * @param[in] font - 字体结构体
- * @param[in] fontStyle - 字体风格
+ * @param[in] pt - 文字大小（磅）
+ * @param[in] sytle_id - 文字风格ID
  * @return - 无
  */
-void xfont_setStyle(xfont_t * font, xfont_style_t fontStyle);
+void xfont_config(xfont_t * font, float pt, xuint32_t pattern_id);
 
 /**
- * @brief 获取字体大小
+ * @brief 获取字体像素大小
  * @param[in] pft - 字体结构体
  * @return - 字体大小
  */
 xuint16_t xfont_getFontSize(xfont_t * font);
 
 /**
- * @brief 获取字体高度
+ * @brief 获取字体像素高度
  * @param[in] font - 字体结构体
  * @return - 字体高度
  */
 xuint16_t xfont_getHeight(xfont_t * font);
 
 /**
- * @brief 获取字符串宽度
+ * @brief 获取字符串像素宽度
  * @param[in] font - 字体结构体
  * @param[in] text - 目标字符串
  * @param[in] nChars - 目标字符串字串字符个数,如果为0或常超出字符串长度的数据,表示返回目标字符串全长
@@ -91,7 +76,7 @@ xuint16_t xfont_measureText(xfont_t * font, const xwchar_t * text, xuint32_t nCh
  * @param[in] image - 目标图片结构体
  * @return 无
 */
-void xfont_drawBegin(xfont_t * font, void * pixels_argb, xuint16_t width, xuint16_t height);
+void xfont_drawBegin(xfont_t * font, void * pixels, xuint16_t width, xuint16_t height);
 
 /**
  * @brief 开始绘制文字
@@ -99,10 +84,9 @@ void xfont_drawBegin(xfont_t * font, void * pixels_argb, xuint16_t width, xuint1
  * @param[in] x - 目标位置，左上角x坐标
  * @param[in] y - 目标位置，左上角y坐标
  * @param[in] text - 绘制字符串
- * @param[in] r,g,b - 绘制字体颜色
  * @return 无
 */
-void xfont_drawText(xfont_t * font, xint16_t x, xint16_t y, const xwchar_t * text, xuint8_t r, xuint8_t g, xuint8_t b);
+void xfont_drawText(xfont_t * font, xint16_t x, xint16_t y, const xwchar_t * text);
 
 /**
  * @brief 释放绘图上下文
