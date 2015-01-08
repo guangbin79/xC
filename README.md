@@ -20,6 +20,7 @@ xC -- A portable C interface
 
 "xCPI" 开源库移植方案:
 
+0. 创建版本库, 并已 x<开源库名>.git 命名, 比如: xCairo;
 1. 初始化版本库, 创建 master 分支, 提交 README.md / .gitignore 这两个文件;
 2. 提交所有源代码到版本库, 并在 README.md 中记录所用的开源版本库的官方版本号, 此次提交命名为 "init src";
 3. 在第 2 步的基础上依据 xC 移植代码, 可以根据需要增删改文件;
