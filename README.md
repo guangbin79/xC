@@ -18,7 +18,7 @@ xC -- A portable C interface
 5. 函数名: <文件名(所在头文件名)>\_<功能>，功能由小写字母组成，如果类型名由多个单词组成，则除第一个单词外，其余单词的首字母大写，缩写单词算做一个单词 ------ 例如: xmemory\_alloc, xfile\_open, xtime\_mkTime
 6. 函数指针类型(回调函数类型): xfn\_<函数类型名>\_t ------ 例如: xfn\_timer\_event\_t
 
-"xCPI" 下开源库的移植方案:
+"xCPI" 开源库移植方案:
 
 1. 初始化版本库, 创建 master 分支, 提交 README.md / .gitignore 这两个文件;
 2. 提交所有源代码到版本库, 并在 README.md 中记录所用的开源版本库的官方版本号, 此次提交命名为 "init src";
