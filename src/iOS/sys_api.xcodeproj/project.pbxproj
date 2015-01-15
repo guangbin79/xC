@@ -37,6 +37,12 @@
 		994C38B11A2718F100D48484 /* sys_frmdir.m in Sources */ = {isa = PBXBuildFile; fileRef = 994C389E1A2718F100D48484 /* sys_frmdir.m */; };
 		994C38B21A2718F100D48484 /* sys_fseek.m in Sources */ = {isa = PBXBuildFile; fileRef = 994C389F1A2718F100D48484 /* sys_fseek.m */; };
 		994C38B31A2718F100D48484 /* sys_fwrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 994C38A01A2718F100D48484 /* sys_fwrite.m */; };
+		9965E5571A2D961E00B9372B /* xdebug.c in Sources */ = {isa = PBXBuildFile; fileRef = 9965E5541A2D961E00B9372B /* xdebug.c */; };
+		9965E5581A2D961E00B9372B /* xmemory.c in Sources */ = {isa = PBXBuildFile; fileRef = 9965E5551A2D961E00B9372B /* xmemory.c */; };
+		9965E5591A2D961E00B9372B /* xrand.c in Sources */ = {isa = PBXBuildFile; fileRef = 9965E5561A2D961E00B9372B /* xrand.c */; };
+		9965E5631A2D963500B9372B /* sys_debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 9965E55E1A2D963500B9372B /* sys_debug.m */; };
+		9965E5641A2D963500B9372B /* sys_memory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9965E5601A2D963500B9372B /* sys_memory.m */; };
+		9965E5651A2D963500B9372B /* sys_rand.m in Sources */ = {isa = PBXBuildFile; fileRef = 9965E5621A2D963500B9372B /* sys_rand.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +105,15 @@
 		994C389F1A2718F100D48484 /* sys_fseek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sys_fseek.m; sourceTree = "<group>"; };
 		994C38A01A2718F100D48484 /* sys_fwrite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sys_fwrite.m; sourceTree = "<group>"; };
 		994C38B41A271FAE00D48484 /* sys_filedef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sys_filedef.h; sourceTree = "<group>"; };
+		9965E5541A2D961E00B9372B /* xdebug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xdebug.c; sourceTree = "<group>"; };
+		9965E5551A2D961E00B9372B /* xmemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xmemory.c; sourceTree = "<group>"; };
+		9965E5561A2D961E00B9372B /* xrand.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xrand.c; sourceTree = "<group>"; };
+		9965E55A1A2D962900B9372B /* sys_debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sys_debug.h; sourceTree = "<group>"; };
+		9965E55B1A2D962900B9372B /* sys_memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sys_memory.h; sourceTree = "<group>"; };
+		9965E55C1A2D962900B9372B /* sys_rand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sys_rand.h; sourceTree = "<group>"; };
+		9965E55E1A2D963500B9372B /* sys_debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sys_debug.m; sourceTree = "<group>"; };
+		9965E5601A2D963500B9372B /* sys_memory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sys_memory.m; sourceTree = "<group>"; };
+		9965E5621A2D963500B9372B /* sys_rand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sys_rand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +172,9 @@
 		994C38651A26D4D100D48484 /* comm */ = {
 			isa = PBXGroup;
 			children = (
+				9965E5541A2D961E00B9372B /* xdebug.c */,
+				9965E5551A2D961E00B9372B /* xmemory.c */,
+				9965E5561A2D961E00B9372B /* xrand.c */,
 				994C38891A2718DC00D48484 /* xfile.c */,
 				994C387E1A2702B100D48484 /* xtimer.c */,
 				994C38661A26D4D100D48484 /* xtime.c */,
@@ -168,6 +186,9 @@
 		994C38671A26D4D100D48484 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				9965E55A1A2D962900B9372B /* sys_debug.h */,
+				9965E55B1A2D962900B9372B /* sys_memory.h */,
+				9965E55C1A2D962900B9372B /* sys_rand.h */,
 				994C388B1A2718E600D48484 /* sys_file.h */,
 				994C38801A2702BA00D48484 /* sys_timer.h */,
 				994C38681A26D4D100D48484 /* sys_time.h */,
@@ -179,6 +200,9 @@
 		994C38691A26D4D100D48484 /* system */ = {
 			isa = PBXGroup;
 			children = (
+				9965E55D1A2D963500B9372B /* debug */,
+				9965E55F1A2D963500B9372B /* memory */,
+				9965E5611A2D963500B9372B /* rand */,
 				994C388C1A2718F100D48484 /* file */,
 				994C38871A27040A00D48484 /* include */,
 				994C38811A2702C500D48484 /* timer */,
@@ -240,6 +264,30 @@
 				994C38A01A2718F100D48484 /* sys_fwrite.m */,
 			);
 			path = file;
+			sourceTree = "<group>";
+		};
+		9965E55D1A2D963500B9372B /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				9965E55E1A2D963500B9372B /* sys_debug.m */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
+		9965E55F1A2D963500B9372B /* memory */ = {
+			isa = PBXGroup;
+			children = (
+				9965E5601A2D963500B9372B /* sys_memory.m */,
+			);
+			path = memory;
+			sourceTree = "<group>";
+		};
+		9965E5611A2D963500B9372B /* rand */ = {
+			isa = PBXGroup;
+			children = (
+				9965E5621A2D963500B9372B /* sys_rand.m */,
+			);
+			path = rand;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +374,7 @@
 				994C38AE1A2718F100D48484 /* sys_fread.m in Sources */,
 				994C38AC1A2718F100D48484 /* sys_fmkdir.m in Sources */,
 				994C38B01A2718F100D48484 /* sys_frename.m in Sources */,
+				9965E5571A2D961E00B9372B /* xdebug.c in Sources */,
 				994C38A61A2718F100D48484 /* sys_fenumnext.m in Sources */,
 				994C38AD1A2718F100D48484 /* sys_fopen.m in Sources */,
 				994C388A1A2718DC00D48484 /* xfile.c in Sources */,
@@ -338,14 +387,19 @@
 				994C38AA1A2718F100D48484 /* sys_fgetsize.m in Sources */,
 				994C38A91A2718F100D48484 /* sys_fgetfreespace.m in Sources */,
 				994C38A81A2718F100D48484 /* sys_fexist.m in Sources */,
+				9965E5591A2D961E00B9372B /* xrand.c in Sources */,
 				994C38A71A2718F100D48484 /* sys_fenumstart.m in Sources */,
 				994C38A11A2718F100D48484 /* fpathchange.m in Sources */,
+				9965E5641A2D963500B9372B /* sys_memory.m in Sources */,
 				994C38A31A2718F100D48484 /* sys_fchsize.m in Sources */,
+				9965E5581A2D961E00B9372B /* xmemory.c in Sources */,
+				9965E5631A2D963500B9372B /* sys_debug.m in Sources */,
 				994C38A21A2718F100D48484 /* sys_diskexist.m in Sources */,
 				994C38AB1A2718F100D48484 /* sys_fgetspace.m in Sources */,
 				994C38A51A2718F100D48484 /* sys_fenumend.m in Sources */,
 				994C38B11A2718F100D48484 /* sys_frmdir.m in Sources */,
 				994C386C1A26D4D100D48484 /* xtime.c in Sources */,
+				9965E5651A2D963500B9372B /* sys_rand.m in Sources */,
 				994C38A41A2718F100D48484 /* sys_fclose.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
