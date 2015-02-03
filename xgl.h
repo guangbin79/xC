@@ -2,10 +2,9 @@
  * xC
  * @file xgl.h
  * @brief xgl API
- * @author tangbo <tangbo@tiros.com.cn>
+ * @author guangbin <guangbin79@gmail.com>
  * @date 2014/03/17
- * @par 修改xgl_makeCurrentContext接口声明
- *
+i*
  */
 
 #ifndef _XGL_H_

@@ -131,10 +131,7 @@ typedef long            XGLsizeiptr;
 #define XGL_RGBA                                          0x1908
 #define XGL_LUMINANCE                                     0x1909
 #define XGL_LUMINANCE_ALPHA                               0x190A
-
-#if GL_APPLE_texture_format_BGRA8888 || GL_IMG_read_format
-#define GL_BGRA                                                 0x80E1
-#endif
+#define XGL_BGRA                                          0x80E1
 
 /* PixelType */
 /*      XGL_UNSIGNED_BYTE */

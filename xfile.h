@@ -1,8 +1,8 @@
 /**
- * @file file.h
+ * @file xfile.h
  * @brief 文件
- * @author tangbo <tangbo@tiros.com.cn>
- * @date 2014/03/17
+ * @author guangbin <guangbin79@gmail.com>
+ * @date 2015/01/30
  * @par 修改记录
  */
 
@@ -28,8 +28,8 @@ typedef struct _xfile_enum xfile_enum_t;
  */
 #define XFS_DEFAULT ""              //默认私有,随机读写文件系统
 #define XFS_ASSET   "asset:/"       //私有资源,随机只读文件系统
-#define XFS_COLUD   "colud:/"       //私有云同步,随机读写文件系统
 #define XFS_SHARE   "share:/"       //扩展共享,随机读写文件系统
+/* #define XFS_COLUD   "colud:/"       //私有云同步,随机读写文件系统 */
 
 /**
  * @brief 文件打开类型枚举

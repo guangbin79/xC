@@ -2,7 +2,7 @@
  * xC
  * @file xtime.h
  * @brief 日期\时间
- * @author guangbin <baigb@tiros.com.cn>
+ * @author guangbin <guangbin79@gmail.com>
  * @date 2014/03/12
  * @par 修改记录
  *

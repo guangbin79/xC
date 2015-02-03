@@ -2,7 +2,7 @@
  * xC
  * @file xtimer.h
  * @brief 定时器
- * @author guangbin <baigb@tiros.com.cn>
+ * @author guangbin <guangbin79@gmail.com>
  * @date 2014/03/14
  * @par 修改记录
  *

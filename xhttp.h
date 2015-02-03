@@ -2,7 +2,7 @@
  * xC
  * @file xhttp.h
  * @brief 通用xhttp相关接口
- * @author tangbo <tangbo@tiros.com.cn>
+ * @author guangbin <guangbin79@gmail.com>
  * @date 2014/03/18
  * @par 修改记录
  *

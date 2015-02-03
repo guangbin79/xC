@@ -2,7 +2,7 @@
  * xC
  * @file xlongjmp.h
  * @brief 非本地跳转
- * @author guangbin <baigb@tiros.com.cn>
+ * @author guangbin <guangbin79@gmail.com>
  * @date 2014/03/14
  * @par 修改记录
  *
