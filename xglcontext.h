@@ -4,7 +4,8 @@
  * @brief xglcontext API
  * @author guangbin <guangbin79@gmail.com>
  * @date 2014/03/17
-i*
+ * @par 修改记录
+ *
  */
 
 #ifndef _XGLCONTEXT_H_

@@ -5,6 +5,8 @@
  * @author tangbo <tangbo@tiros.com.cn>
  * @date 2014/03/17
  * @par android/ios pixel format different.
+ * @par 修改记录
+ *
  */
 
 #ifndef _XOPENGL_H_
