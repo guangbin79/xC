@@ -23,11 +23,13 @@ typedef enum _xC_API {
     xC_API_End = xVarArgs
 } xC_API_t;
 
+typedef void (*xfn_test_result_t)(const char * file, int line, const char * description);
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void xC_API_Test(xC_API_t api);
+void xC_API_Test(xC_API_t _api_type, xfn_test_result_t _result_cb);
 
 #ifdef __cplusplus
 }

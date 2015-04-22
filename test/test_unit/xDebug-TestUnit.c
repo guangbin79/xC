@@ -5,5 +5,8 @@
 
 DEFINE_XC_TEST_UNIT_BEGIN(xDebug)
 
+    XC_TEST_CASE {
+        TEST_CASE_FAIL("test")
+    }
 
 DEFINE_XC_TEST_UNIT_END
