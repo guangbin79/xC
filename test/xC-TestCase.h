@@ -14,7 +14,7 @@
                                  } \
                                  while (1)
 
-#define TEST_CASE_PASS()         { \
+#define XC_TEST_CASE_PASS()      { \
                                      if (_testCaseStatus == 'i') { \
                                          _testCaseStatus = 'o'; \
                                      } \
@@ -24,11 +24,10 @@
                                      } \
                                  }
 
-#define TEST_CASE_FAIL(T)        { \
+#define XC_TEST_CASE_FAIL(T)     { \
                                      if (_testCaseStatus == 'i') { \
                                          _testCaseStatus = 'o'; \
                                          _result_cb(__FILE__, __LINE__, T); \
-                                         break; \
                                      } \
                                      else { \
                                          _result_cb(__FILE__, __LINE__, "!!! The test case is wrong."); \
