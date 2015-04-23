@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    xC_API_Test(xMemory, result_cb);
+    xC_Test(xMemory, result_cb);
 
     return a.exec();
 }
