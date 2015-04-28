@@ -1,9 +1,11 @@
 /**
+ * xC
  * @file xfile.h
  * @brief 文件
  * @author guangbin <guangbin79@gmail.com>
  * @date 2015/01/30
  * @par 修改记录
+ *
  */
 
 #ifndef _XFILE_H_
