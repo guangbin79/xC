@@ -14,6 +14,7 @@ CONFIG   -= app_bundle
 
 TEMPLATE = app
 
+CONFIG(release, debug|release): DEFINES += NDEBUG
 
 SOURCES += main.cpp \
     ../../xC-Test.c \

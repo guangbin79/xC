@@ -12,6 +12,8 @@ TARGET = xC
 TEMPLATE = lib
 CONFIG += staticlib
 
+CONFIG(release, debug|release): DEFINES += NDEBUG
+
 SOURCES += \
     ../xdebug/xdebug.cpp \
     ../xmemory/xmemory.cpp
