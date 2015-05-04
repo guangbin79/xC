@@ -1,6 +1,5 @@
 #include "../../../../xdebug.h"
-#include "../../../../xvarargs.h"
-//#include <QDebug>
+#include "../../../../xvarargs.h"ß
 //#include <QString>
 //
 //void xdebug_assert(xbool_t exp) {
@@ -12,4 +11,3 @@
 //
 //    out << QString().vsprintf(format, ap);
 //}
-
