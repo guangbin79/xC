@@ -19,17 +19,16 @@ SOURCES += \
     ../xmemory/xmemory.cpp
 
 HEADERS += \
+    ../../../xbaseon.h \
     ../../../xboolean.h \
     ../../../xcharacter.h \
     ../../../xdebug.h \
     ../../../xfile.h \
     ../../../xfloat.h \
-    ../../../xglcontext.h \
-    ../../../xhttprequest.h \
+    ../../../xgles.h \
     ../../../xinteger.h \
     ../../../xlongjmp.h \
     ../../../xmemory.h \
-    ../../../xopengl.h \
     ../../../xpointer.h \
     ../../../xrand.h \
     ../../../xthread.h \
