@@ -18,17 +18,16 @@ CONFIG(release, debug|release): DEFINES += NDEBUG
 
 SOURCES += main.cpp \
     ../../xC-Test.c \
+    ../../test_unit/xBaseOn-TestUnit.c \
     ../../test_unit/xBoolean-TestUnit.c \
     ../../test_unit/xCharacter-TestUnit.c \
     ../../test_unit/xDebug-TestUnit.c \
     ../../test_unit/xFile-TestUnit.c \
     ../../test_unit/xFloat-TestUnit.c \
-    ../../test_unit/xGLContext-TestUnit.c \
-    ../../test_unit/xHttpRequest-TestUnit.c \
+    ../../test_unit/xGLES-TestUnit.c \
     ../../test_unit/xInteger-TestUnit.c \
     ../../test_unit/xLongJmp-TestUnit.c \
     ../../test_unit/xMemory-TestUnit.c \
-    ../../test_unit/xOpenGL-TestUnit.c \
     ../../test_unit/xPointer-TestUnit.c \
     ../../test_unit/xRand-TestUnit.c \
     ../../test_unit/xThread-TestUnit.c \
