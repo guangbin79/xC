@@ -1,6 +1,6 @@
 /**
  * xC
- * @file xopengl.h
+ * @file xgles.h
  * @brief opengles2.0 API
  * @author tangbo <tangbo@tiros.com.cn>
  * @date 2014/03/17
@@ -9,8 +9,8 @@
  *
  */
 
-#ifndef _XOPENGL_H_
-#define _XOPENGL_H_
+#ifndef _XGLES_H_
+#define _XGLES_H_
 
 /*-------------------------------------------------------------------------
  * Data type definitions
@@ -208,78 +208,78 @@ typedef long            XGLsizeiptr;
 #ifdef __cplusplus
 extern "C" {
 #endif
-    
+
 /*-------------------------------------------------------------------------
  * Entrypoint definitions
  *-----------------------------------------------------------------------*/
 
-void xopengl_genBuffers(XGLsizei n, XGLuint * buffers);
-void xopengl_deleteBuffers(XGLsizei n, const XGLuint * buffers);
-void xopengl_bindBuffer(XGLenum target, XGLuint buffer);
-void xopengl_bufferData(XGLenum target, XGLsizeiptr size, const XGLvoid * data, XGLenum usage);
-void xopengl_bufferSubData(XGLenum target, XGLintptr offset, XGLsizeiptr size, const XGLvoid * data);
-XGLuint xopengl_createShader(XGLenum type);
-void xopengl_getShaderSource(XGLuint shader, XGLsizei bufsize, XGLsizei * length, XGLchar * source);
-void xopengl_compileShader(XGLuint shader);
-void xopengl_getShaderiv(XGLuint shader, XGLenum pname, XGLint * params);
-void xopengl_getShaderInfoLog(XGLuint shader, XGLsizei bufsize, XGLsizei * length, XGLchar * infolog);
-void xopengl_deleteShader(XGLuint shader);
-XGLuint xopengl_createProgram(void);
-void xopengl_attachShader(XGLuint program, XGLuint shader);
-void xopengl_deleteProgram(XGLuint program);
-void xopengl_linkProgram(XGLuint program);
-void xopengl_useProgram(XGLuint program);
-void xopengl_getProgramiv(XGLuint program, XGLenum pname, XGLint * params);
-void xopengl_getProgramInfoLog(XGLuint program, XGLsizei bufsize, XGLsizei * length, XGLchar * infolog);
-XGLint xopengl_getUniformLocation(XGLuint program, const XGLchar* name);
-void xopengl_uniform1f(XGLint location, XGLfloat x);
-void xopengl_uniform2f(XGLint location, XGLfloat x, XGLfloat y);
-void xopengl_uniform3f(XGLint location, XGLfloat x, XGLfloat y, XGLfloat z);
-void xopengl_uniform4f(XGLint location, XGLfloat x, XGLfloat y, XGLfloat z, XGLfloat w);
-void xopengl_uniformMatrix3fv(XGLint location, XGLsizei count, XGLboolean transpose, const XGLfloat * value);
-void xopengl_uniformMatrix4fv(XGLint location, XGLsizei count, XGLboolean transpose, const XGLfloat * value);
-void xopengl_uniform1i(XGLint location, XGLint x);
-void xopengl_attachShader(XGLuint program, XGLuint shader);
-void xopengl_getVertexAttribPointerv(XGLuint index, XGLenum pname, XGLvoid ** pointer);
-void xopengl_enableVertexAttribArray(XGLuint index);
-void xopengl_disableVertexAttribArray(XGLuint index);
-XGLint  xopengl_getAttribLocation(XGLuint program, const XGLchar * name);
-void xopengl_genFramebuffers(XGLsizei n, XGLuint * framebuffers);
-void xopengl_bindFramebuffer(XGLenum target, XGLuint framebuffer);
-void xopengl_framebufferTexture2D(XGLenum target, XGLenum attachment, XGLenum textarget, XGLuint texture, XGLint level);
-XGLenum xopengl_checkFramebufferStatus(XGLenum target);
-void xopengl_deleteFramebuffers(XGLsizei n, const XGLuint * framebuffers);
-void xopengl_genRenderbuffers(XGLsizei n, XGLuint * renderbuffers);
-void xopengl_bindRenderbuffer(XGLenum target, XGLuint renderbuffer);
-void xopengl_renderbufferStorage(XGLenum target, XGLenum internalformat, XGLsizei width, XGLsizei height);
-void xopengl_framebufferRenderbuffer(XGLenum target, XGLenum attachment, XGLenum renderbuffertarget, XGLuint renderbuffer);
-void xopengl_deleteRenderbuffers(XGLsizei n, const XGLuint * renderbuffers);
-void xopengl_texParameterf(XGLenum target, XGLenum pname, XGLfloat param);
-void xopengl_texImage2D(XGLenum target, XGLint level, XGLint internalformat, XGLsizei width, XGLsizei height, XGLint border, XGLenum format, XGLenum type, const XGLvoid* pixels);
-void xopengl_genTextures(XGLsizei n, XGLuint * textures);
-void xopengl_activeTexture(XGLenum texture);
-void xopengl_bindTexture(XGLenum target, XGLuint texture);
-void xopengl_deleteTextures(XGLsizei n, const XGLuint * textures);
-XGLenum xopengl_getError(void);
-void xopengl_texSubImage2D(XGLenum target, XGLint level, XGLint xoffset, XGLint yoffset, XGLsizei width, XGLsizei height, XGLenum format, XGLenum type, const XGLvoid* pixels);
-void xopengl_getIntegerv(XGLenum pname, XGLint* params);
-void xopengl_drawArrays(XGLenum mode, XGLint first, XGLsizei count);
-void xopengl_drawElements(XGLenum mode, XGLsizei count, XGLenum type, const XGLvoid * indices);
-void xopengl_enable(XGLenum cap);
-void xopengl_disable(XGLenum cap);
-void xopengl_finish(void);
-void xopengl_flush(void);
-void xopengl_blendFunc(XGLenum sfactor, XGLenum dfactor);
-void xopengl_depthFunc(XGLenum func);
-void xopengl_depthMask(XGLboolean flag);
-void xopengl_copyTexSubImage2D(XGLenum target, XGLint level, XGLint xoffset, XGLint yoffset, XGLint x, XGLint y, XGLsizei width, XGLsizei height);
-void xopengl_clear(XGLbitfield mask);
-void xopengl_clearColor(XGLfloat red, XGLfloat green, XGLfloat blue, XGLfloat alpha);
-void xopengl_viewport(XGLint x, XGLint y, XGLsizei width, XGLsizei height);
+void xgles_genBuffers(XGLsizei n, XGLuint * buffers);
+void xgles_deleteBuffers(XGLsizei n, const XGLuint * buffers);
+void xgles_bindBuffer(XGLenum target, XGLuint buffer);
+void xgles_bufferData(XGLenum target, XGLsizeiptr size, const XGLvoid * data, XGLenum usage);
+void xgles_bufferSubData(XGLenum target, XGLintptr offset, XGLsizeiptr size, const XGLvoid * data);
+XGLuint xgles_createShader(XGLenum type);
+void xgles_getShaderSource(XGLuint shader, XGLsizei bufsize, XGLsizei * length, XGLchar * source);
+void xgles_compileShader(XGLuint shader);
+void xgles_getShaderiv(XGLuint shader, XGLenum pname, XGLint * params);
+void xgles_getShaderInfoLog(XGLuint shader, XGLsizei bufsize, XGLsizei * length, XGLchar * infolog);
+void xgles_deleteShader(XGLuint shader);
+XGLuint xgles_createProgram(void);
+void xgles_attachShader(XGLuint program, XGLuint shader);
+void xgles_deleteProgram(XGLuint program);
+void xgles_linkProgram(XGLuint program);
+void xgles_useProgram(XGLuint program);
+void xgles_getProgramiv(XGLuint program, XGLenum pname, XGLint * params);
+void xgles_getProgramInfoLog(XGLuint program, XGLsizei bufsize, XGLsizei * length, XGLchar * infolog);
+XGLint xgles_getUniformLocation(XGLuint program, const XGLchar* name);
+void xgles_uniform1f(XGLint location, XGLfloat x);
+void xgles_uniform2f(XGLint location, XGLfloat x, XGLfloat y);
+void xgles_uniform3f(XGLint location, XGLfloat x, XGLfloat y, XGLfloat z);
+void xgles_uniform4f(XGLint location, XGLfloat x, XGLfloat y, XGLfloat z, XGLfloat w);
+void xgles_uniformMatrix3fv(XGLint location, XGLsizei count, XGLboolean transpose, const XGLfloat * value);
+void xgles_uniformMatrix4fv(XGLint location, XGLsizei count, XGLboolean transpose, const XGLfloat * value);
+void xgles_uniform1i(XGLint location, XGLint x);
+void xgles_attachShader(XGLuint program, XGLuint shader);
+void xgles_getVertexAttribPointerv(XGLuint index, XGLenum pname, XGLvoid ** pointer);
+void xgles_enableVertexAttribArray(XGLuint index);
+void xgles_disableVertexAttribArray(XGLuint index);
+XGLint  xgles_getAttribLocation(XGLuint program, const XGLchar * name);
+void xgles_genFramebuffers(XGLsizei n, XGLuint * framebuffers);
+void xgles_bindFramebuffer(XGLenum target, XGLuint framebuffer);
+void xgles_framebufferTexture2D(XGLenum target, XGLenum attachment, XGLenum textarget, XGLuint texture, XGLint level);
+XGLenum xgles_checkFramebufferStatus(XGLenum target);
+void xgles_deleteFramebuffers(XGLsizei n, const XGLuint * framebuffers);
+void xgles_genRenderbuffers(XGLsizei n, XGLuint * renderbuffers);
+void xgles_bindRenderbuffer(XGLenum target, XGLuint renderbuffer);
+void xgles_renderbufferStorage(XGLenum target, XGLenum internalformat, XGLsizei width, XGLsizei height);
+void xgles_framebufferRenderbuffer(XGLenum target, XGLenum attachment, XGLenum renderbuffertarget, XGLuint renderbuffer);
+void xgles_deleteRenderbuffers(XGLsizei n, const XGLuint * renderbuffers);
+void xgles_texParameterf(XGLenum target, XGLenum pname, XGLfloat param);
+void xgles_texImage2D(XGLenum target, XGLint level, XGLint internalformat, XGLsizei width, XGLsizei height, XGLint border, XGLenum format, XGLenum type, const XGLvoid* pixels);
+void xgles_genTextures(XGLsizei n, XGLuint * textures);
+void xgles_activeTexture(XGLenum texture);
+void xgles_bindTexture(XGLenum target, XGLuint texture);
+void xgles_deleteTextures(XGLsizei n, const XGLuint * textures);
+XGLenum xgles_getError(void);
+void xgles_texSubImage2D(XGLenum target, XGLint level, XGLint xoffset, XGLint yoffset, XGLsizei width, XGLsizei height, XGLenum format, XGLenum type, const XGLvoid* pixels);
+void xgles_getIntegerv(XGLenum pname, XGLint* params);
+void xgles_drawArrays(XGLenum mode, XGLint first, XGLsizei count);
+void xgles_drawElements(XGLenum mode, XGLsizei count, XGLenum type, const XGLvoid * indices);
+void xgles_enable(XGLenum cap);
+void xgles_disable(XGLenum cap);
+void xgles_finish(void);
+void xgles_flush(void);
+void xgles_blendFunc(XGLenum sfactor, XGLenum dfactor);
+void xgles_depthFunc(XGLenum func);
+void xgles_depthMask(XGLboolean flag);
+void xgles_copyTexSubImage2D(XGLenum target, XGLint level, XGLint xoffset, XGLint yoffset, XGLint x, XGLint y, XGLsizei width, XGLsizei height);
+void xgles_clear(XGLbitfield mask);
+void xgles_clearColor(XGLfloat red, XGLfloat green, XGLfloat blue, XGLfloat alpha);
+void xgles_viewport(XGLint x, XGLint y, XGLsizei width, XGLsizei height);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* _XOPENGL_H_ */
+#endif /* _XGLES_H_ */
 
