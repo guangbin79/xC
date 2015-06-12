@@ -2,7 +2,7 @@
  * xC
  * @file xtime.h
  * @brief 日期\时间
- * @author guangbin <baigb@tiros.com.cn>
+ * @author guangbin <guangbin79@gmail.com>
  * @date 2014/03/12
  * @par 修改记录
  *
@@ -17,7 +17,7 @@
 /**
  * @brief 日期时间结构体
  */
-typedef struct _xdate_time_t {
+typedef struct _xdate_time {
     xint16_t year;   ///< 年
     xint8_t month;   ///< 月
     xint8_t day;     ///< 日

@@ -2,7 +2,7 @@
  * xC
  * @file xlongjmp.h
  * @brief 非本地跳转
- * @author guangbin <baigb@tiros.com.cn>
+ * @author guangbin <guangbin79@gmail.com>
  * @date 2014/03/14
  * @par 修改记录
  *
@@ -17,7 +17,9 @@
 /**
  * @brief 用于保存恢复调用环境所需的信息
  */
-typedef struct _xjmp_buf_t xjmp_buf_t;
+typedef struct _xjmp_buf {
+    int buf[66]; // 66 : 用于兼容各个系统的 jmp_buf 大小
+} xjmp_buf_t[1];
 
 
 /**

@@ -1,11 +1,11 @@
 /**
- * xC 
+ * xC
  * @file xmemory.h
  * @brief 内存
- * @author guangbin <baigb@tiros.com.cn>
+ * @author guangbin <guangbin79@gmail.com>
  * @date 2014/03/14
  * @par 修改记录
- * 
+ *
  */
 
 #ifndef _XMEMORY_H_
@@ -60,7 +60,7 @@ void * xmemory_realloc(void * ptr, xsize_t size);
  * @param[in] ptr - 指向准备释放空间的指针
  * @return - 无
  * @par 接口使用约定
- * 
+ *
  */
 void xmemory_free(void * ptr);
 
@@ -93,10 +93,8 @@ void * xmemory_move(void * dptr, const void * sptr, xsize_t size);
  * @param[in] c - 设置值
  * @param[in] count - 设置次数
  * @return - 目标内存首地址
- * @par 接口使用约定
- *      1.注意:“int c” 的数据有效范围为0~255, 属于C语言规范遗留bug<br>
  */
-void * xmemory_set(void * ptr, xint32_t c, xuint32_t count);
+void * xmemory_set(void * ptr, xuint8_t c, xuint32_t count);
 
 /**
  * @brief 比较内存区域buf1和buf2的前count个字节

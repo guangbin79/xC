@@ -2,7 +2,7 @@
  * xC
  * @file xtimer.h
  * @brief 定时器
- * @author guangbin <baigb@tiros.com.cn>
+ * @author guangbin <guangbin79@gmail.com>
  * @date 2014/03/14
  * @par 修改记录
  *
@@ -18,7 +18,7 @@
 /**
  * @brief 定时器结构体
  */
-typedef struct _xtimer_t xtimer_t;
+typedef struct _xtimer xtimer_t;
 
 /**
  * @brief 定时器回调函数类型声明

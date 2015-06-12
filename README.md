@@ -1,11 +1,5 @@
 xC -- A portable C interface
 ==
 
-"xC" 的主要目的是构建具有 "高度可移植性" 的 C 语言开发接口, 接口包括: 基本类型/操作系统相关 API. 同时, 在此接口的基础上移植常用的C语言开源库. 使移植完成的开源库也具有高度的可移植性.
-
-    "高度可移植性" 在这里的意思有两个:
-    1. "xC" 本身非常容易在不同操作系统平台移植;
-    2. 在 "xC" 基础上开发的 C 语言代码(比如已经移植到 "xC" 上的开源库), 不需要任何修改就可以在不同平台上编译使用.
-
-    "xC" 将会优先在 Android/iOS/Qt 上移植实现，WP8/QNX 待定.
+The goal of xC is to define a set of cross-platform C language interface (including: basic data types / OS-API), so based xC easier to develop cross-platform C language code.
 
