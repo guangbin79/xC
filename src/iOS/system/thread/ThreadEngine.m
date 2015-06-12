@@ -17,7 +17,6 @@
     if (self = [super init])
 	{
         _pThreadHandle = nil;
-        _pThreadNotifyFunc = NULL;
         _pThreadProcFunc = NULL;
         _pvUser = NULL;
         _busy = NO;
@@ -34,7 +33,6 @@
         [_pThreadHandle release];
         _pThreadHandle = nil;
     }
-    _pThreadNotifyFunc = NULL;
     _pThreadProcFunc = NULL;
     _pvUser = NULL;
     _busy = NO;
@@ -53,7 +51,6 @@
 -(void)initAttr:(SYS_ThreadProcFunc) proc WithNotify:(SYS_ThreadNotifyFunc) notify AndUser:(void*) user
 {
     _pThreadProcFunc = proc;
-    _pThreadNotifyFunc = notify;
     _pvUser = user;
 }
 
@@ -99,10 +96,6 @@
     }
     [_pThreadHandle release];
     _pThreadHandle = nil;
-    if (_pThreadNotifyFunc != nil)
-    {
-        (*_pThreadNotifyFunc)(_pvUser);
-    }
 }
 
 -(void)Run
@@ -117,7 +110,7 @@
         
         _busy = NO;
         
-        if (![[NSThread currentThread] isCancelled] && _pThreadNotifyFunc)
+        if (![[NSThread currentThread] isCancelled])
         {
             [self performSelectorOnMainThread:@selector(NotifyToMainThread) withObject:nil waitUntilDone:YES];
         }

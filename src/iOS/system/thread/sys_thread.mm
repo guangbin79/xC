@@ -10,13 +10,13 @@
 
 
 
-SYS_Thread* sys_ThreadCreate(SYS_ThreadProcFunc proc, SYS_ThreadNotifyFunc notify, void* pvuser)
+SYS_Thread* sys_ThreadCreate(SYS_ThreadProcFunc proc, void* pvuser)
 {
     SYS_Thread * pThread = (SYS_Thread*)malloc(sizeof(SYS_Thread));
     if (pThread)
     {
         pThread->_pThreadEngine = [[ThreadEngine alloc]init];
-        [pThread->_pThreadEngine initAttr:proc WithNotify:notify AndUser:pvuser];
+        [pThread->_pThreadEngine initAttr:proc WithNotify:NULL AndUser:pvuser];
     }
     return pThread;
 }

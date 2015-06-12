@@ -21,7 +21,7 @@ typedef void (*SYS_ThreadNotifyFunc)(void* pvuser);
 extern "C" {
 #endif
     
-    SYS_Thread* sys_ThreadCreate(SYS_ThreadProcFunc proc, SYS_ThreadNotifyFunc notify, void* pvuser);
+    SYS_Thread* sys_ThreadCreate(SYS_ThreadProcFunc proc, void* pvuser);
     
     unsigned char sys_ThreadStart(SYS_Thread* pthread);
     

@@ -3,8 +3,7 @@
 
 xthread_t * xthread_create(xfn_thread_proc_t proc, void* pvuser)
 {
-//    return (xthread_t *)sys_ThreadCreate((SYS_ThreadProcFunc)proc, pvuser);
-    return 0;
+    return (xthread_t *)sys_ThreadCreate((SYS_ThreadProcFunc)proc, pvuser);
 }
 
 xbool_t xthread_start(xthread_t * pthread)
@@ -32,22 +31,22 @@ void xthread_sleep(xuint32_t dwMSecs)
 /*                                                                                  */
 /************************************************************************************/
 
-xmutex_t * xmutex_create()
+xthread_mutex_t * xmutex_create()
 {
-    return (xmutex_t *)sys_MutexCreate();
+    return (xthread_mutex_t *)sys_MutexCreate();
 }
 
-void xmutex_lock(xmutex_t * pmutex)
+void xmutex_lock(xthread_mutex_t * pmutex)
 {
     sys_MutexLock((SYS_Mutex*) pmutex);
 }
 
-void xmutex_unlock(xmutex_t * pmutex)
+void xmutex_unlock(xthread_mutex_t * pmutex)
 {
     sys_MutexUnlock((SYS_Mutex*) pmutex);
 }
 
-void xmutex_destory(xmutex_t * pmutex)
+void xmutex_destory(xthread_mutex_t * pmutex)
 {
     sys_MutexDestory((SYS_Mutex*) pmutex);
 }

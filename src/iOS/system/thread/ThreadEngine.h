@@ -12,7 +12,6 @@
 @interface ThreadEngine : NSObject{
     NSThread* _pThreadHandle;
     SYS_ThreadProcFunc _pThreadProcFunc;
-    SYS_ThreadNotifyFunc _pThreadNotifyFunc;
     void* _pvUser;
 }
 -(id)init;
