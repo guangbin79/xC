@@ -3,7 +3,8 @@
 
 xthread_t * xthread_create(xfn_thread_proc_t proc, void* pvuser)
 {
-    return (xthread_t *)sys_ThreadCreate((SYS_ThreadProcFunc)proc, pvuser);
+//    return (xthread_t *)sys_ThreadCreate((SYS_ThreadProcFunc)proc, pvuser);
+    return 0;
 }
 
 xbool_t xthread_start(xthread_t * pthread)
@@ -23,7 +24,6 @@ void xthread_destory(xthread_t * pthread)
 
 void xthread_sleep(xuint32_t dwMSecs)
 {
-    sys_ThreadSleep(dwMSecs);
 }
 
 /************************************************************************************/

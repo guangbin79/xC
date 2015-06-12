@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AD6631A5-BCC7-4B7D-932A-993C3D5C69A7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>xC</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8424448BE37D0E48941FEE65C395173C84652354</key>
+		<string>github.com:tangbo2013/xC.git</string>
+		<key>8C423B90F561543494DD537FD60BF94F4D5C5FBA</key>
+		<string>github.com:xCPI/project.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>src/iOS/xC.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8424448BE37D0E48941FEE65C395173C84652354</key>
+		<string>../../../..</string>
+		<key>8C423B90F561543494DD537FD60BF94F4D5C5FBA</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:tangbo2013/xC.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8424448BE37D0E48941FEE65C395173C84652354</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8C423B90F561543494DD537FD60BF94F4D5C5FBA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>..</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8424448BE37D0E48941FEE65C395173C84652354</string>
+			<key>IDESourceControlWCCName</key>
+			<string>xC</string>
+		</dict>
+	</array>
+</dict>
+</plist>
