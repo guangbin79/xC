@@ -7,18 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30C8DCC61B297B4D00868750 /* libxC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C8DCBA1B297B4D00868750 /* libxC.a */; };
+		30C8DD141B297F2C00868750 /* xthread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8DCF91B297F2C00868750 /* xthread.cpp */; };
+		30C8DD151B297F2C00868750 /* LockEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C8DD101B297F2C00868750 /* LockEngine.m */; };
+		30C8DD161B297F2C00868750 /* sys_thread.mm in Sources */ = {isa = PBXBuildFile; fileRef = 30C8DD111B297F2C00868750 /* sys_thread.mm */; };
+		30C8DD171B297F2C00868750 /* ThreadEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C8DD131B297F2C00868750 /* ThreadEngine.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		30C8DCC71B297B4D00868750 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 30C8DCB21B297B4C00868750 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 30C8DCB91B297B4D00868750;
-			remoteInfo = xC;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		30C8DCB81B297B4D00868750 /* CopyFiles */ = {
@@ -34,7 +27,14 @@
 
 /* Begin PBXFileReference section */
 		30C8DCBA1B297B4D00868750 /* libxC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libxC.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		30C8DCC51B297B4D00868750 /* xCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30C8DCF91B297F2C00868750 /* xthread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xthread.cpp; sourceTree = "<group>"; };
+		30C8DCFD1B297F2C00868750 /* sys_thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sys_thread.h; sourceTree = "<group>"; };
+		30C8DD081B297F2C00868750 /* sys_threaddef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sys_threaddef.h; sourceTree = "<group>"; };
+		30C8DD0F1B297F2C00868750 /* LockEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockEngine.h; sourceTree = "<group>"; };
+		30C8DD101B297F2C00868750 /* LockEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockEngine.m; sourceTree = "<group>"; };
+		30C8DD111B297F2C00868750 /* sys_thread.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = sys_thread.mm; sourceTree = "<group>"; };
+		30C8DD121B297F2C00868750 /* ThreadEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadEngine.h; sourceTree = "<group>"; };
+		30C8DD131B297F2C00868750 /* ThreadEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadEngine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,20 +45,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		30C8DCC21B297B4D00868750 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				30C8DCC61B297B4D00868750 /* libxC.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		30C8DCB11B297B4C00868750 = {
 			isa = PBXGroup;
 			children = (
+				30C8DCF81B297F2C00868750 /* common */,
+				30C8DCFB1B297F2C00868750 /* include */,
+				30C8DD051B297F2C00868750 /* system */,
 				30C8DCBB1B297B4D00868750 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,9 +62,53 @@
 			isa = PBXGroup;
 			children = (
 				30C8DCBA1B297B4D00868750 /* libxC.a */,
-				30C8DCC51B297B4D00868750 /* xCTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		30C8DCF81B297F2C00868750 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				30C8DCF91B297F2C00868750 /* xthread.cpp */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		30C8DCFB1B297F2C00868750 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				30C8DCFD1B297F2C00868750 /* sys_thread.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		30C8DD051B297F2C00868750 /* system */ = {
+			isa = PBXGroup;
+			children = (
+				30C8DD061B297F2C00868750 /* include */,
+				30C8DD0E1B297F2C00868750 /* thread */,
+			);
+			path = system;
+			sourceTree = "<group>";
+		};
+		30C8DD061B297F2C00868750 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				30C8DD081B297F2C00868750 /* sys_threaddef.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		30C8DD0E1B297F2C00868750 /* thread */ = {
+			isa = PBXGroup;
+			children = (
+				30C8DD0F1B297F2C00868750 /* LockEngine.h */,
+				30C8DD101B297F2C00868750 /* LockEngine.m */,
+				30C8DD111B297F2C00868750 /* sys_thread.mm */,
+				30C8DD121B297F2C00868750 /* ThreadEngine.h */,
+				30C8DD131B297F2C00868750 /* ThreadEngine.m */,
+			);
+			path = thread;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,24 +131,6 @@
 			productReference = 30C8DCBA1B297B4D00868750 /* libxC.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		30C8DCC41B297B4D00868750 /* xCTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 30C8DCD11B297B4D00868750 /* Build configuration list for PBXNativeTarget "xCTests" */;
-			buildPhases = (
-				30C8DCC11B297B4D00868750 /* Sources */,
-				30C8DCC21B297B4D00868750 /* Frameworks */,
-				30C8DCC31B297B4D00868750 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				30C8DCC81B297B4D00868750 /* PBXTargetDependency */,
-			);
-			name = xCTests;
-			productName = xCTests;
-			productReference = 30C8DCC51B297B4D00868750 /* xCTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -120,9 +141,6 @@
 				ORGANIZATIONNAME = map;
 				TargetAttributes = {
 					30C8DCB91B297B4D00868750 = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
-					30C8DCC41B297B4D00868750 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
 				};
@@ -140,45 +158,23 @@
 			projectRoot = "";
 			targets = (
 				30C8DCB91B297B4D00868750 /* xC */,
-				30C8DCC41B297B4D00868750 /* xCTests */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		30C8DCC31B297B4D00868750 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		30C8DCB61B297B4D00868750 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		30C8DCC11B297B4D00868750 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				30C8DD151B297F2C00868750 /* LockEngine.m in Sources */,
+				30C8DD161B297F2C00868750 /* sys_thread.mm in Sources */,
+				30C8DD141B297F2C00868750 /* xthread.cpp in Sources */,
+				30C8DD171B297F2C00868750 /* ThreadEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		30C8DCC81B297B4D00868750 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 30C8DCB91B297B4D00868750 /* xC */;
-			targetProxy = 30C8DCC71B297B4D00868750 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		30C8DCCC1B297B4D00868750 /* Debug */ = {
@@ -258,6 +254,7 @@
 		30C8DCCF1B297B4D00868750 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -267,39 +264,10 @@
 		30C8DCD01B297B4D00868750 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		30C8DCD21B297B4D00868750 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = xCTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		30C8DCD31B297B4D00868750 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = xCTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -322,14 +290,7 @@
 				30C8DCD01B297B4D00868750 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		30C8DCD11B297B4D00868750 /* Build configuration list for PBXNativeTarget "xCTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				30C8DCD21B297B4D00868750 /* Debug */,
-				30C8DCD31B297B4D00868750 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
