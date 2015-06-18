@@ -1,0 +1,11 @@
+//
+// Prefix header for all source files of the 'system_api' target in the 'system_api' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
+
+#define TIROS_IOS_PLATFORM  1
+#define NDEBUG

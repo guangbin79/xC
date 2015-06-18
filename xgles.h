@@ -239,7 +239,6 @@ void xgles_uniform4f(XGLint location, XGLfloat x, XGLfloat y, XGLfloat z, XGLflo
 void xgles_uniformMatrix3fv(XGLint location, XGLsizei count, XGLboolean transpose, const XGLfloat * value);
 void xgles_uniformMatrix4fv(XGLint location, XGLsizei count, XGLboolean transpose, const XGLfloat * value);
 void xgles_uniform1i(XGLint location, XGLint x);
-void xgles_attachShader(XGLuint program, XGLuint shader);
 void xgles_getVertexAttribPointerv(XGLuint index, XGLenum pname, XGLvoid ** pointer);
 void xgles_enableVertexAttribArray(XGLuint index);
 void xgles_disableVertexAttribArray(XGLuint index);
