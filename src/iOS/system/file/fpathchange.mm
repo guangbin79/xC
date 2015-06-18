@@ -27,34 +27,18 @@ char * fpathchange(const char * pszFilename)
     char* sFilePath = (char*)malloc(255);
     const char* tempFilename = pszFilename;
     memset(sFilePath, 0, 255);
-    if (strstr(pszFilename, "fs1:/"))
-    {
-        sPath = [docDir stringByAppendingPathComponent:@"tiros-com-cn-ext"];
+    
+    if (strstr(pszFilename, "asset:/")) {
+        tempFilename += 5;
+        sPath = [docDir stringByAppendingPathComponent:@"PrivateData"];
+    }
+    else if (strstr(pszFilename, "share:/")) {
+        sPath = [docDir stringByAppendingPathComponent:@"share"];
         tempFilename += 5;
     }
-    else if (strstr(pszFilename, "fs2:/"))
-    {
-        sPath = [docDir stringByAppendingPathComponent:@"tiros-com-cn-web"];
-        tempFilename += 5;
-    }
-    else if (strstr(pszFilename, "fs3:/"))
+    else if (strstr(pszFilename, ""))
     {
         
-    }
-    else if (strstr(pszFilename, "fs4:/"))
-    {
-        sPath = [docDir stringByAppendingPathComponent:@"Cloud"];
-        tempFilename += 5;
-    }
-    else if (strstr(pszFilename, [docDir UTF8String]))
-    {
-        strcpy(sFilePath, pszFilename);
-        return sFilePath;
-    }
-    else {
-        if (strstr(pszFilename, "fs0:/"))
-            tempFilename += 5;
-        sPath = [docDir stringByAppendingPathComponent:@"PrivateData"];
     }
     
     //创建文件夹并且设置不上传属性
