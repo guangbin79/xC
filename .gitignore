@@ -24,3 +24,5 @@ build-*-Desktop-*
 
 # MacOSX 
 .DS_Store
+
+src/Android/Xc/bin/
