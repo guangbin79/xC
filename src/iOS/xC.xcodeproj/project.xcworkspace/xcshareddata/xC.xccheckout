@@ -22,7 +22,7 @@
 		<key>8424448BE37D0E48941FEE65C395173C84652354</key>
 		<string>../../../..</string>
 		<key>8C423B90F561543494DD537FD60BF94F4D5C5FBA</key>
-		<string>../../../../../..</string>
+		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:tangbo2013/xC.git</string>
@@ -38,7 +38,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>8C423B90F561543494DD537FD60BF94F4D5C5FBA</string>
 			<key>IDESourceControlWCCName</key>
-			<string>..</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
